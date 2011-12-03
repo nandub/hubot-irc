@@ -18,7 +18,6 @@
   "main": "./src/irc.coffee",
   "engine": "node > 0.6.0 < 0.7.0",
   "dependencies": {
-    "hubot": "2.0.4",
     "irc": "0.3.3"
   },
   "devDependencies": {
