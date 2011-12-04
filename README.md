@@ -12,10 +12,6 @@ This is the IRC adapter for hubot.
 * Install dependencies with `npm install`
 * Run hubot with `bin/hubot -a irc`
 
-### Note if running on Heroku
-
-You will need to change the process type from `app` to `web` in the `Procfile`.
-
 ## Usage
 
 You will need to set some environment variables to use this adapter.
