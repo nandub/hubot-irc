@@ -6,6 +6,8 @@ Irc     = require 'irc'
 class IrcBot extends Adapter
   send: (user, strings...) ->
     for str in strings
+      if not str?
+        continue
       if user.room
         console.log "#{user.room} #{str}"
         @bot.say(user.room, str)
