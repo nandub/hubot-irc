@@ -71,7 +71,7 @@ class IrcBot extends Adapter
 
     bot.addListener 'message', (from, to, message) ->
       console.log "From #{from} to #{to}: #{message}"
-      
+
       user = self.userForName from
       unless user?
         id = (new Date().getTime() / 1000).toString().replace('.','')
@@ -83,6 +83,8 @@ class IrcBot extends Adapter
         console.log "#{to} <#{from}> #{message}"
       else
         user.room = null
+        unless message.indexOf(to) == 0
+          message = "#{to}: #{message}"
         console.log "msg <#{from}> #{message}"
 
       self.receive new Robot.TextMessage(user, message)
