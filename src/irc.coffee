@@ -8,7 +8,10 @@ class IrcBot extends Adapter
     for str in strings
       if not str?
         continue
-      if user.room
+      if user.match(/^[&#]/)
+        console.log "#{user} #{str}"
+        @bot.say(user, str)
+      else if user.room
         console.log "#{user.room} #{str}"
         @bot.say(user.room, str)
       else
