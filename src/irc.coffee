@@ -15,6 +15,17 @@ class IrcBot extends Adapter
         console.log "#{user.name} #{str}"
         @bot.say(user.name, str)
 
+  notice: (user, strings...) ->
+    for str in strings
+      if not str?
+        continue
+      if user.room
+        console.log "notice #{user.room} #{str}"
+        @bot.notice(user.room, str)
+      else
+        console.log "notice #{user.name} #{str}"
+        @bot.notice(user.name, str)
+
   reply: (user, strings...) ->
     for str in strings
       @send user, "#{user.name}: #{str}"
@@ -108,6 +119,15 @@ class IrcBot extends Adapter
 
     @bot = bot
 
+class IrcResponse extends Robot.Response
+  notice: (strings...) ->
+    @robot.adapter.notice @message.user, strings...
+
 exports.use = (robot) ->
+  robot.notice = (user, strings...) ->
+    @adapter.notice user, strings...
+
+  robot.Response = IrcResponse
+
   new IrcBot robot
 
