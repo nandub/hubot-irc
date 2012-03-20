@@ -4,6 +4,14 @@ Adapter = require('hubot').adapter()
 Irc     = require 'irc'
 
 class IrcBot extends Adapter
+  constructor: (@robot) ->
+    super @robot
+
+    @robot.notice = (user, strings...) ->
+      @adapter.notice user, strings...
+
+    @robot.Response = IrcResponse
+
   send: (user, strings...) ->
     for str in strings
       if not str?
@@ -124,10 +132,5 @@ class IrcResponse extends Robot.Response
     @robot.adapter.notice @message.user, strings...
 
 exports.use = (robot) ->
-  robot.notice = (user, strings...) ->
-    @adapter.notice user, strings...
-
-  robot.Response = IrcResponse
-
   new IrcBot robot
 
