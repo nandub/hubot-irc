@@ -44,6 +44,7 @@ class IrcBot extends Adapter
       usessl:   process.env.HUBOT_IRC_USESSL?
 
     client_options =
+      userName: process.env.HUBOT_IRC_USERNAME
       password: options.password,
       debug: options.debug,
       port: options.port,
