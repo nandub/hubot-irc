@@ -108,6 +108,8 @@ class IrcBot extends Adapter
 
     @bot = bot
 
+    self.emit "connected"
+
 exports.use = (robot) ->
   new IrcBot robot
 
