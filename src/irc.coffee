@@ -4,6 +4,14 @@ Adapter = require('hubot').adapter()
 Irc     = require 'irc'
 
 class IrcBot extends Adapter
+  constructor: (@robot) ->
+    super @robot
+
+    @robot.notice = (user, strings...) ->
+      @adapter.notice user, strings...
+
+    @robot.Response = IrcResponse
+
   send: (user, strings...) ->
     for str in strings
       if not str?
@@ -14,6 +22,17 @@ class IrcBot extends Adapter
       else
         console.log "#{user.name} #{str}"
         @bot.say(user.name, str)
+
+  notice: (user, strings...) ->
+    for str in strings
+      if not str?
+        continue
+      if user.room
+        console.log "notice #{user.room} #{str}"
+        @bot.notice(user.room, str)
+      else
+        console.log "notice #{user.name} #{str}"
+        @bot.notice(user.name, str)
 
   reply: (user, strings...) ->
     for str in strings
@@ -107,6 +126,10 @@ class IrcBot extends Adapter
       bot.join channel
 
     @bot = bot
+
+class IrcResponse extends Robot.Response
+  notice: (strings...) ->
+    @robot.adapter.notice @message.user, strings...
 
 exports.use = (robot) ->
   new IrcBot robot
