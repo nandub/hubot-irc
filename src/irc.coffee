@@ -127,6 +127,8 @@ class IrcBot extends Adapter
 
     @bot = bot
 
+    self.emit "connected"
+
 class IrcResponse extends Robot.Response
   notice: (strings...) ->
     @robot.adapter.notice @message.user, strings...
