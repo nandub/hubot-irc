@@ -42,9 +42,10 @@ class IrcBot extends Adapter
       unflood:  process.env.HUBOT_IRC_UNFLOOD?
       debug:    process.env.HUBOT_IRC_DEBUG?
       usessl:   process.env.HUBOT_IRC_USESSL?
+      userName: process.env.HUBOT_IRC_USERNAME?
 
     client_options =
-      userName: process.env.HUBOT_IRC_USERNAME
+      userName: options.userName,
       password: options.password,
       debug: options.debug,
       port: options.port,
