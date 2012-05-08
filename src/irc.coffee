@@ -42,6 +42,7 @@ class IrcBot extends Adapter
     self = @
     @bot.join channel, () ->
       console.log('joined %s', channel)
+      self.emit 'joined'
 
   part: (channel) ->
     @bot.part channel, () ->
