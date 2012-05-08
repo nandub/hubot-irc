@@ -47,6 +47,10 @@ class IrcBot extends Adapter
     @bot.part channel, () ->
       console.log('left %s', channel)
 
+  command: (command, strings...) ->
+    for str in strings
+      @bot.send command, str
+
   run: ->
     self = @
 
