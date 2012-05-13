@@ -122,9 +122,9 @@ class IrcBot extends Adapter
         unless user?
           id = (new Date().getTime() / 1000).toString().replace('.','')
           user = self.userForId id
-          user.name = from
+          user.name = who
 
-        user.room = from
+        user.room = who
 
         self.receive new Robot.TextMessage(user, '~@join')
 
