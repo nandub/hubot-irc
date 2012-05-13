@@ -123,6 +123,8 @@ class IrcBot extends Adapter
           id = (new Date().getTime() / 1000).toString().replace('.','')
           user = self.userForId id
           user.name = who
+          
+        user.room = channel
 
         self.receive new Robot.TextMessage(user, '~@join')
 
