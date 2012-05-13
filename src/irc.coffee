@@ -114,26 +114,26 @@ class IrcBot extends Adapter
   
     bot.addListener 'pm', (nick, message) ->
         console.log('Got private message from %s: %s', nick, message)
-		self.receive new Robot.TextMessage(nick, message)
+	self.receive new Robot.TextMessage(nick, message)
 
     bot.addListener 'join', (channel, who) ->
         console.log('%s has joined %s', who, channel)
-		self.receive new Robot.TextMessage(who, '~@join')
+	self.receive new Robot.TextMessage(who, '~@join')
 
     bot.addListener 'part', (channel, who, reason) ->
         console.log('%s has left %s: %s', who, channel, reason)
-		self.receive new Robot.TextMessage(who, '~@part')
+	self.receive new Robot.TextMessage(who, '~@part')
 
     bot.addListener 'kick', (channel, who, _by, reason) ->
         console.log('%s was kicked from %s by %s: %s', who, channel, _by, reason)
 
     bot.addListener 'invite', (channel, from) ->
-      console.log('%s invite you to join %s', from, channel)
-      bot.join channel
+    	console.log('%s invite you to join %s', from, channel)
+    	bot.join channel
 	  
     bot.addListener 'quit', (who, action, channel, something1, something2) ->
-       console.log('%s has quit [%s] channel %s: %s; %s', who, action, channel, something1, something2)
-       self.receive new Robot.TextMessage(who, '~@quit')
+    	console.log('%s has quit [%s] channel %s: %s; %s', who, action, channel, something1, something2)
+    	self.receive new Robot.TextMessage(who, '~@quit')
 
     @bot = bot
 
