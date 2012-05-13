@@ -138,7 +138,7 @@ class IrcBot extends Adapter
         
         user.room = channel
         
-        unless bot.info.id == user.id
+        unless options.nick == user.name
           self.receive new Robot.EnterMessage(user)
 
     bot.addListener 'part', (channel, who, reason) ->
@@ -152,7 +152,7 @@ class IrcBot extends Adapter
           
         user.room = channel
         
-        unless bot.info.id == user.id
+        unless options.nick == user.name
           self.receive new Robot.LeaveMessage(user)
 
     bot.addListener 'kick', (channel, who, _by, reason) ->
@@ -166,7 +166,7 @@ class IrcBot extends Adapter
           
         user.room = channel
         
-        unless bot.info.id == user.id
+        unless options.nick == user.name
           self.receive new Robot.LeaveMessage(user)
 
     bot.addListener 'invite', (channel, from) ->
@@ -184,7 +184,7 @@ class IrcBot extends Adapter
           
         user.room = channel
         
-        unless bot.info.id == user.id
+        unless options.nick == user.name
           self.receive new Robot.LeaveMessage(user)
 
     @bot = bot
