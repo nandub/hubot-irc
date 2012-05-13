@@ -126,7 +126,7 @@ class IrcBot extends Adapter
         
         user.room = channel
         console.log user  
-        #self.receive new Robot.TextMessage(user, '~@join')
+        self.receive new Robot.TextMessage(user, '~@join')
 
     bot.addListener 'part', (channel, who, reason) ->
         console.log('%s has left %s: %s', who, channel, reason)
