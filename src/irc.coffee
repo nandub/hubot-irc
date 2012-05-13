@@ -124,8 +124,6 @@ class IrcBot extends Adapter
           user = self.userForId id
           user.name = who
 
-        user.room = who
-
         self.receive new Robot.TextMessage(user, '~@join')
 
     bot.addListener 'part', (channel, who, reason) ->
