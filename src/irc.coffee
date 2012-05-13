@@ -116,7 +116,7 @@ class IrcBot extends Adapter
         console.log('Got private message from %s: %s', nick, message)
 		self.receive new Robot.TextMessage(nick, message)
 
-#using TextMessage instead of EnterMessage and LeaveMessage because the latter has not yet been implemented in hubot
+    #using TextMessage instead of EnterMessage and LeaveMessage bc they not yet been implemented in hubot
     bot.addListener 'join', (channel, who) ->
         console.log('%s has joined %s', who, channel)
 		self.receive new Robot.TextMessage(who, '~@join')
