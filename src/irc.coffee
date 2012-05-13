@@ -125,7 +125,6 @@ class IrcBot extends Adapter
           user.name = who
         
         user.room = channel
-        console.log user  
         self.receive new Robot.TextMessage(user, '~@join')
 
     bot.addListener 'part', (channel, who, reason) ->
@@ -137,9 +136,8 @@ class IrcBot extends Adapter
           user = self.userForId id
           user.name = who
           
-        #user.room = channel
-          
-        #self.receive new Robot.LeaveMessage(user)
+        user.room = channel  
+        self.receive new Robot.LeaveMessage(user)
 
     bot.addListener 'kick', (channel, who, _by, reason) ->
         console.log('%s was kicked from %s by %s: %s', who, channel, _by, reason)
