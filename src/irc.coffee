@@ -133,9 +133,7 @@ class IrcBot extends Adapter
           user.name = who
         
         user.room = channel
-        
-        unless options.nick == user.name
-          self.receive new Robot.EnterMessage(user)
+        self.receive new Robot.EnterMessage(user)
 
     bot.addListener 'part', (channel, who, reason) ->
         console.log('%s has left %s: %s', who, channel, reason)
@@ -148,8 +146,7 @@ class IrcBot extends Adapter
           
         user.room = channel
         
-        unless options.nick == user.name
-          self.receive new Robot.LeaveMessage(user)
+        self.receive new Robot.LeaveMessage(user)
 
     bot.addListener 'kick', (channel, who, _by, reason) ->
         console.log('%s was kicked from %s by %s: %s', who, channel, _by, reason)
@@ -162,8 +159,7 @@ class IrcBot extends Adapter
           
         user.room = channel
         
-        unless options.nick == user.name
-          self.receive new Robot.LeaveMessage(user)
+        self.receive new Robot.LeaveMessage(user)
 
     bot.addListener 'invite', (channel, from) ->
         console.log('%s invite you to join %s', from, channel)
@@ -180,8 +176,7 @@ class IrcBot extends Adapter
           
         user.room = channel
         
-        unless options.nick == user.name
-          self.receive new Robot.LeaveMessage(user)
+        self.receive new Robot.LeaveMessage(user)
 
     @bot = bot
 
