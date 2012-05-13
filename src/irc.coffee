@@ -1,4 +1,4 @@
-Robot	 = require('hubot').robot()
+Robot   = require('hubot').robot()
 Adapter = require('hubot').adapter()
 
 Irc = require 'irc'
@@ -117,7 +117,16 @@ class IrcBot extends Adapter
 
     bot.addListener 'join', (channel, who) ->
         console.log('%s has joined %s', who, channel)
-        self.receive new Robot.TextMessage(who, '~@join')
+
+        user = self.userForName who
+        unless user?
+          id = (new Date().getTime() / 1000).toString().replace('.','')
+          user = self.userForId id
+          user.name = from
+
+        user.room = from
+
+        self.receive new Robot.TextMessage(user, '~@join')
 
     bot.addListener 'part', (channel, who, reason) ->
         console.log('%s has left %s: %s', who, channel, reason)
