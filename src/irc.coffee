@@ -36,16 +36,16 @@ class IrcBot extends Adapter
 
   reply: (user, strings...) ->
     for str in strings
-      @send user, "#{user.name}: #{str}"
+      @send user, "@#{user.name}: #{str}"
 
   join: (channel) ->
     self = @
     @bot.join channel, () ->
-      console.log('joined %s', channel)
+      console.log('I joined %s', channel)
 
   part: (channel) ->
     @bot.part channel, () ->
-      console.log('left %s', channel)
+      console.log('I left %s', channel)
 
   run: ->
     self = @
@@ -107,6 +107,10 @@ class IrcBot extends Adapter
         console.log "msg <#{from}> #{message}"
 
       self.receive new Robot.TextMessage(user, message)
+
+    bot.Me (err, data) ->
+        bot.info = data.user
+        bot.name = bot.info.name
 
     bot.addListener 'error', (message) ->
         console.error('ERROR: %s: %s', message.command, message.args.join(' '))
