@@ -113,7 +113,7 @@ class IrcBot extends Adapter
 
     bot.addListener 'pm', (nick, message) ->
         console.log('Got private message from %s: %s', nick, message)
-        self.receive new Robot.TextMessage(nick, message)
+        #self.receive new Robot.TextMessage(nick, message)
 
     bot.addListener 'join', (channel, who) ->
         console.log('%s has joined %s', who, channel)
@@ -123,7 +123,8 @@ class IrcBot extends Adapter
           id = (new Date().getTime() / 1000).toString().replace('.','')
           user = self.userForId id
           user.name = who
-          user.room = channel
+        
+        user.room = channel
           
         self.receive new Robot.TextMessage(user, '~@join')
 
@@ -135,7 +136,8 @@ class IrcBot extends Adapter
           id = (new Date().getTime() / 1000).toString().replace('.','')
           user = self.userForId id
           user.name = who
-          user.room = channel
+          
+        user.room = channel
           
         self.receive new Robot.LeaveMessage(user)
 
@@ -154,7 +156,8 @@ class IrcBot extends Adapter
           id = (new Date().getTime() / 1000).toString().replace('.','')
           user = self.userForId id
           user.name = who
-          user.room = channel
+          
+        user.room = channel
           
       self.receive new Robot.LeaveMessage(user)
 
