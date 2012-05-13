@@ -108,10 +108,6 @@ class IrcBot extends Adapter
 
       self.receive new Robot.TextMessage(user, message)
 
-    bot.Me (err, data) ->
-        bot.info = data.user
-        bot.name = bot.info.name
-
     bot.addListener 'error', (message) ->
         console.error('ERROR: %s: %s', message.command, message.args.join(' '))
 
