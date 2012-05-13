@@ -113,15 +113,15 @@ class IrcBot extends Adapter
 
 	bot.addListener 'pm', (nick, message) ->
 		console.log('Got private message from %s: %s', nick, message)
-	self.receive new Robot.TextMessage(nick, message)
+		self.receive new Robot.TextMessage(nick, message)
 
 	bot.addListener 'join', (channel, who) ->
 		console.log('%s has joined %s', who, channel)
-	self.receive new Robot.TextMessage(who, '~@join')
+		self.receive new Robot.TextMessage(who, '~@join')
 
 	bot.addListener 'part', (channel, who, reason) ->
 		console.log('%s has left %s: %s', who, channel, reason)
-	self.receive new Robot.TextMessage(who, '~@part')
+		self.receive new Robot.TextMessage(who, '~@part')
 
 	bot.addListener 'kick', (channel, who, _by, reason) ->
 		console.log('%s was kicked from %s by %s: %s', who, channel, _by, reason)
