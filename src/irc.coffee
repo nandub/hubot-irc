@@ -91,7 +91,7 @@ class IrcBot extends Adapter
             @join room
 
     bot.addListener 'message', (from, to, message) ->
-      #console.log "From #{from} to #{to}: #{message}"
+      console.log "From #{from} to #{to}: #{message}"
       
       user = self.userForName from
       unless user?
