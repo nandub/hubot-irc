@@ -121,7 +121,7 @@ class IrcBot extends Adapter
           user.name = nick
         
         user.room = nick
-        #self.receive new Robot.TextMessage(user, message)
+        self.receive new Robot.TextMessage(user, message)
 
     bot.addListener 'join', (channel, who) ->
         console.log('%s has joined %s', who, channel)
@@ -145,7 +145,6 @@ class IrcBot extends Adapter
           user.name = who
           
         user.room = channel
-        
         self.receive new Robot.LeaveMessage(user)
 
     bot.addListener 'kick', (channel, who, _by, reason) ->
@@ -158,7 +157,6 @@ class IrcBot extends Adapter
           user.name = who
           
         user.room = channel
-        
         self.receive new Robot.LeaveMessage(user)
 
     bot.addListener 'invite', (channel, from) ->
