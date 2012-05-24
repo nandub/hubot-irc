@@ -16,13 +16,14 @@ class IrcBot extends Adapter
     for str in strings
       if not str?
         continue
-      if user.room
-        console.log "#{user.room} #{str}"
-        @bot.say(user.room, str)
-      else
+      if user.isPM
         console.log "#{user.name} #{str}"
         @bot.say(user.name, str)
+      else if user.room
+        console.log "#{user.room} #{str}"
+        @bot.say(user.room, str)
 
+        
   notice: (user, strings...) ->
     for str in strings
       if not str?
