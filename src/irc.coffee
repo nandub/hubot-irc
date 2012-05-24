@@ -1,7 +1,7 @@
 Robot   = require('hubot').robot()
 Adapter = require('hubot').adapter()
 
-Irc     = require 'irc'
+Irc = require 'irc'
 
 class IrcBot extends Adapter
   constructor: (@robot) ->
@@ -16,13 +16,14 @@ class IrcBot extends Adapter
     for str in strings
       if not str?
         continue
-      if user.room
-        console.log "#{user.room} #{str}"
-        @bot.say(user.room, str)
-      else
+      if user.isPM
         console.log "#{user.name} #{str}"
         @bot.say(user.name, str)
+      else if user.room
+        console.log "#{user.room} #{str}"
+        @bot.say(user.room, str)
 
+        
   notice: (user, strings...) ->
     for str in strings
       if not str?
@@ -36,16 +37,16 @@ class IrcBot extends Adapter
 
   reply: (user, strings...) ->
     for str in strings
-      @send user, "#{user.name}: #{str}"
+      @send user, "@#{user.name}: #{str}"
 
   join: (channel) ->
     self = @
     @bot.join channel, () ->
-      console.log('joined %s', channel)
+      console.log('I joined %s', channel)
 
   part: (channel) ->
     @bot.part channel, () ->
-      console.log('left %s', channel)
+      console.log('I left %s', channel)
 
   run: ->
     self = @
@@ -113,19 +114,68 @@ class IrcBot extends Adapter
 
     bot.addListener 'pm', (nick, message) ->
         console.log('Got private message from %s: %s', nick, message)
+        
+        user = self.userForName nick
+        unless user?
+          id = (new Date().getTime() / 1000).toString().replace('.','')
+          user = self.userForId id
+          user.name = nick
+        
+        user.room = nick
+        self.receive new Robot.TextMessage(user, message)
 
     bot.addListener 'join', (channel, who) ->
         console.log('%s has joined %s', who, channel)
 
+        user = self.userForName who
+        unless user?
+          id = (new Date().getTime() / 1000).toString().replace('.','')
+          user = self.userForId id
+          user.name = who
+        
+        user.room = channel
+        self.receive new Robot.EnterMessage(user)
+
     bot.addListener 'part', (channel, who, reason) ->
         console.log('%s has left %s: %s', who, channel, reason)
+        
+        user = self.userForName who
+        unless user?
+          id = (new Date().getTime() / 1000).toString().replace('.','')
+          user = self.userForId id
+          user.name = who
+          
+        user.room = channel
+        self.receive new Robot.LeaveMessage(user)
 
     bot.addListener 'kick', (channel, who, _by, reason) ->
         console.log('%s was kicked from %s by %s: %s', who, channel, _by, reason)
+        
+        user = self.userForName who
+        unless user?
+          id = (new Date().getTime() / 1000).toString().replace('.','')
+          user = self.userForId id
+          user.name = who
+          
+        user.room = channel
+        self.receive new Robot.LeaveMessage(user)
 
     bot.addListener 'invite', (channel, from) ->
-      console.log('%s invite you to join %s', from, channel)
-      bot.join channel
+        console.log('%s invite you to join %s', from, channel)
+        bot.join channel
+
+    bot.addListener 'quit', (who, action, channel, something1, something2) ->
+        console.log('%s has quit [%s] channel %s: %s; %s', who, action, channel, something1, something2)
+      
+        user = self.userForName who
+        unless user?
+          id = (new Date().getTime() / 1000).toString().replace('.','')
+          user = self.userForId id
+          user.name = who
+          
+        user.room = channel
+        
+        self.receive new Robot.LeaveMessage(user)
 
     @bot = bot
 
@@ -137,4 +187,3 @@ class IrcResponse extends Robot.Response
 
 exports.use = (robot) ->
   new IrcBot robot
-
