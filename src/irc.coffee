@@ -1,5 +1,5 @@
-Robot   = require('hubot').robot()
-Adapter = require('hubot').adapter()
+Robot   = require("#{__dirname}/../../../").robot()
+Adapter = require("#{__dirname}/../../../").adapter()
 
 Irc     = require 'irc'
 
