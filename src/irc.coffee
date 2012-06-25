@@ -1,6 +1,7 @@
 Robot   = require('hubot').Robot
 Adapter = require('hubot').Adapter
 TextMessage = require('hubot').TextMessage
+Response = require('hubot').Response
 
 Irc     = require 'irc'
 
