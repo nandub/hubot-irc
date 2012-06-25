@@ -1,17 +1,10 @@
-Robot   = require('hubot').robot()
-Adapter = require('hubot').adapter()
+Robot   = require('hubot').Robot
+Adapter = require('hubot').Adapter
+TextMessage = require('hubot').TextMessage
 
 Irc     = require 'irc'
 
 class IrcBot extends Adapter
-  constructor: (@robot) ->
-    super @robot
-
-    @robot.notice = (user, strings...) ->
-      @adapter.notice user, strings...
-
-    @robot.Response = IrcResponse
-
   send: (user, strings...) ->
     for str in strings
       if not str?
@@ -47,6 +40,12 @@ class IrcBot extends Adapter
   part: (channel) ->
     @bot.part channel, () ->
       console.log('left %s', channel)
+
+  kick: (channel, client, message) ->
+    @bot.emit 'raw',
+      command: 'KICK'
+      nick: process.env.HUBOT_IRC_NICK
+      args: [ channel, client, message ]
 
   command: (command, strings...) ->
     @bot.send command, strings...
@@ -110,7 +109,7 @@ class IrcBot extends Adapter
         user.room = null
         console.log "msg <#{from}> #{message}"
 
-      self.receive new Robot.TextMessage(user, message)
+      self.receive new TextMessage(user, message)
 
     bot.addListener 'error', (message) ->
         console.error('ERROR: %s: %s', message.command, message.args.join(' '))
@@ -135,7 +134,7 @@ class IrcBot extends Adapter
 
     self.emit "connected"
 
-class IrcResponse extends Robot.Response
+class IrcResponse extends Response
   notice: (strings...) ->
     @robot.adapter.notice @message.user, strings...
 
