@@ -39,15 +39,14 @@ class IrcBot extends Adapter
     @bot.join channel, () ->
       console.log('joined %s', channel)
 
-      user = self.userForName @bot.name
-      self.receive new EnterMessage(user)
+      self.receive new EnterMessage(null)
 
   part: (channel) ->
+    self = @
     @bot.part channel, () ->
       console.log('left %s', channel)
 
-      user = self.userForName @bot.name
-      self.receive new LeaveMessage(user)
+      self.receive new LeaveMessage(null)
 
   kick: (channel, client, message) ->
     @bot.emit 'raw',
