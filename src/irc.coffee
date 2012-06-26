@@ -1,6 +1,8 @@
 Robot   = require('hubot').Robot
 Adapter = require('hubot').Adapter
 TextMessage = require('hubot').TextMessage
+EnterMessage = require('hubot').EnterMessage
+LeaveMessage = require('hubot').LeaveMessage
 Response = require('hubot').Response
 
 Irc     = require 'irc'
@@ -36,11 +38,16 @@ class IrcBot extends Adapter
     self = @
     @bot.join channel, () ->
       console.log('joined %s', channel)
-      self.emit 'joined'
+
+      user = self.userForName @bot.name
+      self.receive new EnterMessage(user)
 
   part: (channel) ->
     @bot.part channel, () ->
       console.log('left %s', channel)
+
+      user = self.userForName @bot.name
+      self.receive new LeaveMessage(user)
 
   kick: (channel, client, message) ->
     @bot.emit 'raw',
@@ -96,7 +103,7 @@ class IrcBot extends Adapter
 
     bot.addListener 'message', (from, to, message) ->
       console.log "From #{from} to #{to}: #{message}"
-      
+
       user = self.userForName from
       unless user?
         id = (new Date().getTime() / 1000).toString().replace('.','')
@@ -121,8 +128,14 @@ class IrcBot extends Adapter
     bot.addListener 'join', (channel, who) ->
         console.log('%s has joined %s', who, channel)
 
+        user = self.userForName who
+        self.receive new EnterMessage(user)
+
     bot.addListener 'part', (channel, who, reason) ->
         console.log('%s has left %s: %s', who, channel, reason)
+
+        user = self.userForName who
+        self.receive new LeaveMessage(user)
 
     bot.addListener 'kick', (channel, who, _by, reason) ->
         console.log('%s was kicked from %s by %s: %s', who, channel, _by, reason)
