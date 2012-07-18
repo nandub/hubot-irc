@@ -120,6 +120,8 @@ class IrcBot extends Adapter
       if user.room
         console.log "#{to} <#{from}> #{message}"
       else
+        unless message.indexOf(to) == 0
+          message = "#{to}: #{message}"
         console.log "msg <#{from}> #{message}"
 
       self.receive new TextMessage(user, message)
