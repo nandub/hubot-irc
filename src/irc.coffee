@@ -1,17 +1,13 @@
-Robot   = require('hubot').robot()
-Adapter = require('hubot').adapter()
+Robot   = require('hubot').Robot
+Adapter = require('hubot').Adapter
+TextMessage = require('hubot').TextMessage
+EnterMessage = require('hubot').EnterMessage
+LeaveMessage = require('hubot').LeaveMessage
+Response = require('hubot').Response
 
 Irc     = require 'irc'
 
 class IrcBot extends Adapter
-  constructor: (@robot) ->
-    super @robot
-
-    @robot.notice = (user, strings...) ->
-      @adapter.notice user, strings...
-
-    @robot.Response = IrcResponse
-
   send: (user, strings...) ->
     for str in strings
       if not str?
@@ -43,9 +39,23 @@ class IrcBot extends Adapter
     @bot.join channel, () ->
       console.log('joined %s', channel)
 
+      self.receive new EnterMessage(null)
+
   part: (channel) ->
+    self = @
     @bot.part channel, () ->
       console.log('left %s', channel)
+
+      self.receive new LeaveMessage(null)
+
+  kick: (channel, client, message) ->
+    @bot.emit 'raw',
+      command: 'KICK'
+      nick: process.env.HUBOT_IRC_NICK
+      args: [ channel, client, message ]
+
+  command: (command, strings...) ->
+    @bot.send command, strings...
 
   run: ->
     self = @
@@ -92,7 +102,7 @@ class IrcBot extends Adapter
 
     bot.addListener 'message', (from, to, message) ->
       console.log "From #{from} to #{to}: #{message}"
-      
+
       user = self.userForName from
       unless user?
         id = (new Date().getTime() / 1000).toString().replace('.','')
@@ -106,7 +116,7 @@ class IrcBot extends Adapter
         user.room = null
         console.log "msg <#{from}> #{message}"
 
-      self.receive new Robot.TextMessage(user, message)
+      self.receive new TextMessage(user, message)
 
     bot.addListener 'error', (message) ->
         console.error('ERROR: %s: %s', message.command, message.args.join(' '))
@@ -117,8 +127,14 @@ class IrcBot extends Adapter
     bot.addListener 'join', (channel, who) ->
         console.log('%s has joined %s', who, channel)
 
+        user = self.userForName who
+        self.receive new EnterMessage(user)
+
     bot.addListener 'part', (channel, who, reason) ->
         console.log('%s has left %s: %s', who, channel, reason)
+
+        user = self.userForName who
+        self.receive new LeaveMessage(user)
 
     bot.addListener 'kick', (channel, who, _by, reason) ->
         console.log('%s was kicked from %s by %s: %s', who, channel, _by, reason)
@@ -131,7 +147,7 @@ class IrcBot extends Adapter
 
     self.emit "connected"
 
-class IrcResponse extends Robot.Response
+class IrcResponse extends Response
   notice: (strings...) ->
     @robot.adapter.notice @message.user, strings...
 
