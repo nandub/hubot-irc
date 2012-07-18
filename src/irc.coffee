@@ -48,6 +48,19 @@ class IrcBot extends Adapter
 
       self.receive new LeaveMessage(null)
 
+  createUser: (channel, from) ->
+      user = @userForName from
+      unless user?
+        id = (new Date().getTime() / 1000).toString().replace('.','')
+        user = @userForId id
+        user.name = from
+
+      if channel.match(/^[&#]/)
+        user.room = channel
+      else
+        user.room = null
+      user
+
   kick: (channel, client, message) ->
     @bot.emit 'raw',
       command: 'KICK'
@@ -103,17 +116,10 @@ class IrcBot extends Adapter
     bot.addListener 'message', (from, to, message) ->
       console.log "From #{from} to #{to}: #{message}"
 
-      user = self.userForName from
-      unless user?
-        id = (new Date().getTime() / 1000).toString().replace('.','')
-        user = self.userForId id
-        user.name = from
-
-      if to.match(/^[&#]/)
-        user.room = to
+      user = self.createUser to, from
+      if user.room
         console.log "#{to} <#{from}> #{message}"
       else
-        user.room = null
         console.log "msg <#{from}> #{message}"
 
       self.receive new TextMessage(user, message)
@@ -127,14 +133,14 @@ class IrcBot extends Adapter
     bot.addListener 'join', (channel, who) ->
         console.log('%s has joined %s', who, channel)
 
-        user = self.userForName who
-        self.receive new EnterMessage(user)
+        user = self.createUser channel, who
+        self.receive new Robot.EnterMessage(user)
 
     bot.addListener 'part', (channel, who, reason) ->
         console.log('%s has left %s: %s', who, channel, reason)
 
-        user = self.userForName who
-        self.receive new LeaveMessage(user)
+        user = self.createUser channel, who
+        self.receive new Robot.LeaveMessage(user)
 
     bot.addListener 'kick', (channel, who, _by, reason) ->
         console.log('%s was kicked from %s by %s: %s', who, channel, _by, reason)
@@ -153,4 +159,3 @@ class IrcResponse extends Response
 
 exports.use = (robot) ->
   new IrcBot robot
-
