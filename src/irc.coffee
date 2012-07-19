@@ -74,7 +74,7 @@ class IrcBot extends Adapter
     @bot.send command, strings...
 
   checkCanStart: ->
-    if not process.env.HUBOT_IRC_NICK or @robot.name
+    if not (process.env.HUBOT_IRC_NICK or @robot.name)
       throw new Error("HUBOT_IRC_NICK is not defined; try: export HUBOT_IRC_NICK='mybot'")
     else if not process.env.HUBOT_IRC_ROOMS
       throw new Error("HUBOT_IRC_ROOMS is not defined; try: export HUBOT_IRC_ROOMS='#myroom'")
@@ -148,18 +148,12 @@ class IrcBot extends Adapter
     bot.addListener 'join', (channel, who) ->
         console.log('%s has joined %s', who, channel)
         user = self.createUser channel, who
-        self.receive new Robot.EnterMessage(user)
-
-        user = self.createUser channel, who
-        self.receive new Robot.EnterMessage(user)
+        self.receive new EnterMessage(user)
 
     bot.addListener 'part', (channel, who, reason) ->
         console.log('%s has left %s: %s', who, channel, reason)
         user = self.createUser channel, who
-        self.receive new Robot.LeaveMessage(user)
-
-        user = self.createUser channel, who
-        self.receive new Robot.LeaveMessage(user)
+        self.receive new LeaveMessage(user)
 
     bot.addListener 'kick', (channel, who, _by, reason) ->
         console.log('%s was kicked from %s by %s: %s', who, channel, _by, reason)
