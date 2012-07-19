@@ -111,6 +111,7 @@ class IrcBot extends Adapter
 
     client_options['channels'] = options.rooms unless options.nickpass
 
+    @robot.name = options.nick
     bot = new Irc.Client options.server, options.nick, client_options
 
     next_id = 1
