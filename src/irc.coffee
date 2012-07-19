@@ -73,8 +73,18 @@ class IrcBot extends Adapter
   command: (command, strings...) ->
     @bot.send command, strings...
 
+  checkCanStart: ->
+    if not process.env.HUBOT_IRC_NICK or @robot.name
+      throw new Error("HUBOT_IRC_NICK is not defined; try: export HUBOT_IRC_NICK='mybot'")
+    else if not process.env.HUBOT_IRC_ROOMS
+      throw new Error("HUBOT_IRC_ROOMS is not defined; try: export HUBOT_IRC_ROOMS='#myroom'")
+    else if not process.env.HUBOT_IRC_SERVER
+      throw new Error("HUBOT_IRC_SERVER is not defined: try: export HUBOT_IRC_SERVER='irc.myserver.com'")
+
   run: ->
     self = @
+
+    do @checkCanStart
 
     options =
       nick:     process.env.HUBOT_IRC_NICK or @robot.name
