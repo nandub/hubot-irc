@@ -1,6 +1,6 @@
 # Hubot IRC Adapter
 
-NOTICE: I did not created the IRC adapter, just created the NPM package.  Did not intended to take over the adapter I just wanted to use the adapter sooner than later.
+NOTICE: This bot is now upgraded to Hubot 2.3.  You should specify 0.0.8 as your hubot-irc dependency for older versions of Hubot (<2.0.0).
 
 ## Description
 
@@ -47,5 +47,5 @@ Here's the most direct way to get your work merged into the project.
 
 ## Copyright
 
-Copyright &copy; Fernando Ortiz. See LICENSE for details.
+Copyright &copy; Fernando Ortiz. MIT License; see LICENSE for further details.
 
