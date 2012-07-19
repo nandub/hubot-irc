@@ -6,7 +6,7 @@ This is the IRC adapter for hubot.  For discussion about this adapter, join `#hu
 
 ## Installation
 
-NOTICE: This bot is now upgraded to Hubot 2.3.  You should specify 0.0.8 as your hubot-irc dependency for older versions of Hubot (<2.0.0).
+NOTICE: This bot is now upgraded to Hubot 2.3.  You should specify 0.0.8 as your hubot-irc dependency for older versions of Hubot (<2.3.0).
 
 * Add `hubot-irc` as a dependency in your hubot's `package.json`
 * Install dependencies with `npm install`
