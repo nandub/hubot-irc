@@ -93,6 +93,7 @@ class IrcBot extends Adapter
       server:   process.env.HUBOT_IRC_SERVER
       password: process.env.HUBOT_IRC_PASSWORD
       nickpass: process.env.HUBOT_IRC_NICKSERV_PASSWORD
+      nickusername: process.env.HUBOT_IRC_NICKSERV_USERNAME
       fakessl:  process.env.HUBOT_IRC_SERVER_FAKE_SSL?
       unflood:  process.env.HUBOT_IRC_UNFLOOD?
       debug:    process.env.HUBOT_IRC_DEBUG?
@@ -118,9 +119,16 @@ class IrcBot extends Adapter
     user_id = {}
 
     if options.nickpass?
+      identify_args = ""
+
+      if options.nickusername?
+        identify_args += "#{options.nickusername} "
+
+      identify_args += "#{options.nickpass}"
+
       bot.addListener 'notice', (from, to, text) ->
         if from is 'NickServ' and text.indexOf('registered') isnt -1
-          bot.say 'NickServ', "identify #{options.nickpass}"
+          bot.say 'NickServ', "identify #{identify_args}"
         else if options.nickpass and from is 'NickServ' and
                 (text.indexOf('Password accepted') isnt -1 or
                  text.indexOf('identified') isnt -1)
