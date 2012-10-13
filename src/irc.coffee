@@ -54,7 +54,7 @@ class IrcBot extends Adapter
   createUser: (channel, from) ->
       user = @userForName from
       unless user?
-        id = (new Date().getTime() / 1000).toString().replace('.','')
+        id = new Date().getTime().toString()
         user = @userForId id
         user.name = from
 
