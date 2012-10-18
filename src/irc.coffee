@@ -8,6 +8,14 @@ Response = require('hubot').Response
 Irc     = require 'irc'
 
 class IrcBot extends Adapter
+  constructor: (@robot) ->
+    super @robot
+
+    @robot.notice = (user, strings...) ->
+      @adapter.notice user, strings...
+
+    @robot.Response = IrcResponse
+
   send: (user, strings...) ->
     for str in strings
       if not str?
