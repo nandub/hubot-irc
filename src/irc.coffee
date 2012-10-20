@@ -150,17 +150,19 @@ class IrcBot extends Adapter
       console.log "From #{from} to #{to}: #{message}"
 
       user = self.createUser to, from
+
+      if action = message.match /^\u0001ACTION ([\s\S]*)\u0001$/
+        message = action[1]
+
       if user.room
         console.log "#{to} <#{from}> #{message}"
       else
-        unless message.indexOf(to) == 0
+        unless message.indexOf(to) == 0 or action
           message = "#{to}: #{message}"
         console.log "msg <#{from}> #{message}"
 
       textmessage = new TextMessage user, message
-      if match = message.match /^\u0001ACTION ([\s\S]*)\u0001$/
-        textmessage.action = true
-        textmessage.text = match[1]
+      textmessage.action = true if action
 
       self.receive textmessage
 
