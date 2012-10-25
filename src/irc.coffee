@@ -127,7 +127,7 @@ class IrcBot extends Adapter
       identify_args += "#{options.nickpass}"
 
       bot.addListener 'notice', (from, to, text) ->
-        if from is 'NickServ' and text.indexOf('identify') isnt -1
+        if from is 'NickServ' and text.toLowerCase().indexOf('identify') isnt -1
           bot.say 'NickServ', "identify #{identify_args}"
         else if options.nickpass and from is 'NickServ' and
                 (text.indexOf('Password accepted') isnt -1 or
