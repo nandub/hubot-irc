@@ -4,12 +4,17 @@
 
 This is the IRC adapter for hubot.  For discussion about this adapter, join `#hubot-irc` on `irc.freenode.net`.
 
-## Installation
+## Installation and Setup
 
 NOTICE: This bot is now upgraded to Hubot 2.3.  You should specify 0.0.8 as your hubot-irc dependency for older versions of Hubot (<2.3.0).
 
-* Add `hubot-irc` as a dependency in your hubot's `package.json`
+* Download and Extract [Hubot 2.3](https://github.com/downloads/github/hubot/hubot-2.3.2.tar.gz) from the [Hubot Downloads page](https://github.com/github/hubot/downloads)
+* Run `npm install hubot-irc --save` in the extracted `Hubot 2` directory to add the `hubot-irc` adapter to your dependencies.
 * Install dependencies with `npm install`
+* Set your environment variables like: (Windows Users substitute `set` for `export`)
+    * export HUBOT_IRC_NICK="hubot-new"
+    * export HUBOT_IRC_ROOMS="#hubot-irc"
+    * export HUBOT_IRC_SERVER="irc.freenode.net"
 * Run hubot with `bin/hubot -a irc`
 
 ## Usage
