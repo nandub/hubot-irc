@@ -99,6 +99,7 @@ class IrcBot extends Adapter
       debug:    process.env.HUBOT_IRC_DEBUG?
       usessl:   process.env.HUBOT_IRC_USESSL?
       userName: process.env.HUBOT_IRC_USERNAME
+      allowexpiredssl: process.env.HUBOT_IRC_SERVER_ALLOW_EXPIRED_SSL?
 
     client_options =
       userName: options.userName,
@@ -108,7 +109,8 @@ class IrcBot extends Adapter
       stripColors: true,
       secure: options.usessl,
       selfSigned: options.fakessl,
-      floodProtection: options.unflood
+      floodProtection: options.unflood,
+      certExpired: options.allowexpiredssl
 
     client_options['channels'] = options.rooms unless options.nickpass
 
