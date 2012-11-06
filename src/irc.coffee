@@ -106,7 +106,7 @@ class IrcBot extends Adapter
       stripColors: true
       secure: options.usessl
       selfSigned: options.fakessl
-      certExpired: options.certExpire
+      certExpired: options.certExpired
       floodProtection: options.unflood
 
     client_options['channels'] = options.rooms unless options.nickpass
