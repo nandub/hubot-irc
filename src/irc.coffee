@@ -1,11 +1,8 @@
-Robot   = require('hubot').Robot
-Adapter = require('hubot').Adapter
-TextMessage = require('hubot').TextMessage
-EnterMessage = require('hubot').EnterMessage
-LeaveMessage = require('hubot').LeaveMessage
-Response = require('hubot').Response
+# Hubot dependencies
+{Robot, Adapter, TextMessage, EnterMessage, LeaveMessage, Response} = require 'hubot'
 
-Irc     = require 'irc'
+# Irc library
+Irc = require 'irc'
 
 class IrcBot extends Adapter
   send: (user, strings...) ->
@@ -95,7 +92,7 @@ class IrcBot extends Adapter
       nickpass: process.env.HUBOT_IRC_NICKSERV_PASSWORD
       nickusername: process.env.HUBOT_IRC_NICKSERV_USERNAME
       fakessl:  process.env.HUBOT_IRC_SERVER_FAKE_SSL?
-      certExpire: process.env.HUBOT_IRC_SERVER_CERT_EXPIRE?
+      certExpired: process.env.HUBOT_IRC_SERVER_CERT_EXPIRED?
       unflood:  process.env.HUBOT_IRC_UNFLOOD?
       debug:    process.env.HUBOT_IRC_DEBUG?
       usessl:   process.env.HUBOT_IRC_USESSL?
@@ -109,7 +106,7 @@ class IrcBot extends Adapter
       stripColors: true
       secure: options.usessl
       selfSigned: options.fakessl
-      certExpire: options.certExpire
+      certExpired: options.certExpire
       floodProtection: options.unflood
 
     client_options['channels'] = options.rooms unless options.nickpass
@@ -176,10 +173,6 @@ class IrcBot extends Adapter
     @bot = bot
 
     self.emit "connected"
-
-class IrcResponse extends Response
-  notice: (strings...) ->
-    @robot.adapter.notice @message.user, strings...
 
 exports.use = (robot) ->
   new IrcBot robot
