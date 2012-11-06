@@ -95,19 +95,21 @@ class IrcBot extends Adapter
       nickpass: process.env.HUBOT_IRC_NICKSERV_PASSWORD
       nickusername: process.env.HUBOT_IRC_NICKSERV_USERNAME
       fakessl:  process.env.HUBOT_IRC_SERVER_FAKE_SSL?
+      certExpire: process.env.HUBOT_IRC_SERVER_CERT_EXPIRE?
       unflood:  process.env.HUBOT_IRC_UNFLOOD?
       debug:    process.env.HUBOT_IRC_DEBUG?
       usessl:   process.env.HUBOT_IRC_USESSL?
       userName: process.env.HUBOT_IRC_USERNAME
 
     client_options =
-      userName: options.userName,
-      password: options.password,
-      debug: options.debug,
-      port: options.port,
-      stripColors: true,
-      secure: options.usessl,
-      selfSigned: options.fakessl,
+      userName: options.userName
+      password: options.password
+      debug: options.debug
+      port: options.port
+      stripColors: true
+      secure: options.usessl
+      selfSigned: options.fakessl
+      certExpire: options.certExpire
       floodProtection: options.unflood
 
     client_options['channels'] = options.rooms unless options.nickpass
