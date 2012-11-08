@@ -85,6 +85,7 @@ class IrcBot extends Adapter
 
     options =
       nick:     process.env.HUBOT_IRC_NICK or @robot.name
+      realName: process.env.HUBOT_IRC_REALNAME
       port:     process.env.HUBOT_IRC_PORT
       rooms:    process.env.HUBOT_IRC_ROOMS.split(",")
       server:   process.env.HUBOT_IRC_SERVER
@@ -100,6 +101,7 @@ class IrcBot extends Adapter
 
     client_options =
       userName: options.userName
+      realName: options.realName
       password: options.password
       debug: options.debug
       port: options.port
