@@ -30,6 +30,17 @@ class IrcBot extends Adapter
         console.log "notice #{user.name} #{str}"
         @bot.notice(user.name, str)
 
+  action: (user, strings...) ->
+    for str in strings
+      if not str?
+        continue
+      if user.room
+        console.log "action #{user.room} #{str}"
+        @bot.action(user.room, str)
+      else
+        console.log "action #{user.name} #{str}"
+        @bot.action(user.name, str)
+
   reply: (user, strings...) ->
     for str in strings
       @send user, "#{user.name}: #{str}"
@@ -140,14 +151,21 @@ class IrcBot extends Adapter
       console.log "From #{from} to #{to}: #{message}"
 
       user = self.createUser to, from
+
+      if action = message.match /^\u0001ACTION ([\s\S]*)\u0001$/
+        message = action[1]
+
       if user.room
         console.log "#{to} <#{from}> #{message}"
       else
-        unless message.indexOf(to) == 0
+        unless message.indexOf(to) == 0 or action
           message = "#{to}: #{message}"
         console.log "msg <#{from}> #{message}"
 
-      self.receive new TextMessage(user, message)
+      textmessage = new TextMessage user, message
+      textmessage.action = true if action
+
+      self.receive textmessage
 
     bot.addListener 'error', (message) ->
         console.error('ERROR: %s: %s', message.command, message.args.join(' '))
