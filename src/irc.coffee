@@ -12,9 +12,9 @@ class IrcBot extends Adapter
       if user.room
         console.log "#{user.room} #{str}"
         @bot.say(user.room, str)
-      else if user.name
-        console.log "#{user.name} #{str}"
-        @bot.say(user.name, str)
+      else if user.user.name
+        console.log "#{user.user.name} #{str}"
+        @bot.say(user.user.name, str)
       else
         console.log "#{user} #{str}"
         @bot.say(user, str)
