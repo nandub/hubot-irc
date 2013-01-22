@@ -6,18 +6,42 @@ Irc = require 'irc'
 
 class IrcBot extends Adapter
   send: (envelope, strings...) ->
+    user = null
+    room = null
+    target = null
+
+    # as of hubot 2.4.2, the first param to send() is an object with 'user'
+    # and 'room' data inside. detect the old style here.
+    if envelope.reply_to
+      user = envelope
+    else
+      # expand envelope
+      user = envelope.user
+      room = envelope.room
+
+    if user
+      # most common case - we're replying to a user in a room
+      if user.room
+        target = user.room
+      # reply directly
+      else if user.name
+        target = user.name
+      # replying to pm
+      else if user.reply_to
+        target = user.reply_to
+      # allows user to be an id string
+      else if user.search?(/@/) != -1
+        target = user
+    else if room
+      # this will happen if someone uses robot.messageRoom(jid, ...)
+      target = room
+
+    unless target
+      console.log "ERROR: Not sure who to send to. envelope=", envelope
+      return
+
     for str in strings
-      if not str?
-        continue
-      if envelope.user.room
-        console.log "#{envelope.user.room} #{str}"
-        @bot.say(envelope.user.room, str)
-      else if envelope.user.name
-        console.log "#{envelope.user.name} #{str}"
-        @bot.say(envelope.user.name, str)
-      else
-        console.log "#{envelope.user} #{str}"
-        @bot.say(envelope.user, str)
+      @bot.say target, str
 
   notice: (envelope, strings...) ->
     for str in strings
@@ -154,23 +178,25 @@ class IrcBot extends Adapter
       self.receive new TextMessage(user, message)
 
     bot.addListener 'error', (message) ->
-        console.error('ERROR: %s: %s', message.command, message.args.join(' '))
+      console.error('ERROR: %s: %s', message.command, message.args.join(' '))
 
     bot.addListener 'pm', (nick, message) ->
-        console.log('Got private message from %s: %s', nick, message)
+      console.log('Got private message from %s: %s', nick, message)
+
+      self.receive new TextMessage({reply_to: nick, name: nick}, message)
 
     bot.addListener 'join', (channel, who) ->
-        console.log('%s has joined %s', who, channel)
-        user = self.createUser channel, who
-        self.receive new EnterMessage(user)
+      console.log('%s has joined %s', who, channel)
+      user = self.createUser channel, who
+      self.receive new EnterMessage(user)
 
     bot.addListener 'part', (channel, who, reason) ->
-        console.log('%s has left %s: %s', who, channel, reason)
-        user = self.createUser channel, who
-        self.receive new LeaveMessage(user)
+      console.log('%s has left %s: %s', who, channel, reason)
+      user = self.createUser channel, who
+      self.receive new LeaveMessage(user)
 
     bot.addListener 'kick', (channel, who, _by, reason) ->
-        console.log('%s was kicked from %s by %s: %s', who, channel, _by, reason)
+      console.log('%s was kicked from %s by %s: %s', who, channel, _by, reason)
 
     bot.addListener 'invite', (channel, from) ->
       console.log('%s invite you to join %s', from, channel)
