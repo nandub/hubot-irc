@@ -136,6 +136,10 @@ class IrcBot extends Adapter
           for room in options.rooms
             @join room
 
+    bot.addListener 'names', (channel, nicks) ->
+      for nick of nicks
+        self.createUser channel, nick
+
     bot.addListener 'message', (from, to, message) ->
       console.log "From #{from} to #{to}: #{message}"
 
