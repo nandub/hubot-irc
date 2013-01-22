@@ -5,34 +5,34 @@
 Irc = require 'irc'
 
 class IrcBot extends Adapter
-  send: (user, strings...) ->
+  send: (envelope, strings...) ->
     for str in strings
       if not str?
         continue
-      if user.room
-        console.log "#{user.room} #{str}"
-        @bot.say(user.room, str)
-      else if user.name
-        console.log "#{user.name} #{str}"
-        @bot.say(user.name, str)
+      if envelope.user.room
+        console.log "#{envelope.user.room} #{str}"
+        @bot.say(envelope.user.room, str)
+      else if envelope.user.name
+        console.log "#{envelope.user.name} #{str}"
+        @bot.say(envelope.user.name, str)
       else
-        console.log "#{user} #{str}"
-        @bot.say(user, str)
+        console.log "#{envelope.user} #{str}"
+        @bot.say(envelope.user, str)
 
-  notice: (user, strings...) ->
+  notice: (envelope, strings...) ->
     for str in strings
       if not str?
         continue
-      if user.room
-        console.log "notice #{user.room} #{str}"
-        @bot.notice(user.room, str)
+      if envelope.user.room
+        console.log "notice #{envelope.user.room} #{str}"
+        @bot.notice(envelope.user.room, str)
       else
-        console.log "notice #{user.name} #{str}"
-        @bot.notice(user.name, str)
+        console.log "notice #{envelope.user.name} #{str}"
+        @bot.notice(envelope.user.name, str)
 
-  reply: (user, strings...) ->
+  reply: (envelope, strings...) ->
     for str in strings
-      @send user, "#{user.name}: #{str}"
+      @send envelope.user, "#{envelope.user.name}: #{str}"
 
   join: (channel) ->
     self = @
