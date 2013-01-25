@@ -183,6 +183,10 @@ class IrcBot extends Adapter
     bot.addListener 'pm', (nick, message) ->
       console.log('Got private message from %s: %s', nick, message)
 
+      nameLength = options.nick.length
+      if message.slice(0, nameLength).toLowerCase() != options.nick.toLowerCase()
+        message = "#{options.nick} #{message}"
+
       self.receive new TextMessage({reply_to: nick, name: nick}, message)
 
     bot.addListener 'join', (channel, who) ->
