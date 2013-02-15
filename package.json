@@ -18,7 +18,7 @@
   "main": "./src/irc.coffee",
   "engine": "node > 0.6.0 < 0.8.0",
   "dependencies": {
-    "irc": "0.3.5"
+    "irc": "0.3.6"
   },
   "devDependencies": {
     "coffee-script": "1.1.3"
