@@ -165,6 +165,10 @@ class IrcBot extends Adapter
         self.createUser channel, nick
 
     bot.addListener 'message', (from, to, message) ->
+      if options.nick.toLowerCase() == to.toLowerCase()
+        # this is a private message, let the 'pm' listener handle it
+        return
+
       console.log "From #{from} to #{to}: #{message}"
 
       user = self.createUser to, from
