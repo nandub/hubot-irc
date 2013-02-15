@@ -6,9 +6,16 @@ This is the IRC adapter for hubot.  For discussion about this adapter, join `#hu
 
 ## Installation and Setup
 
-NOTICE: This bot is now upgraded to Hubot 2.3.  You should specify 0.0.8 as your hubot-irc dependency for older versions of Hubot (<2.3.0).
+This is just the irc adapter for the hubot, not the full runnable hubot package.  You shouldn't have to hack on this code directly or clone it unless you want to add features or fix bugs.
+
+If you want a packaged hubot ready to run try [hubot-irc-runnable](https://github.com/jgable/hubot-irc-runnable)
+
+## Manual Installation
+
+This bot is now upgraded to Hubot 2.3.  You should specify 0.0.8 as your hubot-irc dependency for older versions of Hubot (<2.3.0).
 
 * Download and Extract [Hubot 2.3](https://github.com/downloads/github/hubot/hubot-2.3.2.tar.gz) from the [Hubot Downloads page](https://github.com/github/hubot/downloads)
+    - You *must* use the downloaded and extracted version of the hubot code, not just a clone of the repo.
 * Run `npm install hubot-irc --save` in the extracted `Hubot 2` directory to add the `hubot-irc` adapter to your dependencies.
 * Install dependencies with `npm install`
 * Set your environment variables like: (Windows Users substitute `set` for `export`)
