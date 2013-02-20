@@ -200,7 +200,7 @@ class IrcBot extends Adapter
 
     bot.addListener 'part', (channel, who, reason) ->
       console.log('%s has left %s: %s', who, channel, reason)
-      user = self.createUser channel, who
+      user = self.createUser '', who
       self.receive new LeaveMessage(user)
 
     bot.addListener 'kick', (channel, who, _by, reason) ->
