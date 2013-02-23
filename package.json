@@ -1,13 +1,15 @@
 {
   "name": "hubot-irc",
-  "version": "0.1.9",
+  "version": "0.1.10",
   "author": "Fernando Ortiz <fortiz2k@gmail.com>",
   "description": "IRC adapter for Hubot 2.3",
   "keywords": "hubot irc adapter",
-  "licenses": [{
-    "type":     "MIT",
-    "url":      "http://github.com/nandub/hubot-irc/raw/master/LICENSE"
-  }],
+  "licenses": [
+    {
+      "type": "MIT",
+      "url": "http://github.com/nandub/hubot-irc/raw/master/LICENSE"
+    }
+  ],
   "repository": {
     "type": "git",
     "url": "git://github.com/nandub/hubot-irc.git"
@@ -20,7 +22,5 @@
   "dependencies": {
     "irc": "0.3.6"
   },
-  "devDependencies": {
-    "coffee-script": "1.1.3"
-  }
+  "devDependencies": {}
 }
