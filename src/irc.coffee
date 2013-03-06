@@ -41,7 +41,10 @@ class IrcBot extends Adapter
       return
 
     for str in strings
-      @bot.say target, str
+      if process.env.HUBOT_IRC_SEND_NOTICE_MODE?
+        @bot.notice target, str
+      else
+        @bot.say target, str
 
   notice: (envelope, strings...) ->
     for str in strings
