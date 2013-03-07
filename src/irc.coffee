@@ -117,6 +117,7 @@ class IrcBot extends Adapter
       password: process.env.HUBOT_IRC_PASSWORD
       nickpass: process.env.HUBOT_IRC_NICKSERV_PASSWORD
       nickusername: process.env.HUBOT_IRC_NICKSERV_USERNAME
+      connectCommand: process.env.HUBOT_IRC_CONNECT_COMMAND
       fakessl:  process.env.HUBOT_IRC_SERVER_FAKE_SSL?
       certExpired: process.env.HUBOT_IRC_SERVER_CERT_EXPIRED?
       unflood:  process.env.HUBOT_IRC_UNFLOOD?
@@ -160,6 +161,12 @@ class IrcBot extends Adapter
                  text.indexOf('identified') isnt -1)
           for room in options.rooms
             @join room
+
+    if options.connectCommand?
+      bot.addListener 'registered', (message) ->
+        # The 'registered' event is fired when you are connected to the server
+        strings = options.connectCommand.split " "
+        self.command strings.shift(), strings...
 
     bot.addListener 'names', (channel, nicks) ->
       for nick of nicks
