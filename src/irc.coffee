@@ -39,9 +39,10 @@ class IrcBot extends Adapter
     unless target
       console.log "ERROR: Not sure who to send to. envelope=", envelope
       return
-
+    
+    speak = if process.env.HUBOT_IRC_SEND_NOTICE_MODE? then "notice" else "say"
     for str in strings
-      @bot.say target, str
+      @bot[speak] target, str
 
   notice: (envelope, strings...) ->
     for str in strings
