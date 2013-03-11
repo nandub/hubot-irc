@@ -39,6 +39,19 @@ You will need to set some environment variables to use this adapter.
     % export HUBOT_IRC_NICK="hubot"
     % export HUBOT_IRC_ROOMS="#hubot,#hubot-irc"
     % export HUBOT_IRC_SERVER="irc.freenode.net"
+
+### Advanced Options
+
+The `hubot-irc` adapter has a number of configurable options based on different community contributions.
+
+    # Don't join other rooms or respond to PM's
+    HUBOT_IRC_PRIVATE = true
+
+    # Send messages via notice instead of say
+    HUBOT_IRC_SEND_NOTICE_MODE = true
+
+    # Issue an irc command once connected to the server.
+    HUBOT_IRC_CONNECT_COMMAND = NICKSERV blah thing1
     
 ### Testing Local Changes
 

@@ -6,54 +6,36 @@ Irc = require 'irc'
 
 class IrcBot extends Adapter
   send: (envelope, strings...) ->
-    user = null
-    room = null
-    target = null
+    # Use @notice if SEND_NOTICE_MODE is set
+    return @notice envelope, strings if process.env.HUBOT_IRC_SEND_NOTICE_MODE?
 
-    # as of hubot 2.4.2, the first param to send() is an object with 'user'
-    # and 'room' data inside. detect the old style here.
-    if envelope.reply_to
-      user = envelope
-    else
-      # expand envelope
-      user = envelope.user
-      room = envelope.room
-
-    if user
-      # most common case - we're replying to a user in a room
-      if user.room
-        target = user.room
-      # reply directly
-      else if user.name
-        target = user.name
-      # replying to pm
-      else if user.reply_to
-        target = user.reply_to
-      # allows user to be an id string
-      else if user.search?(/@/) != -1
-        target = user
-    else if room
-      # this will happen if someone uses robot.messageRoom(jid, ...)
-      target = room
+    target = @_getTargetFromEnvelope envelope
 
     unless target
-      console.log "ERROR: Not sure who to send to. envelope=", envelope
-      return
+      return console.log "ERROR: Not sure who to send to. envelope=", envelope
     
-    speak = if process.env.HUBOT_IRC_SEND_NOTICE_MODE? then "notice" else "say"
     for str in strings
-      @bot[speak] target, str
+      @bot.say target, str
 
   notice: (envelope, strings...) ->
+    target = @_getTargetFromEnvelope envelope
+
+    unless target
+      return console.log "Notice: no target found", envelope
+
+    # Flatten out strings from send
+    flattened = []
     for str in strings
+      if Array.isArray str
+        flattened = flattened.concat str
+      else
+        flattened.push str
+
+    for str in flattened
       if not str?
         continue
-      if envelope.user.room
-        console.log "notice #{envelope.user.room} #{str}"
-        @bot.notice(envelope.user.room, str)
-      else
-        console.log "notice #{envelope.user.name} #{str}"
-        @bot.notice(envelope.user.name, str)
+
+      @bot.notice target, str
 
   reply: (envelope, strings...) ->
     for str in strings
@@ -226,6 +208,39 @@ class IrcBot extends Adapter
     @bot = bot
 
     self.emit "connected"
+
+  _getTargetFromEnvelope: (envelope) ->
+    user = null
+    room = null
+    target = null
+
+    # as of hubot 2.4.2, the first param to send() is an object with 'user'
+    # and 'room' data inside. detect the old style here.
+    if envelope.reply_to
+      user = envelope
+    else
+      # expand envelope
+      user = envelope.user
+      room = envelope.room
+
+    if user
+      # most common case - we're replying to a user in a room
+      if user.room
+        target = user.room
+      # reply directly
+      else if user.name
+        target = user.name
+      # replying to pm
+      else if user.reply_to
+        target = user.reply_to
+      # allows user to be an id string
+      else if user.search?(/@/) != -1
+        target = user
+    else if room
+      # this will happen if someone uses robot.messageRoom(jid, ...)
+      target = room
+
+    target
 
 exports.use = (robot) ->
   new IrcBot robot

@@ -1,6 +1,6 @@
 {
   "name": "hubot-irc",
-  "version": "0.1.11",
+  "version": "0.1.12",
   "author": "Fernando Ortiz <fortiz2k@gmail.com>",
   "description": "IRC adapter for Hubot 2.3",
   "keywords": "hubot irc adapter",
@@ -18,7 +18,7 @@
     "url": "http://github.com/nandub/hubot-irc/issues"
   },
   "main": "./src/irc.coffee",
-  "engine": "node > 0.6.0 < 0.8.0",
+  "engine": "node > 0.6.0",
   "dependencies": {
     "irc": "0.3.6"
   },
