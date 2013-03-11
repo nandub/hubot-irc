@@ -194,6 +194,9 @@ class IrcBot extends Adapter
 
     bot.addListener 'pm', (nick, message) ->
       console.log('Got private message from %s: %s', nick, message)
+      
+      if process.env.HUBOT_IRC_PRIVATE
+        return
 
       nameLength = options.nick.length
       if message.slice(0, nameLength).toLowerCase() != options.nick.toLowerCase()
@@ -216,7 +219,9 @@ class IrcBot extends Adapter
 
     bot.addListener 'invite', (channel, from) ->
       console.log('%s invite you to join %s', from, channel)
-      bot.join channel
+      
+      if not process.env.HUBOT_IRC_PRIVATE
+        bot.join channel
 
     @bot = bot
 
