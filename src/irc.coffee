@@ -13,7 +13,7 @@ class IrcBot extends Adapter
 
     unless target
       return console.log "ERROR: Not sure who to send to. envelope=", envelope
-    
+
     for str in strings
       @bot.say target, str
 
@@ -85,6 +85,15 @@ class IrcBot extends Adapter
     else if not process.env.HUBOT_IRC_SERVER
       throw new Error("HUBOT_IRC_SERVER is not defined: try: export HUBOT_IRC_SERVER='irc.myserver.com'")
 
+  unfloodProtection: (unflood) ->
+    if unflood? then unflood else unflood == null
+
+  unfloodProtectionDelay: (unflood) ->
+    switch @unfloodProtection(unflood)
+      when true then 1000
+      when false then 0
+      else parseInt(unflood / 60)
+
   run: ->
     self = @
 
@@ -102,7 +111,7 @@ class IrcBot extends Adapter
       connectCommand: process.env.HUBOT_IRC_CONNECT_COMMAND
       fakessl:  process.env.HUBOT_IRC_SERVER_FAKE_SSL?
       certExpired: process.env.HUBOT_IRC_SERVER_CERT_EXPIRED?
-      unflood:  process.env.HUBOT_IRC_UNFLOOD?
+      unflood:  process.env.HUBOT_IRC_UNFLOOD
       debug:    process.env.HUBOT_IRC_DEBUG?
       usessl:   process.env.HUBOT_IRC_USESSL?
       userName: process.env.HUBOT_IRC_USERNAME
@@ -117,7 +126,8 @@ class IrcBot extends Adapter
       secure: options.usessl
       selfSigned: options.fakessl
       certExpired: options.certExpired
-      floodProtection: options.unflood
+      floodProtection: @unfloodProtection(options.unflood),
+      floodProtectionDelay: @unfloodProtectionDelay(options.unflood),
 
     client_options['channels'] = options.rooms unless options.nickpass
 
@@ -176,7 +186,7 @@ class IrcBot extends Adapter
 
     bot.addListener 'pm', (nick, message) ->
       console.log('Got private message from %s: %s', nick, message)
-      
+
       if process.env.HUBOT_IRC_PRIVATE
         return
 
@@ -201,7 +211,7 @@ class IrcBot extends Adapter
 
     bot.addListener 'invite', (channel, from) ->
       console.log('%s invite you to join %s', from, channel)
-      
+
       if not process.env.HUBOT_IRC_PRIVATE
         bot.join channel
 
