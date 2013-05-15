@@ -55,8 +55,13 @@ class IrcBot extends Adapter
 
       self.receive new LeaveMessage(null)
 
+  getUserFromName: (name) ->
+    return @robot.brain.userForName(name) if @robot.brain?.userForName?
+
+    return @userForName name
+
   createUser: (channel, from) ->
-      user = @userForName from
+      user = @getUserFromName from
       unless user?
         id = new Date().getTime().toString()
         user = @userForId id
