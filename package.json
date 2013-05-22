@@ -1,6 +1,6 @@
 {
   "name": "hubot-irc",
-  "version": "0.1.13",
+  "version": "0.1.14",
   "author": "Fernando Ortiz <fortiz2k@gmail.com>",
   "description": "IRC adapter for Hubot 2.3",
   "keywords": "hubot irc adapter",
@@ -22,5 +22,10 @@
   "dependencies": {
     "irc": "0.3.6"
   },
-  "devDependencies": {}
+  "devDependencies": {
+    "grunt-contrib-clean": "~0.4.1",
+    "grunt-contrib-coffee": "~0.7.0",
+    "grunt": "~0.4.1",
+    "grunt-release": "~0.3.3"
+  }
 }
