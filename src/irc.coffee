@@ -60,11 +60,16 @@ class IrcBot extends Adapter
 
     return @userForName name
 
+  getUserFromId: (id) ->
+    return @robot.brain.userForId(id) if @robot.brain?.userForId?
+
+    return @userForId id
+
   createUser: (channel, from) ->
       user = @getUserFromName from
       unless user?
         id = new Date().getTime().toString()
-        user = @userForId id
+        user = @getUserForId id
         user.name = from
 
       if channel.match(/^[&#]/)
