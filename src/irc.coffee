@@ -69,7 +69,7 @@ class IrcBot extends Adapter
       user = @getUserFromName from
       unless user?
         id = new Date().getTime().toString()
-        user = @getUserForId id
+        user = @getUserFromId id
         user.name = from
 
       if channel.match(/^[&#]/)
