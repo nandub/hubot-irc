@@ -66,17 +66,17 @@ class IrcBot extends Adapter
     return @userForId id
 
   createUser: (channel, from) ->
-      user = @getUserFromName from
-      unless user?
-        id = new Date().getTime().toString()
-        user = @getUserFromId id
-        user.name = from
+    user = @getUserFromName from
+    unless user?
+      id = new Date().getTime().toString()
+      user = @getUserForId id
+      user.name = from
 
-      if channel.match(/^[&#]/)
-        user.room = channel
-      else
-        user.room = null
-      user
+    if channel.match(/^[&#]/)
+      user.room = channel
+    else
+      user.room = null
+    user
 
   kick: (channel, client, message) ->
     @bot.emit 'raw',
