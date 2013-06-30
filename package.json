@@ -20,7 +20,7 @@
   "main": "./src/irc.coffee",
   "engine": "node > 0.6.0",
   "dependencies": {
-    "irc": "0.3.6"
+    "irc": "git://github.com/nandub/node-irc.git"
   },
   "devDependencies": {
     "grunt": "~0.4.1",
