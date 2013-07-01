@@ -96,13 +96,16 @@ class IrcBot extends Adapter
       throw new Error("HUBOT_IRC_SERVER is not defined: try: export HUBOT_IRC_SERVER='irc.myserver.com'")
 
   unfloodProtection: (unflood) ->
-    if unflood? then unflood else unflood == null
+    unflood == 'true' or !isNaN(parseInt(unflood))
 
   unfloodProtectionDelay: (unflood) ->
-    switch @unfloodProtection(unflood)
-      when true then 1000
-      when false then 0
-      else parseInt(unflood / 60)
+    unfloodProtection = @unfloodProtection(unflood)
+    unfloodValue = parseInt(unflood) or 1000
+
+    if unfloodProtection
+      unfloodValue
+    else
+      0 
 
   run: ->
     self = @
