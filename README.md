@@ -6,52 +6,152 @@ This is the IRC adapter for hubot.  For discussion about this adapter, join `#hu
 
 ## Installation and Setup
 
-This is just the irc adapter for the hubot, not the full runnable hubot package.  You shouldn't have to hack on this code directly or clone it unless you want to add features or fix bugs.
+To get your own hubot up and running we recommend following the [Getting Started](https://github.com/github/hubot/tree/master/docs) directions from the hubot wiki, they are summarized here:
 
-If you want a packaged hubot ready to run try [hubot-irc-runnable](https://github.com/jgable/hubot-irc-runnable)
+    % npm install -g hubot coffee-script
+    % hubot --create myhubot
+    % cd myhubot
+    % npm install hubot-irc --save && npm install
+    % HUBOT_IRC_SERVER=irc.freenode.net \
+      HUBOT_IRC_ROOMS="#myhubot-irc" \
+      HUBOT_IRC_NICK="myhubot" \
+      HUBOT_IRC_UNFLOOD="true" \
+      bin/hubot -a irc --name myhubot
 
-## Manual Installation
+**Note**: The default hubot configuration will use a redis based brain that assumes the redis server is already running.  Either start your local redis server (usually with `redis-start &`) or remove the `redis-brain.coffee` script from the default `hubot-scripts.json` file.
 
-This bot is now upgraded to Hubot 2.3.  You should specify 0.0.8 as your hubot-irc dependency for older versions of Hubot (<2.3.0).
+## Configuring the Adapter
 
-* Download and Extract [Hubot 2.3](https://github.com/downloads/github/hubot/hubot-2.3.2.tar.gz) from the [Hubot Downloads page](https://github.com/github/hubot/downloads)
-    - You *must* use the downloaded and extracted version of the hubot code, not just a clone of the repo.
-* Run `npm install hubot-irc --save` in the extracted `Hubot 2` directory to add the `hubot-irc` adapter to your dependencies.
-* Install dependencies with `npm install`
-* Set your environment variables like: (Windows Users substitute `set` for `export`)
-    * export HUBOT_IRC_NICK="hubot-new"
-    * export HUBOT_IRC_ROOMS="#hubot-irc"
-    * export HUBOT_IRC_SERVER="irc.freenode.net"
-* Run hubot with `bin/hubot -a irc`
+The IRC adapter requires only the following environment variables.
 
-## Usage
+* `HUBOT_IRC_SERVER`
+* `HUBOT_IRC_ROOMS`
+* `HUBOT_IRC_NICK`
 
-You will need to set some environment variables to use this adapter.
+And the following are optional.
 
-### Heroku
+* `HUBOT_IRC_PORT`
+* `HUBOT_IRC_PASSWORD`
+* `HUBOT_IRC_NICKSERV_PASSWORD`
+* `HUBOT_IRC_NICKSERV_USERNAME`
+* `HUBOT_IRC_SERVER_FAKE_SSL`
+* `HUBOT_IRC_UNFLOOD`
+* `HUBOT_IRC_DEBUG`
+* `HUBOT_IRC_USESSL`
 
-    % heroku config:add HUBOT_IRC_NICK="hubot"
-    % heroku config:add HUBOT_IRC_ROOMS="#hubot,#hubot-irc"
-    % heroku config:add HUBOT_IRC_SERVER="irc.freenode.net"
+### IRC Server
 
-### Non-Heroku environment variables
+This is the full hostname or IP address of the IRC server you want your hubot
+to connect to. Make a note of it.
 
-    % export HUBOT_IRC_NICK="hubot"
-    % export HUBOT_IRC_ROOMS="#hubot,#hubot-irc"
-    % export HUBOT_IRC_SERVER="irc.freenode.net"
+### IRC Rooms
 
-### Advanced Options
+This is a comma separated list of the IRC channels you want your hubot to join.
+They must include the `#`. Make a note of them.
 
-The `hubot-irc` adapter has a number of configurable options based on different community contributions.
+### IRC Nick
 
-    # Don't join other rooms or respond to PM's
-    HUBOT_IRC_PRIVATE = true
+This is the optional nick you want your hubot to join with. If omitted it will
+default to the name of your hubot.
 
-    # Send messages via notice instead of say
-    HUBOT_IRC_SEND_NOTICE_MODE = true
+### IRC Port
 
-    # Issue an irc command once connected to the server.
-    HUBOT_IRC_CONNECT_COMMAND = NICKSERV blah thing1
+This is the optional port of the IRC server you want your hubot to connect to.
+If omitted the default is `6667`. Make a note of it if required.
+
+### IRC Password
+
+This is the optional password of the IRC server you want your hubot to connect
+to. If the IRC server doesn't require a password, this can be omitted. Make a
+note of it if required.
+
+### IRC Nickserv Password
+
+This is the optional Nickserv password if your hubot is using a nick registered
+with Nickserv on the IRC server. Make a note of it if required.
+
+### IRC Nickserv Username
+
+This is the optional Nickserv username if your hubot is using a nick registered
+with Nickserv on the IRC server, e.g. `/msg NickServ identify <username> <password>`.
+
+### IRC Server Fake SSL
+
+This is the optional flag if you want to accept self signed SSL certificated
+from a non trusted CA. You can set the variable to anything.
+
+### IRC Unflood
+
+This is the optional flag if you want to protect your hubot from flooding
+channels with messages. It will queue messages and slowly send. You can set the
+variable to any truthy value or a number; if a number is given we will interpret it as
+a wait time in milliseconds to use between sending messages.
+
+### IRC Debug
+
+This is the optional flag which will display debug output. You can set the
+variable to anything.
+
+### IRC Use SSL
+
+This is the optional flag if your hubot is connecting to an IRC server using
+SSL. You can set the variable to anything.
+
+### Configuring the variables on Heroku
+
+    % heroku config:add HUBOT_IRC_SERVER="..."
+
+    % heroku config:add HUBOT_IRC_ROOMS="#foo,#bar"
+
+Optional
+
+    % heroku config:add HUBOT_IRC_NICK="..."
+
+    % heroku config:add HUBOT_IRC_PORT=6767
+
+    % heroku config:add HUBOT_IRC_PASSWORD="..."
+
+    % heroku config:add HUBOT_IRC_NICKSERV_PASSWORD="..."
+
+    % heroku config:add HUBOT_IRC_SERVER_FAKE_SSL="true"
+
+    % heroku config:add HUBOT_IRC_UNFLOOD="true"
+
+    % heroku config:add HUBOT_IRC_DEBUG="true"
+
+    % heroku config:add HUBOT_IRC_USESSL="true"
+
+### Configuring the variables on UNIX
+
+    % export HUBOT_IRC_SERVER="..."
+
+    % export HUBOT_IRC_ROOMS="#foo,#bar"
+
+Optional
+
+    % export HUBOT_IRC_NICK="..."
+
+    % export HUBOT_IRC_PORT=6767
+
+    % export HUBOT_IRC_PASSWORD="..."
+
+    % export HUBOT_IRC_NICKSERV_PASSWORD="..."
+
+    % export HUBOT_IRC_SERVER_FAKE_SSL="true"
+
+    % export HUBOT_IRC_UNFLOOD="true" # Can optionally be passed a number (in milliseconds) that will be used as the delay between messages
+
+    % export HUBOT_IRC_DEBUG="true"
+
+    % export HUBOT_IRC_USESSL="true"
+
+### Configuring the variables on Windows
+
+From Powershell:
+
+    setx HUBOT_IRC_SERVER "..." /m
+
+    setx HUBOT_IRC_ROOMS "#foo,#bar" /m
     
 ### Testing Local Changes
 
