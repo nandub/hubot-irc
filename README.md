@@ -38,6 +38,7 @@ And the following are optional.
 * `HUBOT_IRC_UNFLOOD`
 * `HUBOT_IRC_DEBUG`
 * `HUBOT_IRC_USESSL`
+* `HUBOT_IRC_PRIVATE`
 
 ### IRC Server
 
@@ -96,6 +97,11 @@ variable to anything.
 
 This is the optional flag if your hubot is connecting to an IRC server using
 SSL. You can set the variable to anything.
+
+### IRC Private
+
+This is the optional flag if your hubot should ignore `PRIVMSG` and `INVITE`
+commands. You can set the variable to anything.
 
 ### Configuring the variables on Heroku
 
