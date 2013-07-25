@@ -105,7 +105,7 @@ class IrcBot extends Adapter
     if unfloodProtection
       unfloodValue
     else
-      0 
+      0
 
   run: ->
     self = @
