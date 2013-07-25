@@ -2,7 +2,7 @@
 
 ## Description
 
-This is the IRC adapter for hubot.  For discussion about this adapter, join `#hubot-irc` on `irc.freenode.net`.
+This is the IRC adapter for hubot.  For discussion about this adapter, join `#hubot-irc` on `irc.freenode.net`.  For convenience you can [#hubot-irc on irc.freenode.net](http://mibbit.com/?channel=%23hubot-irc&server=irc.freenode.net)
 
 ## Installation and Setup
 
