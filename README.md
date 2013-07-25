@@ -38,6 +38,7 @@ And the following are optional.
 * `HUBOT_IRC_UNFLOOD`
 * `HUBOT_IRC_DEBUG`
 * `HUBOT_IRC_USESSL`
+* `HUBOT_IRC_PRIVATE`
 
 ### IRC Server
 
