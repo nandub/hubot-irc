@@ -206,6 +206,16 @@ class IrcBot extends Adapter
 
       self.receive new TextMessage(user, message)
 
+    bot.addListener 'action', (from, to, message) ->
+      console.log " * From #{from} to #{to}: #{message}"
+      user = self.createUser to, from
+      if user.room
+        console.log "#{to} * #{from} #{message}"
+      else
+        console.log "msg <#{from}> #{message}"
+
+      self.receive new TextMessage(user, message)
+
     bot.addListener 'error', (message) ->
       console.error('ERROR: %s: %s', message.command, message.args.join(' '))
 
