@@ -17,6 +17,18 @@ class IrcBot extends Adapter
     for str in strings
       @bot.say target, str
 
+  emote: (envelope, strings...) ->
+    # Use @notice if SEND_NOTICE_MODE is set
+    return @notice envelope, strings if process.env.HUBOT_IRC_SEND_NOTICE_MODE?
+
+    target = @_getTargetFromEnvelope envelope
+
+    unless target
+      return console.log "ERROR: Not sure who to send to. envelope=", envelope
+
+    for str in strings
+      @bot.action target, str
+
   notice: (envelope, strings...) ->
     target = @_getTargetFromEnvelope envelope
 
