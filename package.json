@@ -19,6 +19,9 @@
   },
   "main": "./src/irc.coffee",
   "engine": "node > 0.6.0",
+  "scripts": {
+    "test": "grunt"
+  },
   "dependencies": {
     "irc": "git://github.com/nandub/node-irc.git"
   },

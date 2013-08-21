@@ -37,7 +37,7 @@ module.exports = (grunt) ->
           "lib/irc.js": "src/irc.coffee"
 
     coffeelint:
-      client: ["src/**/*.coffee"]
+      client: ["Gruntfile.coffee", "src/**/*.coffee"]
       options:
         indentation:
           value: 2
