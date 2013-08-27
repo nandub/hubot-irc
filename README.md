@@ -1,6 +1,6 @@
 # Hubot IRC Adapter
 
-# Travis-CI Build Status
+## Travis-CI Build Status
 
 [![Build Status](https://travis-ci.org/nandub/hubot-irc.png?branch=master)](https://travis-ci.org/nandub/hubot-irc)
 
