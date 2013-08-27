@@ -1,5 +1,9 @@
 # Hubot IRC Adapter
 
+# Travis-CI Build Status
+
+[![Build Status](https://travis-ci.org/nandub/hubot-irc.png?branch=master)](https://travis-ci.org/nandub/hubot-irc)
+
 ## Description
 
 This is the IRC adapter for hubot.  For discussion about this adapter, join `#hubot-irc` on `irc.freenode.net`.  For convenience you can [#hubot-irc using webchat.freenode.net/](http://webchat.freenode.net/?channels=hubot-irc&uio=d4)
