@@ -247,7 +247,7 @@ class IrcBot extends Adapter
     bot.addListener 'invite', (channel, from) ->
       console.log('%s invite you to join %s', from, channel)
 
-      if not process.env.HUBOT_IRC_PRIVATE
+      if not process.env.HUBOT_IRC_PRIVATE or process.env.HUBOT_IRC_IGNOREINVITE
         bot.join channel
 
     @bot = bot
