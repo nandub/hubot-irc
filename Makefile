@@ -5,7 +5,12 @@ dev: js
 	@coffee -wc --bare -o lib src/
 
 VERSION = $(shell coffee src/npm-version.coffee)
-release: npm-dep js
+pre-release:
+	@bundle install >/dev/null 2>&1
+	@sh release/changelog >/dev/null 2>&1
+	@sh release/contributors >/dev/null 2>&1
+
+release: pre-release npm-dep js
 	git commit --allow-empty -a -m "release $(VERSION)"
 	git tag v$(VERSION)
 	git push origin master

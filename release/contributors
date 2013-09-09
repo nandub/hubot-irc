@@ -1,2 +1,3 @@
 #!/bin/sh
-git shortlog -n -s
+git shortlog -n -s > CONTRIBUTORS.md
+echo Create CONTRIBUTORS.md

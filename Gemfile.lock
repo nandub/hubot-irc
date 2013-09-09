@@ -1,0 +1,10 @@
+GEM
+  remote: https://rubygems.org/
+  specs:
+    katip (1.2.1)
+
+PLATFORMS
+  ruby
+
+DEPENDENCIES
+  katip
