@@ -10,7 +10,7 @@ pre-release:
 	@sh release/changelog >/dev/null 2>&1
 	@sh release/contributors >/dev/null 2>&1
 
-release: pre-release npm-dep js
+release: npm-dep js
 	git commit --allow-empty -a -m "release $(VERSION)"
 	git tag v$(VERSION)
 	git push origin master
