@@ -5,7 +5,7 @@ dev: js
 	@coffee -wc --bare -o lib src/
 
 VERSION = $(shell coffee src/npm-version.coffee)
-pre-release:
+pre-release: bundler-dep
 	@bundle install >/dev/null 2>&1
 	@sh release/changelog >/dev/null 2>&1
 	@sh release/contributors >/dev/null 2>&1
@@ -29,6 +29,9 @@ js: coffee-dep
 
 remove-js:
 	@rm -fr lib/
+
+bundler-dep:
+	@test `which bundle` || echo 'You need bundler to do bundle install... makes sense?'
 
 npm-dep:
 	@test `which npm` || echo 'You need npm to do npm install... makes sense?'
