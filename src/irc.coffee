@@ -17,6 +17,11 @@ class IrcBot extends Adapter
     for str in strings
       @bot.say target, str
 
+  topic: (envelope, strings...) ->
+    data = strings.join " / "
+    channel = envelope.room
+    @bot.send 'TOPIC', channel, data
+
   emote: (envelope, strings...) ->
     # Use @notice if SEND_NOTICE_MODE is set
     return @notice envelope, strings if process.env.HUBOT_IRC_SEND_NOTICE_MODE?
