@@ -1,6 +1,6 @@
 {
   "name": "hubot-irc",
-  "version": "0.1.22",
+  "version": "0.1.23",
   "author": "Fernando Ortiz <fortiz2k@gmail.com>",
   "description": "IRC adapter for Hubot 2.3",
   "keywords": "hubot irc adapter",
