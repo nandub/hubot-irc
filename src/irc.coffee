@@ -202,7 +202,8 @@ class IrcBot extends Adapter
         # this is a private message, let the 'pm' listener handle it
         return
 
-      if from in ignoreUsers
+      if from in options.ignoreUsers
+        console.log('Ignoring user: %s', from)
         # we'll ignore this message if it's from someone we want to ignore
         return
 
@@ -221,7 +222,8 @@ class IrcBot extends Adapter
     bot.addListener 'action', (from, to, message) ->
       console.log " * From #{from} to #{to}: #{message}"
 
-      if from in ignoreUsers
+      if from in options.ignoreUsers
+        console.log('Ignoring user: %s', from)
         # we'll ignore this message if it's from someone we want to ignore
         return
 
@@ -242,7 +244,8 @@ class IrcBot extends Adapter
       if process.env.HUBOT_IRC_PRIVATE
         return
 
-      if nick in ignoreUsers
+      if nick in options.ignoreUsers
+        console.log('Ignoring user: %s', nick)
         # we'll ignore this message if it's from someone we want to ignore
         return
 
