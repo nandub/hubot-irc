@@ -136,7 +136,7 @@ class IrcBot extends Adapter
       realName: process.env.HUBOT_IRC_REALNAME
       port:     process.env.HUBOT_IRC_PORT
       rooms:    process.env.HUBOT_IRC_ROOMS.split(",")
-      ignoreUsers: process.env.HUBOT_IRC_IGNORE_USERS?.split(",")
+      ignoreUsers: process.env.HUBOT_IRC_IGNORE_USERS?.split(",") or []
       server:   process.env.HUBOT_IRC_SERVER
       password: process.env.HUBOT_IRC_PASSWORD
       nickpass: process.env.HUBOT_IRC_NICKSERV_PASSWORD
