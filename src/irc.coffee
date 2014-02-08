@@ -271,6 +271,11 @@ class IrcBot extends Adapter
     bot.addListener 'invite', (channel, from) ->
       console.log('%s invited you to join %s', from, channel)
 
+      if from in options.ignoreUsers
+        console.log('Ignoring user: %s', from)
+        # we'll ignore this message if it's from someone we want to ignore
+        return
+      
       if not process.env.HUBOT_IRC_PRIVATE or process.env.HUBOT_IRC_IGNOREINVITE
         bot.join channel
 
