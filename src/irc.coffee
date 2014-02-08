@@ -136,6 +136,7 @@ class IrcBot extends Adapter
       realName: process.env.HUBOT_IRC_REALNAME
       port:     process.env.HUBOT_IRC_PORT
       rooms:    process.env.HUBOT_IRC_ROOMS.split(",")
+      ignoreUsers: process.env.HUBOT_IRC_IGNORE_USERS?.split(",")
       server:   process.env.HUBOT_IRC_SERVER
       password: process.env.HUBOT_IRC_PASSWORD
       nickpass: process.env.HUBOT_IRC_NICKSERV_PASSWORD
@@ -201,6 +202,10 @@ class IrcBot extends Adapter
         # this is a private message, let the 'pm' listener handle it
         return
 
+      if from in ignoreUsers
+        # we'll ignore this message if it's from someone we want to ignore
+        return
+
       console.log "From #{from} to #{to}: #{message}"
 
       user = self.createUser to, from
@@ -215,6 +220,11 @@ class IrcBot extends Adapter
 
     bot.addListener 'action', (from, to, message) ->
       console.log " * From #{from} to #{to}: #{message}"
+
+      if from in ignoreUsers
+        # we'll ignore this message if it's from someone we want to ignore
+        return
+
       user = self.createUser to, from
       if user.room
         console.log "#{to} * #{from} #{message}"
@@ -230,6 +240,10 @@ class IrcBot extends Adapter
       console.log('Got private message from %s: %s', nick, message)
 
       if process.env.HUBOT_IRC_PRIVATE
+        return
+
+      if nick in ignoreUsers
+        # we'll ignore this message if it's from someone we want to ignore
         return
 
       nameLength = options.nick.length
