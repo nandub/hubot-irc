@@ -1,5 +1,5 @@
 # Hubot dependencies
-{Robot, Adapter, TextMessage, EnterMessage, LeaveMessage, Response} = require 'hubot'
+{Robot, Adapter, TextMessage, EmoteMessage, EnterMessage, LeaveMessage, Response} = require 'hubot'
 
 # Irc library
 Irc = require 'irc'
@@ -233,7 +233,7 @@ class IrcBot extends Adapter
       else
         console.log "msg <#{from}> #{message}"
 
-      self.receive new TextMessage(user, message)
+      self.receive new EmoteMessage(user, message)
 
     bot.addListener 'error', (message) ->
       console.error('ERROR: %s: %s', message.command, message.args.join(' '))
