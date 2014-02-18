@@ -52,7 +52,8 @@ to connect to. Make a note of it.
 ### IRC Rooms
 
 This is a comma separated list of the IRC channels you want your hubot to join.
-They must include the `#`. Make a note of them.
+They must include the `#`. Make a note of them. You can join private channels
+by simply appending the channel password to the room, e.g. `#private password`.
 
 ### IRC Nick
 
