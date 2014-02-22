@@ -197,6 +197,17 @@ class IrcBot extends Adapter
       for nick of nicks
         self.createUser channel, nick
 
+    bot.addListener 'notice', (from, to, message) ->
+      if from in options.ignoreUsers
+        console.log('Ignoring user: %s', from)
+        # we'll ignore this message if it's from someone we want to ignore
+        return
+
+      console.log "NOTICE from #{from} to #{to}: #{message}"
+
+      user = self.createUser to, from
+      self.receive new TextMessage(user, message)
+
     bot.addListener 'message', (from, to, message) ->
       if options.nick.toLowerCase() == to.toLowerCase()
         # this is a private message, let the 'pm' listener handle it
