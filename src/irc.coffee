@@ -198,6 +198,8 @@ class IrcBot extends Adapter
         self.createUser channel, nick
 
     bot.addListener 'notice', (from, to, message) ->
+      return if process.env.HUBOT_IRC_IGNORE_NOTICE?
+
       if from in options.ignoreUsers
         console.log('Ignoring user: %s', from)
         # we'll ignore this message if it's from someone we want to ignore
@@ -288,7 +290,7 @@ class IrcBot extends Adapter
         console.log('Ignoring user: %s', from)
         # we'll ignore this message if it's from someone we want to ignore
         return
-      
+
       if not process.env.HUBOT_IRC_PRIVATE or process.env.HUBOT_IRC_IGNOREINVITE
         bot.join channel
 
