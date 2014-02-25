@@ -77,19 +77,19 @@ class IrcBot extends Adapter
   getUserFromName: (name) ->
     return @robot.brain.userForName(name) if @robot.brain?.userForName?
 
+    # Deprecated in 3.0.0
     return @userForName name
 
   getUserFromId: (id) ->
+    # TODO: Add logic to convert object if name matches
     return @robot.brain.userForId(id) if @robot.brain?.userForId?
 
+    # Deprecated in 3.0.0
     return @userForId id
 
   createUser: (channel, from) ->
-    user = @getUserFromName from
-    unless user?
-      id = new Date().getTime().toString()
-      user = @getUserFromId id
-      user.name = from
+    user = @getUserFromId from
+    user.name = from
 
     if channel.match(/^[&#]/)
       user.room = channel
