@@ -4,6 +4,9 @@
 # Irc library
 Irc = require 'irc'
 
+Log = require('log')
+logger = new Log process.env.HUBOT_LOG_LEVEL or 'info'
+
 class IrcBot extends Adapter
   send: (envelope, strings...) ->
     # Use @notice if SEND_NOTICE_MODE is set
@@ -12,7 +15,7 @@ class IrcBot extends Adapter
     target = @_getTargetFromEnvelope envelope
 
     unless target
-      return console.log "ERROR: Not sure who to send to. envelope=", envelope
+      return logger.error "ERROR: Not sure who to send to. envelope=", envelope
 
     for str in strings
       @bot.say target, str
@@ -29,7 +32,7 @@ class IrcBot extends Adapter
     target = @_getTargetFromEnvelope envelope
 
     unless target
-      return console.log "ERROR: Not sure who to send to. envelope=", envelope
+      return logger.error "ERROR: Not sure who to send to. envelope=", envelope
 
     for str in strings
       @bot.action target, str
@@ -38,7 +41,7 @@ class IrcBot extends Adapter
     target = @_getTargetFromEnvelope envelope
 
     unless target
-      return console.log "Notice: no target found", envelope
+      return logger.warn "Notice: no target found", envelope
 
     # Flatten out strings from send
     flattened = []
@@ -61,7 +64,7 @@ class IrcBot extends Adapter
   join: (channel) ->
     self = @
     @bot.join channel, () ->
-      console.log('joined %s', channel)
+      logger.info('joined %s', channel)
 
       selfUser = self.getUserFromName self.robot.name
       self.receive new EnterMessage(selfUser)
@@ -69,7 +72,7 @@ class IrcBot extends Adapter
   part: (channel) ->
     self = @
     @bot.part channel, () ->
-      console.log('left %s', channel)
+      logger.info('left %s', channel)
 
       selfUser = self.getUserFromName self.robot.name
       self.receive new LeaveMessage(selfUser)
@@ -199,11 +202,11 @@ class IrcBot extends Adapter
 
     bot.addListener 'notice', (from, to, message) ->
       if from in options.ignoreUsers
-        console.log('Ignoring user: %s', from)
+        logger.info('Ignoring user: %s', from)
         # we'll ignore this message if it's from someone we want to ignore
         return
 
-      console.log "NOTICE from #{from} to #{to}: #{message}"
+      logger.info "NOTICE from #{from} to #{to}: #{message}"
 
       user = self.createUser to, from
       self.receive new TextMessage(user, message)
@@ -214,49 +217,49 @@ class IrcBot extends Adapter
         return
 
       if from in options.ignoreUsers
-        console.log('Ignoring user: %s', from)
+        logger.info('Ignoring user: %s', from)
         # we'll ignore this message if it's from someone we want to ignore
         return
 
-      console.log "From #{from} to #{to}: #{message}"
+      logger.debug "From #{from} to #{to}: #{message}"
 
       user = self.createUser to, from
       if user.room
-        console.log "#{to} <#{from}> #{message}"
+        logger.info "#{to} <#{from}> #{message}"
       else
         unless message.indexOf(to) == 0
           message = "#{to}: #{message}"
-        console.log "msg <#{from}> #{message}"
+        logger.debug "msg <#{from}> #{message}"
 
       self.receive new TextMessage(user, message)
 
     bot.addListener 'action', (from, to, message) ->
-      console.log " * From #{from} to #{to}: #{message}"
+      logger.debug " * From #{from} to #{to}: #{message}"
 
       if from in options.ignoreUsers
-        console.log('Ignoring user: %s', from)
+        logger.info('Ignoring user: %s', from)
         # we'll ignore this message if it's from someone we want to ignore
         return
 
       user = self.createUser to, from
       if user.room
-        console.log "#{to} * #{from} #{message}"
+        logger.debug "#{to} * #{from} #{message}"
       else
-        console.log "msg <#{from}> #{message}"
+        logger.debug "msg <#{from}> #{message}"
 
       self.receive new TextMessage(user, message)
 
     bot.addListener 'error', (message) ->
-      console.error('ERROR: %s: %s', message.command, message.args.join(' '))
+      logger.error('ERROR: %s: %s', message.command, message.args.join(' '))
 
     bot.addListener 'pm', (nick, message) ->
-      console.log('Got private message from %s: %s', nick, message)
+      logger.info('Got private message from %s: %s', nick, message)
 
       if process.env.HUBOT_IRC_PRIVATE
         return
 
       if nick in options.ignoreUsers
-        console.log('Ignoring user: %s', nick)
+        logger.info('Ignoring user: %s', nick)
         # we'll ignore this message if it's from someone we want to ignore
         return
 
@@ -267,25 +270,25 @@ class IrcBot extends Adapter
       self.receive new TextMessage({reply_to: nick, name: nick}, message)
 
     bot.addListener 'join', (channel, who) ->
-      console.log('%s has joined %s', who, channel)
+      logger.info('%s has joined %s', who, channel)
       user = self.createUser channel, who
       user.room = channel
       self.receive new EnterMessage(user)
 
     bot.addListener 'part', (channel, who, reason) ->
-      console.log('%s has left %s: %s', who, channel, reason)
+      logger.info('%s has left %s: %s', who, channel, reason)
       user = self.createUser '', who
       user.room = channel
       self.receive new LeaveMessage(user)
 
     bot.addListener 'kick', (channel, who, _by, reason) ->
-      console.log('%s was kicked from %s by %s: %s', who, channel, _by, reason)
+      logger.info('%s was kicked from %s by %s: %s', who, channel, _by, reason)
 
     bot.addListener 'invite', (channel, from) ->
-      console.log('%s invited you to join %s', from, channel)
+      logger.info('%s invited you to join %s', from, channel)
 
       if from in options.ignoreUsers
-        console.log('Ignoring user: %s', from)
+        logger.info('Ignoring user: %s', from)
         # we'll ignore this message if it's from someone we want to ignore
         return
       
