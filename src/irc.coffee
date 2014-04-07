@@ -1,6 +1,11 @@
 # Hubot dependencies
 {Robot, Adapter, TextMessage, EnterMessage, LeaveMessage, Response} = require 'hubot'
 
+# Custom Response class that adds a sendPrivate method
+class IrcResponse extends Response
+  sendPrivate: (strings...) ->
+    @robot.adapter.sendPrivate @envelope, strings...
+
 # Irc library
 Irc = require 'irc'
 
@@ -19,6 +24,17 @@ class IrcBot extends Adapter
 
     for str in strings
       @bot.say target, str
+
+  sendPrivate: (envelope, strings...) ->
+    # Remove the room from the envelope and send as private message to user
+
+    if envelope.room
+      delete envelope.room
+
+    if envelope.user?.room
+      delete envelope.user.room
+
+    @send envelope, strings...
 
   topic: (envelope, strings...) ->
     data = strings.join " / "
@@ -166,6 +182,9 @@ class IrcBot extends Adapter
       floodProtectionDelay: @unfloodProtectionDelay(options.unflood),
 
     client_options['channels'] = options.rooms unless options.nickpass
+
+    # Override the response to provide a sendPrivate method
+    @robot.Response = IrcResponse
 
     @robot.name = options.nick
     bot = new Irc.Client options.server, options.nick, client_options
