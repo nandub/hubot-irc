@@ -209,8 +209,10 @@ class IrcBot extends Adapter
           for room in options.rooms
             @join room
     else
-      for room in options.rooms
-        @join room
+      bot.addListener 'registered', (message) ->
+        # The 'registered' event is fired when you are connected to the server
+        for room in options.rooms
+          @join room
 
     if options.connectCommand?
       bot.addListener 'registered', (message) ->
