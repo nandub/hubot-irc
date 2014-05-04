@@ -208,6 +208,9 @@ class IrcBot extends Adapter
                  text.indexOf('identified') isnt -1)
           for room in options.rooms
             @join room
+    else
+      for room in options.rooms
+        @join room
 
     if options.connectCommand?
       bot.addListener 'registered', (message) ->
