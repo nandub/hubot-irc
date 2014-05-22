@@ -220,6 +220,8 @@ class IrcBot extends Adapter
         self.createUser channel, nick
 
     bot.addListener 'notice', (from, to, message) ->
+      return unless from
+
       if from in options.ignoreUsers
         logger.info('Ignoring user: %s', from)
         # we'll ignore this message if it's from someone we want to ignore
