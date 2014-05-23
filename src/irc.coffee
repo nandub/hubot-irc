@@ -302,6 +302,13 @@ class IrcBot extends Adapter
       user.room = channel
       self.receive new LeaveMessage(user)
 
+    bot.addListener 'quit', (who, reason, channels) ->
+      logger.info '%s has quit: %s (%s)', who, channels, reason
+      for ch in channels
+        user = self.createUser '', who
+        user.room = ch
+        self.receive new LeaveMessage user
+
     bot.addListener 'kick', (channel, who, _by, reason) ->
       logger.info('%s was kicked from %s by %s: %s', who, channel, _by, reason)
 
