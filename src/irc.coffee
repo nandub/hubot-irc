@@ -62,10 +62,12 @@ class IrcBot extends Adapter
     # Flatten out strings from send
     flattened = []
     for str in strings
-      if Array.isArray str
-        flattened = flattened.concat str
-      else
-        flattened.push str
+      if typeof str != 'undefined'
+        for line in str.toString().split(/\r?\n/)
+          if Array.isArray line
+            flattened = flattened.concat line
+          else
+            flattened.push line
 
     for str in flattened
       if not str?
