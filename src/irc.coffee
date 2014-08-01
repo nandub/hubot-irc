@@ -23,6 +23,7 @@ class IrcBot extends Adapter
       return logger.error "ERROR: Not sure who to send to. envelope=", envelope
 
     for str in strings
+      logger.debug "#{target} #{str}"
       @bot.say target, str
 
   sendPrivate: (envelope, strings...) ->
