@@ -7,3 +7,5 @@ before_install:
   - npm update -g npm
 before_script:
   - npm install -g grunt-cli
+notifications:
+  irc: "chat.freenode.net#hubot-irc"
