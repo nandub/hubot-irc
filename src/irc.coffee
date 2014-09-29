@@ -191,7 +191,7 @@ class IrcBot extends Adapter
     @robot.name = options.nick
     if process.env.HUBOT_IRC_ROBOT_NAME
       @robot.name = process.env.HUBOT_IRC_ROBOT_NAME
-      
+    robot_name = @robot.name # We need to keep the name in scope for callbacks that need it
     bot = new Irc.Client options.server, options.nick, client_options
 
     next_id = 1
@@ -289,9 +289,9 @@ class IrcBot extends Adapter
         # we'll ignore this message if it's from someone we want to ignore
         return
 
-      nameLength = @robot.name.length
-      if message.slice(0, nameLength).toLowerCase() != @robot.name.toLowerCase()
-        message = "#{@robot.name} #{message}"
+      nameLength = robot_name.length
+      if message.slice(0, nameLength).toLowerCase() != robot_name.toLowerCase()
+        message = "#{robot_name} #{message}"
 
       self.receive new TextMessage({reply_to: nick, name: nick}, message)
 
