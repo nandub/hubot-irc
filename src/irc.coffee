@@ -289,7 +289,7 @@ class IrcBot extends Adapter
         # we'll ignore this message if it's from someone we want to ignore
         return
 
-      nameLength = @robot.name
+      nameLength = @robot.name.length
       if message.slice(0, nameLength).toLowerCase() != @robot.name.toLowerCase()
         message = "#{@robot.name} #{message}"
 
