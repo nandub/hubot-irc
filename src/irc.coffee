@@ -189,6 +189,9 @@ class IrcBot extends Adapter
     @robot.Response = IrcResponse
 
     @robot.name = options.nick
+    if process.env.HUBOT_IRC_ROBOT_NAME
+      @robot.name = process.env.HUBOT_IRC_ROBOT_NAME
+      
     bot = new Irc.Client options.server, options.nick, client_options
 
     next_id = 1
