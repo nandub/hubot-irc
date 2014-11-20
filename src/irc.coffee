@@ -248,7 +248,7 @@ class IrcBot extends Adapter
 
       user = self.createUser to, from
       if user.room
-        logger.info "#{to} <#{from}> #{message}"
+        logger.debug "#{to} <#{from}> #{message}"
       else
         unless message.indexOf(to) == 0
           message = "#{to}: #{message}"
