@@ -196,5 +196,5 @@ Here's the most direct way to get your work merged into the project.
 
 ## Copyright
 
-Copyright &copy; Fernando Ortiz. MIT License; see LICENSE for further details.
+Copyright &copy; Hubot Irc Community Contributors. MIT License; see LICENSE for further details.
 
