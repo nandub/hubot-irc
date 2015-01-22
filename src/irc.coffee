@@ -13,6 +13,14 @@ Log = require('log')
 logger = new Log process.env.HUBOT_LOG_LEVEL or 'info'
 
 class IrcBot extends Adapter
+
+  onLeave = (channel, who, reason) ->
+    user = @createUser '', who
+    user.room = channel
+    msg = new LeaveMessage user
+    msg.text = reason
+    @receive msg
+
   send: (envelope, strings...) ->
     # Use @notice if SEND_NOTICE_MODE is set
     return @notice envelope, strings if process.env.HUBOT_IRC_SEND_NOTICE_MODE?
@@ -300,28 +308,15 @@ class IrcBot extends Adapter
 
     bot.addListener 'part', (channel, who, reason) ->
       logger.info('%s has left %s: %s', who, channel, reason)
-      user = self.createUser '', who
-      user.room = channel
-      msg = new LeaveMessage user
-      msg.text = reason
-      self.receive msg
+      onLeave.call(self, channel, who, reason)
 
     bot.addListener 'quit', (who, reason, channels) ->
       logger.info '%s has quit: %s (%s)', who, channels, reason
-      for ch in channels
-        user = self.createUser '', who
-        user.room = ch
-        msg = new LeaveMessage user
-        msg.text = reason
-        self.receive msg
+      onLeave.call(self, channel, who, reason) for channel in channels
 
     bot.addListener 'kick', (channel, who, _by, reason) ->
       logger.info('%s was kicked from %s by %s: %s', who, channel, _by, reason)
-      user = self.createUser '', who
-      user.room = channel
-      msg = new LeaveMessage user
-      msg.text = reason
-      self.receive msg
+      onLeave.call(self, channel, who, reason)
 
     bot.addListener 'invite', (channel, from) ->
       logger.info('%s invited you to join %s', from, channel)
