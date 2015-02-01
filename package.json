@@ -23,7 +23,7 @@
     "test": "grunt"
   },
   "dependencies": {
-    "irc": "0.3.8",
+    "irc": "0.3.9",
     "log": "1.4.0"
   },
   "devDependencies": {
