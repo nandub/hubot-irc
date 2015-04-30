@@ -236,6 +236,8 @@ class IrcBot extends Adapter
       self.receive new TextMessage(user, message)
 
     bot.addListener 'message', (from, to, message) ->
+      return unless from
+      
       if options.nick.toLowerCase() == to.toLowerCase()
         # this is a private message, let the 'pm' listener handle it
         return
