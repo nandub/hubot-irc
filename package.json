@@ -1,15 +1,10 @@
 {
   "name": "hubot-irc",
   "version": "0.2.8",
-  "author": "Fernando Ortiz <nandub@github@gmail.com>",
+  "author": "Fernando Ortiz <nandub@nandub.info>",
   "description": "IRC adapter for Hubot 2.3",
   "keywords": "hubot irc adapter",
-  "licenses": [
-    {
-      "type": "MIT",
-      "url": "http://github.com/nandub/hubot-irc/raw/master/LICENSE"
-    }
-  ],
+  "license": "MIT",
   "repository": {
     "type": "git",
     "url": "git://github.com/nandub/hubot-irc.git"
@@ -27,6 +22,7 @@
     "log": "1.4.0"
   },
   "devDependencies": {
+    "are-we-there-yet": "1.0.4",
     "coffeelint": "^1.12.1",
     "grunt": "~0.4.1",
     "grunt-contrib-coffee": "~0.6.2",
