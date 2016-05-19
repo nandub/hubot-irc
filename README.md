@@ -35,6 +35,7 @@ The IRC adapter requires only the following environment variables.
 And the following are optional.
 
 * `HUBOT_IRC_PORT`
+* `HUBOT_IRC_USERNAME`
 * `HUBOT_IRC_PASSWORD`
 * `HUBOT_IRC_NICKSERV_PASSWORD`
 * `HUBOT_IRC_NICKSERV_USERNAME`
@@ -65,10 +66,10 @@ default to the name of your hubot.
 This is the optional port of the IRC server you want your hubot to connect to.
 If omitted the default is `6667`. Make a note of it if required.
 
-### IRC Password
+### IRC User & Password
 
-This is the optional password of the IRC server you want your hubot to connect
-to. If the IRC server doesn't require a password, this can be omitted. Make a
+This is the optional username and/or password of the IRC server you want your hubot to connect
+to. If the IRC server doesn't require a username/password, this can be omitted. Make a
 note of it if required.
 
 ### IRC Nickserv Password
@@ -120,6 +121,8 @@ Optional
 
     % heroku config:add HUBOT_IRC_PORT=6767
 
+    % heroku config:add HUBOT_IRC_USERNAME="..."
+
     % heroku config:add HUBOT_IRC_PASSWORD="..."
 
     % heroku config:add HUBOT_IRC_NICKSERV_PASSWORD="..."
@@ -143,6 +146,8 @@ Optional
     % export HUBOT_IRC_NICK="..."
 
     % export HUBOT_IRC_PORT=6767
+
+    % export HUBOT_IRC_USERNAME="..."
 
     % export HUBOT_IRC_PASSWORD="..."
 
