@@ -1,5 +1,29 @@
 
 #### [Current]
+ * [156f0cd](../../commit/156f0cd) - __(Fernando Ortiz)__ Merge pull request [#166](../../issues/166) from Wykks/patch-1
+
+Update irc
+ * [ca47a9f](../../commit/ca47a9f) - __(Wykks)__ Update irc
+
+Update irc to 0.5.0 in order to make it work with recent version of nodejs.
+ * [d40d6a3](../../commit/d40d6a3) - __(Jacob Gable)__ Merge pull request [#150](../../issues/150) from notpeter/master
+
+Document HUBOT_IRC_USERNAME
+ * [51d1f4b](../../commit/51d1f4b) - __(Fernando Ortiz)__ add dep to compile on node 0.8 and other changes
+ * [aca43c9](../../commit/aca43c9) - __(Fernando Ortiz)__ Merge pull request [#153](../../issues/153) from BenoitZugmeyer/master
+
+Node 4 compatibility
+ * [fb6d24c](../../commit/fb6d24c) - __(Fernando Ortiz)__ Merge pull request [#154](../../issues/154) from BenoitZugmeyer/fix-travis
+
+Add coffeelint as dependency, to fix travis build
+ * [97e2bfa](../../commit/97e2bfa) - __(Benoît Zugmeyer)__ Include node 4 in travis builds
+ * [9671a07](../../commit/9671a07) - __(Benoît Zugmeyer)__ Add coffeelint as dependency, to fix travis build
+ * [1c92923](../../commit/1c92923) - __(Benoît Zugmeyer)__ Update node-irc version
+
+Fix node 4.x installation
+
+ * [0ca5f01](../../commit/0ca5f01) - __(Peter Tripp)__ Document HUBOT_IRC_USERNAME
+ * [f905a66](../../commit/f905a66) - __(Jacob Gable)__ release 0.2.8
  * [f0cc4f8](../../commit/f0cc4f8) - __(Jacob Gable)__ Version 0.2.8
  * [bc47ab6](../../commit/bc47ab6) - __(Jacob Gable)__ Merge pull request [#143](../../issues/143) from radnor/patch-1
 
