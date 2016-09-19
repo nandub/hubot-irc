@@ -3,6 +3,7 @@
 ## Travis-CI Build Status
 
 [![Build Status](https://travis-ci.org/nandub/hubot-irc.png?branch=master)](https://travis-ci.org/nandub/hubot-irc)
+[![npm version](https://badge.fury.io/js/hubot-irc.svg)](https://badge.fury.io/js/hubot-irc)
 
 ## Description
 
