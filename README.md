@@ -40,6 +40,7 @@ And the following are optional.
 * `HUBOT_IRC_NICKSERV_PASSWORD`
 * `HUBOT_IRC_NICKSERV_USERNAME`
 * `HUBOT_IRC_SERVER_FAKE_SSL`
+* `HUBOT_IRC_SERVER_CERT_EXPIRED`
 * `HUBOT_IRC_UNFLOOD`
 * `HUBOT_IRC_DEBUG`
 * `HUBOT_IRC_USESSL`
@@ -86,6 +87,10 @@ with Nickserv on the IRC server, e.g. `/msg NickServ identify <username> <passwo
 
 This is the optional flag if you want to accept self signed SSL certificated
 from a non trusted CA. You can set the variable to anything.
+
+### IRC Server Expired Certificate
+
+This is the optional flag if you want to accept an expired SSL certificate.
 
 ### IRC Unflood
 
