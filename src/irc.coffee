@@ -215,8 +215,10 @@ class IrcBot extends Adapter
     if options.connectCommand?
       bot.addListener 'registered', (message) ->
         # The 'registered' event is fired when you are connected to the server
-        strings = options.connectCommand.split " "
-        self.command strings.shift(), strings...
+        cmds = options.connectCommand.split ";"
+        for cmd in cmds
+          strings = cmd.split " "
+          self.command strings.shift(), strings...
 
     bot.addListener 'names', (channel, nicks) ->
       for nick of nicks
