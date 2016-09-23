@@ -113,7 +113,7 @@ class IrcBot extends Adapter
     user = @getUserFromId from
     user.name = from
 
-    if channel.match(/^[&#]/)
+    if channel.match(/^[&#\!]/)
       user.room = channel
     else
       user.room = null
