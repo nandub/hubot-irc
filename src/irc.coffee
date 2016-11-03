@@ -22,6 +22,15 @@ class IrcBot extends Adapter
     unless target
       return logger.error "ERROR: Not sure who to send to. envelope=", envelope
 
+   if target in process.env.HUBOT_IRC_BLACKLIST_ROOMS.split(",")
+     if envelope.user?.name?
+       user = envelope.user.name
+       @bot.say user, "*I'm not allowed to talk in #{target}* :("
+       # Replying directly to user instead
+       target = envelope.user.name
+     else
+       return logger.error "ERROR: I'm not allowed to msg in", target
+
     for str in strings
       logger.debug "#{target} #{str}"
       @bot.say target, str
