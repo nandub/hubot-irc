@@ -170,6 +170,7 @@ class IrcBot extends Adapter
       debug:    process.env.HUBOT_IRC_DEBUG?
       usessl:   process.env.HUBOT_IRC_USESSL?
       userName: process.env.HUBOT_IRC_USERNAME
+      usesasl:  process.env.HUBOT_IRC_USESASL?
 
     client_options =
       userName: options.userName
@@ -183,6 +184,7 @@ class IrcBot extends Adapter
       certExpired: options.certExpired
       floodProtection: @unfloodProtection(options.unflood),
       floodProtectionDelay: @unfloodProtectionDelay(options.unflood),
+      sasl: options.usesasl
 
     client_options['channels'] = options.rooms unless options.nickpass
 
