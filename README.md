@@ -46,6 +46,7 @@ And the following are optional.
 * `HUBOT_IRC_DEBUG`
 * `HUBOT_IRC_USESSL`
 * `HUBOT_IRC_PRIVATE`
+* `HUBOT_IRC_USESASL`
 
 ### IRC Server
 
@@ -115,6 +116,12 @@ SSL. You can set the variable to anything.
 This is the optional flag if your hubot should ignore `PRIVMSG` and `INVITE`
 commands. You can set the variable to anything.
 
+### IRC SASL
+
+SASL is a method that allows identification to services (NickServ) during the connection 
+process, before anything else happens - therefore eliminating the need to /msg nickserv identify.
+Note: May be a requirement from some IRC hosts (freenode) when connecting from a public cloud provider (AWS).
+
 ### Configuring the variables on Heroku
 
     % heroku config:add HUBOT_IRC_SERVER="..."
@@ -141,6 +148,8 @@ Optional
 
     % heroku config:add HUBOT_IRC_USESSL="true"
 
+    % heroku config:add HUBOT_IRC_USESASL="true"
+
 ### Configuring the variables on UNIX
 
     % export HUBOT_IRC_SERVER="..."
@@ -166,6 +175,8 @@ Optional
     % export HUBOT_IRC_DEBUG="true"
 
     % export HUBOT_IRC_USESSL="true"
+
+    % export HUBOT_IRC_USESASL="true"
 
 ### Configuring the variables on Windows
 
