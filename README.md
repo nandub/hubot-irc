@@ -13,10 +13,10 @@ This is the IRC adapter for hubot.  For discussion about this adapter, join `#hu
 
 To get your own hubot up and running we recommend following the [Getting Started](https://github.com/github/hubot/tree/master/docs) directions from the hubot wiki, they are summarized here:
 
-    % npm install -g hubot coffee-script
-    % hubot --create myhubot
+    % npm install -g yo generator-hubot
+    % mkdir myhubot
     % cd myhubot
-    % npm install hubot-irc --save && npm install
+    % yo hubot --adapter
     % HUBOT_IRC_SERVER=irc.freenode.net \
       HUBOT_IRC_ROOMS="#myhubot-irc" \
       HUBOT_IRC_NICK="myhubot" \
