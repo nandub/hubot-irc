@@ -16,7 +16,7 @@ To get your own hubot up and running we recommend following the [Getting Started
     % npm install -g yo generator-hubot
     % mkdir myhubot
     % cd myhubot
-    % yo hubot --adapter
+    % yo hubot --adapter=irc
     % HUBOT_IRC_SERVER=irc.freenode.net \
       HUBOT_IRC_ROOMS="#myhubot-irc" \
       HUBOT_IRC_NICK="myhubot" \
