@@ -18,7 +18,7 @@
     "test": "grunt"
   },
   "dependencies": {
-    "irc": "^0.5.0",
+    "irc": "matrix-org/node-irc#e80eb07dfe2d1da55f3e0c4ac04dca4fbd2757fd",
     "log": "1.4.0"
   },
   "devDependencies": {
