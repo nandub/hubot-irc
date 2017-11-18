@@ -180,11 +180,13 @@ class IrcBot extends Adapter
       port: options.port
       stripColors: true
       secure: options.usessl
+      sasl: options.usesasl
       selfSigned: options.fakessl
       certExpired: options.certExpired
       floodProtection: @unfloodProtection(options.unflood),
       floodProtectionDelay: @unfloodProtectionDelay(options.unflood),
-      sasl: options.usesasl
+      autoRejoin: true
+      retryCount: Infinity
 
     client_options['channels'] = options.rooms unless options.nickpass
 
