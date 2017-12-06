@@ -1,14 +1,55 @@
 
 #### [Current]
+ * [247417d](../../commit/247417d) - __(Chris Blake)__ Merge pull request [#172](../../issues/172) from 'irc-updates'.
+
+Enable network auto-reconnect and channel auto-rejoin.
+
+Switches to matrix-org node-irc version.
+
+ * [33ab25d](../../commit/33ab25d) - __(Chris Blake)__ Replace irc dependency with matrix-org version.
+ * [6c9b2de](../../commit/6c9b2de) - __(Chris Blake)__ Enable network auto-reconnect and channel auto-rejoin
+
+Closes [#93](../../issues/93)
+
+ * [e806518](../../commit/e806518) - __(Chris Blake)__ Merge pull request [#169](../../issues/169) from gra2m/patch-1
+
+Update hubot creation documentation.
+
+ * [7869b7d](../../commit/7869b7d) - __(Gregor Martynus)__ docs(README): replace hubot --create with yo hubot
+ * [394e48e](../../commit/394e48e) - __(Chris Blake)__ Merge pull request [#167](../../issues/167) from tmccleve/master
+
+Allow enabling SASL
+
+Also closes [#160](../../issues/160).
+
+ * [545ecb6](../../commit/545ecb6) - __(Chris Blake)__ Merge pull request [#158](../../issues/158) from JamiKarvanen/fix-channel-regex
+
+Add ! to channel.match regex
+
+ * [3c5320b](../../commit/3c5320b) - __(Tyler McCleve)__ Add sasl
+ * [e152f12](../../commit/e152f12) - __(Tyler McCleve)__ Adding sasl options
+ * [7c35ef1](../../commit/7c35ef1) - __(Peter Tripp)__ Add npm badge
+ * [8ad2674](../../commit/8ad2674) - __(Peter Tripp)__ Merge pull request [#165](../../issues/165) from internaught/master
+
+Add option to accept an expired SSL cert
+ * [c3aedc7](../../commit/c3aedc7) - __(Fernando Ortiz)__ release 0.2.9
  * [156f0cd](../../commit/156f0cd) - __(Fernando Ortiz)__ Merge pull request [#166](../../issues/166) from Wykks/patch-1
 
 Update irc
  * [ca47a9f](../../commit/ca47a9f) - __(Wykks)__ Update irc
 
 Update irc to 0.5.0 in order to make it work with recent version of nodejs.
+ * [a7520ac](../../commit/a7520ac) - __(Scott)__ Add option to accept an expired SSL cert
+
+This feature is optional but undocumented https://github.com/nandub/hubot-irc/blob/master/src/irc.coffee#L168
  * [d40d6a3](../../commit/d40d6a3) - __(Jacob Gable)__ Merge pull request [#150](../../issues/150) from notpeter/master
 
 Document HUBOT_IRC_USERNAME
+ * [ee05591](../../commit/ee05591) - __(Jami Karvanen)__ Add ! to channel.match regex
+
+Hubot was able to join !-channels on ircnet, but couldn't respond
+to any messages. This adds (escaped) ! to the regex.
+
  * [51d1f4b](../../commit/51d1f4b) - __(Fernando Ortiz)__ add dep to compile on node 0.8 and other changes
  * [aca43c9](../../commit/aca43c9) - __(Fernando Ortiz)__ Merge pull request [#153](../../issues/153) from BenoitZugmeyer/master
 
