@@ -1,8 +1,8 @@
    122	Jacob Gable
     39	Fernando Ortiz
      7	Elliott Foster
-     6	Chris Blake
      5	Robb Wright
+     4	Chris Blake
      4	Tom Bell
      3	Benoît Zugmeyer
      3	Gavin

@@ -1,33 +1,18 @@
 
 #### [Current]
- * [247417d](../../commit/247417d) - __(Chris Blake)__ Merge pull request [#172](../../issues/172) from 'irc-updates'.
-
-Enable network auto-reconnect and channel auto-rejoin.
-
-Switches to matrix-org node-irc version.
-
- * [33ab25d](../../commit/33ab25d) - __(Chris Blake)__ Replace irc dependency with matrix-org version.
- * [6c9b2de](../../commit/6c9b2de) - __(Chris Blake)__ Enable network auto-reconnect and channel auto-rejoin
+ * [67d4a33](../../commit/67d4a33) - __(Chris Blake)__ release 0.3.9
+ * [52fcb1c](../../commit/52fcb1c) - __(Chris Blake)__ Replace irc dependency with matrix-org version.
+ * [b088487](../../commit/b088487) - __(Chris Blake)__ Enable network auto-reconnect and channel auto-rejoin
 
 Closes [#93](../../issues/93)
 
- * [e806518](../../commit/e806518) - __(Chris Blake)__ Merge pull request [#169](../../issues/169) from gra2m/patch-1
-
-Update hubot creation documentation.
-
- * [7869b7d](../../commit/7869b7d) - __(Gregor Martynus)__ docs(README): replace hubot --create with yo hubot
- * [394e48e](../../commit/394e48e) - __(Chris Blake)__ Merge pull request [#167](../../issues/167) from tmccleve/master
-
-Allow enabling SASL
-
-Also closes [#160](../../issues/160).
-
+ * [cc634a1](../../commit/cc634a1) - __(Gregor Martynus)__ docs(README): replace hubot --create with yo hubot
+ * [548e0ec](../../commit/548e0ec) - __(Tyler McCleve)__ Add sasl
+ * [ec70eea](../../commit/ec70eea) - __(Tyler McCleve)__ Adding sasl options
  * [545ecb6](../../commit/545ecb6) - __(Chris Blake)__ Merge pull request [#158](../../issues/158) from JamiKarvanen/fix-channel-regex
 
 Add ! to channel.match regex
 
- * [3c5320b](../../commit/3c5320b) - __(Tyler McCleve)__ Add sasl
- * [e152f12](../../commit/e152f12) - __(Tyler McCleve)__ Adding sasl options
  * [7c35ef1](../../commit/7c35ef1) - __(Peter Tripp)__ Add npm badge
  * [8ad2674](../../commit/8ad2674) - __(Peter Tripp)__ Merge pull request [#165](../../issues/165) from internaught/master
 
