@@ -17,14 +17,21 @@ class IrcBot extends Adapter
     # Use @notice if SEND_NOTICE_MODE is set
     return @notice envelope, strings if process.env.HUBOT_IRC_SEND_NOTICE_MODE?
 
-    target = @_getTargetFromEnvelope envelope
+    if typeof @_getTargetFromEnvelope == "function"
+      target = @_getTargetFromEnvelope envelope
+    else
+      target = @adapter._getTargetFromEnvelope envelope
 
     unless target
       return logger.error "ERROR: Not sure who to send to. envelope=", envelope
 
     for str in strings
       logger.debug "#{target} #{str}"
-      @bot.say target, str
+
+      if typeof @bot != "undefined" && typeof @bot.say == "function"
+        @bot.say target, str
+      else
+        @adapter.bot.say target, str
 
   sendPrivate: (envelope, strings...) ->
     # Remove the room from the envelope and send as private message to user
