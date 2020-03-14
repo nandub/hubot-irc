@@ -10,18 +10,18 @@ pre-release: bundler-dep
 	@sh release/changelog >/dev/null 2>&1
 	@sh release/contributors >/dev/null 2>&1
 
-release: npm-dep js
+release: yarn-dep js
 	git commit --allow-empty -a -m "release $(VERSION)"
 	git tag v$(VERSION)
 	git push origin master
 	git push origin v$(VERSION)
 	@make remove-js
 
-publish: npm-dep js
+publish: yarn-dep js
 	npm publish
 
-install: npm-dep js
-	npm install
+install: yarn-dep js
+	yarn install
 	@make remove-js
 
 js: coffee-dep
@@ -33,11 +33,11 @@ remove-js:
 bundler-dep:
 	@test `which bundle` || echo 'You need bundler to do bundle install... makes sense?'
 
-npm-dep:
-	@test `which npm` || echo 'You need npm to do npm install... makes sense?'
+yarn-dep:
+	@test `which yarn` || echo 'You need to have yarn in your PATH.\nPlease install it using `brew install yarn` or `npm install -g yarn`.'
 
 coffee-dep:
-	@test `which coffee` || echo 'You need to have CoffeeScript in your PATH.\nPlease install it using `brew install coffeescript` or `npm install -g coffeescript`.'
+	@test `which coffee` || echo 'You need to have coffeescript in your PATH.\nPlease install it using `brew install coffeescript` or `npm install -g coffeescript`.'
 
 .PHONY: all
 
