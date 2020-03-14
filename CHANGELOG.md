@@ -1,5 +1,18 @@
 
 #### [Current]
+ * [6c34e08](../../commit/6c34e08) - __(Fernando Ortiz)__ add yarn instead of npm to Makefile
+ * [70441d3](../../commit/70441d3) - __(Fernando Ortiz)__ update deps, add yarn.lock file and change nodejs version on travis file
+ * [2d69ea4](../../commit/2d69ea4) - __(Peter Tripp)__ Merge pull request [#177](../../issues/177) from bval/unpin-node-irc
+
+Unpin node-irc dependency to specific SHA
+ * [7ba1cb7](../../commit/7ba1cb7) - __(Brandon Valentine)__ Unpin node-irc dependency to specific SHA
+ * [ef468c4](../../commit/ef468c4) - __(Peter Tripp)__ Merge pull request [#174](../../issues/174) from phily245/master
+
+Fix for robot.messageRoom. Fixes [#173](../../issues/173).
+ * [7c3e4be](../../commit/7c3e4be) - __(Phil Young)__ Fix Issue For robot.messageRoom
+
+A TypeError was being thrown due to the wrong scope being used when this command was run
+ * [a430c25](../../commit/a430c25) - __(Chris Blake)__ release 0.4.0
  * [67d4a33](../../commit/67d4a33) - __(Chris Blake)__ release 0.3.9
  * [52fcb1c](../../commit/52fcb1c) - __(Chris Blake)__ Replace irc dependency with matrix-org version.
  * [b088487](../../commit/b088487) - __(Chris Blake)__ Enable network auto-reconnect and channel auto-rejoin
