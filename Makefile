@@ -37,7 +37,7 @@ npm-dep:
 	@test `which npm` || echo 'You need npm to do npm install... makes sense?'
 
 coffee-dep:
-	@test `which coffee` || echo 'You need to have CoffeeScript in your PATH.\nPlease install it using `brew install coffee-script` or `npm install coffee-script`.'
+	@test `which coffee` || echo 'You need to have CoffeeScript in your PATH.\nPlease install it using `brew install coffeescript` or `npm install -g coffeescript`.'
 
 .PHONY: all
 
