@@ -1,448 +1,297 @@
+## v0.4.1 - 2020-03-14
+[View Commit]("http://github.com/nandub/hubot-irc/commit/19752a21a7fb41f3eaf02cfb821aa7a97867930f") release 0.4.1
+ [View Commit]("http://github.com/nandub/hubot-irc/commit/6c34e08f3dcb0d68114278f1650ebba2e6d5b298") add yarn instead of npm to Makefile
+ [View Commit]("http://github.com/nandub/hubot-irc/commit/70441d3918743337bbd9b660f55668b846f5bec9") update deps, add yarn.lock file and change nodejs version on travis file
+ [View Commit]("http://github.com/nandub/hubot-irc/commit/7ba1cb794c898b861a6f8edd8f2e65c1e8e08093") Unpin node-irc dependency to specific SHA
+ [View Commit]("http://github.com/nandub/hubot-irc/commit/7c3e4be06deb86cb994dd9adaed160357243ddc1") Fix Issue For robot.messageRoom
+
+## v0.4.0 - 2017-12-06
+[View Commit]("http://github.com/nandub/hubot-irc/commit/a430c2555a0cc53ea307d3ffb38f4530ac86d6d2") release 0.4.0
+ [View Commit]("http://github.com/nandub/hubot-irc/commit/67d4a33b3a4284796aed0ff8ca548eec843e0c40") release 0.3.9
+ [View Commit]("http://github.com/nandub/hubot-irc/commit/52fcb1c4a4e63199d8a240b82cdb6111a009b805") Replace irc dependency with matrix-org version.
+ [View Commit]("http://github.com/nandub/hubot-irc/commit/b088487cddba25ecf111dde10f2feb56d676c676") Enable network auto-reconnect and channel auto-rejoin
+ [View Commit]("http://github.com/nandub/hubot-irc/commit/cc634a16363c0924a91294c3c05217e1dc9c8200") docs(README): replace hubot --create with yo hubot
+ [View Commit]("http://github.com/nandub/hubot-irc/commit/548e0ecfa14130002f73937227a945c4e0c0c0e3") Add sasl
+ [View Commit]("http://github.com/nandub/hubot-irc/commit/ec70eead8f9094709aa1a306d55fce13480ecb8d") Adding sasl options
+ [View Commit]("http://github.com/nandub/hubot-irc/commit/7c35ef19b2eb7ea5f3284b3d5af897a747d56309") Add npm badge
+ [View Commit]("http://github.com/nandub/hubot-irc/commit/a7520ac75f0428a17c7535f7922e4cf9ed6ef98d") Add option to accept an expired SSL cert
+ [View Commit]("http://github.com/nandub/hubot-irc/commit/ee05591ad38177952fbbde20590c009a5f90d810") Add ! to channel.match regex
+
+## v0.2.9 - 2016-09-16
+[View Commit]("http://github.com/nandub/hubot-irc/commit/c3aedc74c6c503c54bd982a4f6711b7ced6ffe7b") release 0.2.9
+ [View Commit]("http://github.com/nandub/hubot-irc/commit/ca47a9f28ac2e465f5fb5aaf725b9d11293994d0") Update irc
+ [View Commit]("http://github.com/nandub/hubot-irc/commit/51d1f4b418fc039a456b7891c7f9bf836699cfdc") add dep to compile on node 0.8 and other changes
+ [View Commit]("http://github.com/nandub/hubot-irc/commit/97e2bfaa5d6156651616d30a1ec26afc5a8964e5") Include node 4 in travis builds
+ [View Commit]("http://github.com/nandub/hubot-irc/commit/9671a07c321d9c9f160aa2aa772f76700ba8ff4a") Add coffeelint as dependency, to fix travis build
+ [View Commit]("http://github.com/nandub/hubot-irc/commit/1c92923adcf748a00d66ff8e2084fdf6588d83cf") Update node-irc version
+ [View Commit]("http://github.com/nandub/hubot-irc/commit/0ca5f0120f7e24adaf20088c2ec4f630795ef2a8") Document HUBOT_IRC_USERNAME
+
+## v0.2.8 - 2015-04-30
+[View Commit]("http://github.com/nandub/hubot-irc/commit/f905a665aa646f45f704a3630cc30306668651c3") release 0.2.8
+ [View Commit]("http://github.com/nandub/hubot-irc/commit/f0cc4f8665600a8947c4b99801670535a351f18c") Version 0.2.8
+ [View Commit]("http://github.com/nandub/hubot-irc/commit/951e0078a8e7080ce39ff3a26e435852a007243c") Fix for #135
+ [View Commit]("http://github.com/nandub/hubot-irc/commit/07753b4b7214f6257f139622fcee9a589d77af37") change irc dep to 0.3.9
+ [View Commit]("http://github.com/nandub/hubot-irc/commit/657ff3cfca556cbd00ba8d915d3e9f340e6c4524") move to latest node-irc
+ [View Commit]("http://github.com/nandub/hubot-irc/commit/092f48849a31c9f6e81e0e711da9f196a477dfac") opps miss the readme
+ [View Commit]("http://github.com/nandub/hubot-irc/commit/3dd5609e02d8730a8efda8e6baab8899a70e6588") change email and license info
+ [View Commit]("http://github.com/nandub/hubot-irc/commit/09f1f09021da7032ee4911e4bfbbaa0163cb7ba8") Log room messages at the debug level
+ [View Commit]("http://github.com/nandub/hubot-irc/commit/470172bb45337640b104adcdb8eaae2aed79266c") Added IRC notifications
+ [View Commit]("http://github.com/nandub/hubot-irc/commit/d047559087401eaf25eef66ec2b7f7e5f7ecd2d6") Log all hubot output to debug log?
+
+## v0.2.7 - 2014-06-18
+[View Commit]("http://github.com/nandub/hubot-irc/commit/522c50166f15e57ada0c10f181d4de26b4349717") release 0.2.7
+ [View Commit]("http://github.com/nandub/hubot-irc/commit/860108fd350c8cd6f9fe340ad2f48a03c0af174a") separate lines in case of notice
+
+## v0.2.6 - 2014-05-23
+[View Commit]("http://github.com/nandub/hubot-irc/commit/bce17c1d89d41d9955a69185a2d2cf4bf3b6aebb") release 0.2.6
+ [View Commit]("http://github.com/nandub/hubot-irc/commit/c4624a0094f7fd229b88bdd2a88366b1b1448416") Don't enable done flag with text. Set text after creating leave message.
+
+## v0.2.5 - 2014-05-23
+[View Commit]("http://github.com/nandub/hubot-irc/commit/2b6177c0402df267e3cbc56867112e69948b97f0") release 0.2.5
+ [View Commit]("http://github.com/nandub/hubot-irc/commit/4e44ce8e4c608105c1bda295f4ef2fbd29e7908a") Update npm in before_install instead of before_script
+ [View Commit]("http://github.com/nandub/hubot-irc/commit/a62ab7477d43b56318ef77cf568160a650bab86a") Update version and fix travis
+ [View Commit]("http://github.com/nandub/hubot-irc/commit/5cf88abfa3f2b395e4604c2629cfba3ea606ef56") Pass reason to LeaveMessage.
+ [View Commit]("http://github.com/nandub/hubot-irc/commit/5677223efd3e02937443388d4c9e34119034228e") Handle quit message.
+
+## v0.2.4 - 2014-05-22
+[View Commit]("http://github.com/nandub/hubot-irc/commit/a31af4e53271bf1945fea5f21d33f07b9aac0149") release 0.2.4
+ [View Commit]("http://github.com/nandub/hubot-irc/commit/074ba6f9b186647ab69f8e413c32450e4c5b90d5") release 0.2.3
+ [View Commit]("http://github.com/nandub/hubot-irc/commit/72d6b5ab2f493e787992e7d06c0478a2eb4b5ec2") Fix notice without from user
+
+## v0.2.2 - 2014-04-07
+[View Commit]("http://github.com/nandub/hubot-irc/commit/769e4a4cdb2189b533cd09e18cabbb9132a96c51") release 0.2.2
+ [View Commit]("http://github.com/nandub/hubot-irc/commit/d68c6425b9cd131ee153eeb8d917163b74d7e3c4") Add sendPrivate method
+
+## v0.2.1 - 2014-02-26
+[View Commit]("http://github.com/nandub/hubot-irc/commit/cac3074cbe2f4555de77d60383c2e6cbe72607c3") release 0.2.1
+ [View Commit]("http://github.com/nandub/hubot-irc/commit/24d5723a7e9064dc88e1ef6b9c8c7b4bae0a7cbb") change to use proper logger
+
+## v0.2.0 - 2014-02-25
+[View Commit]("http://github.com/nandub/hubot-irc/commit/acb02ced88138cb0d4e6a1f80c4ac786cbd13141") release 0.2.0
+
+## v0.1.28 - 2014-02-25
+[View Commit]("http://github.com/nandub/hubot-irc/commit/1c7efa16a400828cbf0218fbc5718d8790e123c2") release 0.1.28
+ [View Commit]("http://github.com/nandub/hubot-irc/commit/24b2d522bf20c481f74639a7e4b43b6f71afce7d") Make smallest possible change to start using irc nick as uid.
+
+## v0.1.27 - 2014-02-22
+[View Commit]("http://github.com/nandub/hubot-irc/commit/ea7a8981d57e249bf45ac06fe4708b256ed2a429") release 0.1.27
+ [View Commit]("http://github.com/nandub/hubot-irc/commit/d4010937356dea242af41d014f43019a28656d0c") Bump version for publish
+ [View Commit]("http://github.com/nandub/hubot-irc/commit/51490cc93e2211becc6dc6b247d0ff86240b4777") Added NOTICE listener
+ [View Commit]("http://github.com/nandub/hubot-irc/commit/72a7ad390f46c28a017abffbc9d5c24716ed58e5") Add note about private room passwords
+
+## v0.1.26 - 2014-02-17
+[View Commit]("http://github.com/nandub/hubot-irc/commit/1417f40a0195bec182196c863357d2c29603ba47") release 0.1.26
+ [View Commit]("http://github.com/nandub/hubot-irc/commit/a57e13cb7c8b7649be6e306bf20b0d64e14ff9d9") Bump version for publish
+ [View Commit]("http://github.com/nandub/hubot-irc/commit/9cd69bc867fdb96fdce694dcaa07e8386c028c79") Add room information when a user joins/leaves
+
+## v0.1.25 - 2014-02-08
+[View Commit]("http://github.com/nandub/hubot-irc/commit/6cf6acd9941e7d09f9ea92396f77ea42bc1edcb2") release 0.1.25
+ [View Commit]("http://github.com/nandub/hubot-irc/commit/3c0083fa59a7c983f41c4e582b008d735b5910d0") Bump version for publish
+ [View Commit]("http://github.com/nandub/hubot-irc/commit/ee2aff833cc58abe8c9691bbacebc488f4540756") added ignore in invite listener
+ [View Commit]("http://github.com/nandub/hubot-irc/commit/6547a1986d614faec4206797d978dbedc618b0d1") fix for empty ignoreUsers array
+ [View Commit]("http://github.com/nandub/hubot-irc/commit/57b9bb8a0a1500783ab6c4c3784caf82edd252a9") Fix ignore users
+ [View Commit]("http://github.com/nandub/hubot-irc/commit/ad94eded74bc34f514abc7f0aaadb406e99c70d1") First pass at ignoring users by configuration
+
+## v0.1.24 - 2013-12-04
+[View Commit]("http://github.com/nandub/hubot-irc/commit/0ff5cc5147415061d2e1bfde0d3b711ede9bf2f3") release 0.1.24
+ [View Commit]("http://github.com/nandub/hubot-irc/commit/29890c9e10530ec13f2061a0da54f39ae2f19639") Update version for release
+ [View Commit]("http://github.com/nandub/hubot-irc/commit/ea07e412a3600f8744d613f27eea58466e9c6d21") Use git https for forked node-irc
+
+## v0.1.23 - 2013-12-03
+[View Commit]("http://github.com/nandub/hubot-irc/commit/4c7bf470b9845d2526470b54062e3bf5940c4287") release 0.1.23
+ [View Commit]("http://github.com/nandub/hubot-irc/commit/ed8bfbabfaa936ec9b6e4453c0391441a432d0c0") Update version
+ [View Commit]("http://github.com/nandub/hubot-irc/commit/decaf4d2dae467a2fca2bf46aec53bcff03a56c2") Support changing the topic in the adapter.
+
+## v0.1.22 - 2013-11-28
+[View Commit]("http://github.com/nandub/hubot-irc/commit/ad567c08b481d9477c7ce170d1255b7c56cfa31e") release 0.1.22
+
+## v0.1.21 - 2013-11-28
+[View Commit]("http://github.com/nandub/hubot-irc/commit/644af67e308e9b2cebe4c68df3921da97d3ce5a2") release 0.1.21
+ [View Commit]("http://github.com/nandub/hubot-irc/commit/567826e490bf24c4b09b3623fce5a6c5f5af68ff") Invite grammar
+
+## v0.1.20 - 2013-11-14
+[View Commit]("http://github.com/nandub/hubot-irc/commit/4ec1905f618f0e7e145def874c7f02801ff5a6ce") release 0.1.20
+ [View Commit]("http://github.com/nandub/hubot-irc/commit/637effc973c98d76050597443416ecc46a755702") Pass user to Leave and Enter Message constructors
+ [View Commit]("http://github.com/nandub/hubot-irc/commit/f5b5496baf0ad6f60aae6029c90b984feeb34f67") add bundler-dep
+ [View Commit]("http://github.com/nandub/hubot-irc/commit/29da22e6453d4fd73b188512c291a9763af38e98") in case 
+jgable does not use ruby I don't force to pre-release in release task
+ [View Commit]("http://github.com/nandub/hubot-irc/commit/5a9f3f81dfa1394a91c55e4fd4e571186b923b80") add changelog and contributors
+ [View Commit]("http://github.com/nandub/hubot-irc/commit/6ea6ea13adb73603104e0320c4dda629cc5aa3fd") add contributors script
+
+## v0.1.19 - 2013-09-03
+[View Commit]("http://github.com/nandub/hubot-irc/commit/569e7e5804c165560f19c411f701d317ef2d03e2") release 0.1.19
+ [View Commit]("http://github.com/nandub/hubot-irc/commit/1020a0f6129714513c867b963356fb7dee1c07f3") Bump version for npm publish
+ [View Commit]("http://github.com/nandub/hubot-irc/commit/af24bfed7ce4624fde353098e2a7f51ee4e442c1") Ignore /invites when the HUBOT_IRC_IGNOREINVITE environment variable is set
+ [View Commit]("http://github.com/nandub/hubot-irc/commit/f3b7d130938df51285abe5181dcd1069e26f8543") Change Build Status heading size
+ [View Commit]("http://github.com/nandub/hubot-irc/commit/81273e773d4aba49688835d0bd5bbdd5741dae0d") Add Travis-CI build status
+
+## v0.1.18 - 2013-08-21
+[View Commit]("http://github.com/nandub/hubot-irc/commit/d25378aae923b8c2cdcafef11a0e50a85d9b4a57") release 0.1.18
+ [View Commit]("http://github.com/nandub/hubot-irc/commit/efa007d456654d89d176a342838420cde9d41504") Add Gruntfile.coffee to linting and add travis file
+ [View Commit]("http://github.com/nandub/hubot-irc/commit/f255884458a0ad6976340228cf50e770e3211a7e") add webchat link to connect to #hubot-irc channel.
+ [View Commit]("http://github.com/nandub/hubot-irc/commit/bd5f99ba6bc39277426d7f5e1ebeccc322fdf148") Revert "Revert "add mibbit.com link to connect to #hubot-irc channel""
+ [View Commit]("http://github.com/nandub/hubot-irc/commit/b42caf344c88e088ba6347abf371309fc6645d74") Trigger TextMessage when actions are done
+ [View Commit]("http://github.com/nandub/hubot-irc/commit/f98db8e2ccc93a560d929384d36946c5ebfe2876") Add emote support
+ [View Commit]("http://github.com/nandub/hubot-irc/commit/95058fd6051afaa0c954a60af42008ec2bacb039") Revert "add mibbit.com link to connect to #hubot-irc channel"
+ [View Commit]("http://github.com/nandub/hubot-irc/commit/04ec0b5f2587fba0f8d06801e9b8eebe23382d0a") add mibbit.com link to connect to #hubot-irc channel
+ [View Commit]("http://github.com/nandub/hubot-irc/commit/0dc3b8613f6d5cd029fdaef467fddca1b7b3c881") Describe the variable's purpose
+ [View Commit]("http://github.com/nandub/hubot-irc/commit/79c128d58a0ad40d7dd44d50f3cb1777cc8acd87") Updates README to include reference to HUBOT_IRC_PRIVATE env variable
+ [View Commit]("http://github.com/nandub/hubot-irc/commit/76afce07530d9c5a15043ac857056954aa3c6d98") remove trailing space (issue reported by grunt)
+ [View Commit]("http://github.com/nandub/hubot-irc/commit/ef7ef14ec9e327e38c531ded228c4c457ef5c736") Update README to include info from Hubot wiki
+
+## v0.1.17 - 2013-07-11
+[View Commit]("http://github.com/nandub/hubot-irc/commit/85e42c5faf974271155421fccfd4e48b8ed7b902") release 0.1.17
+ [View Commit]("http://github.com/nandub/hubot-irc/commit/3653c2bdde23515f6c23589a45fe16a8e22c2aa9") Fix error for getUserForId
+
+## v0.1.16 - 2013-07-11
+[View Commit]("http://github.com/nandub/hubot-irc/commit/8df1ea198193454ef758cec93d98ef81853aaa2f") release 0.1.16
+ [View Commit]("http://github.com/nandub/hubot-irc/commit/4895b20ecd6325188f9bfd8b71ef853ee61b9705") Bump version for npm publish
+ [View Commit]("http://github.com/nandub/hubot-irc/commit/443f25857a1062687fb793d74ee7735ce2c76b96") refactor unflood improvements
+ [View Commit]("http://github.com/nandub/hubot-irc/commit/4d10cfa839a3c62bf4833eeadbfac14e8e291e72") add local fork of node-irc to fix ssl problem on node 0.9+, it fixes #76 or until upstream fixes the problem.
+ [View Commit]("http://github.com/nandub/hubot-irc/commit/d5ad864c60ee286c1434883fe1e65fa38e257909") fix unflood options parse
+ [View Commit]("http://github.com/nandub/hubot-irc/commit/0e3ee5c4e1837a7f6df2b728254a5470a4f8ef67") fix indentation and add grunt-coffeelint
+
+## v0.1.15 - 2013-06-15
+[View Commit]("http://github.com/nandub/hubot-irc/commit/5ffe30457cbef6a38cd5bb9be8442b63b50c84c8") release 0.1.15
+ [View Commit]("http://github.com/nandub/hubot-irc/commit/a1ac90e62f38b50bf1f25e73060b2a43009f97fa") fix typo
+
+## v0.1.14 - 2013-06-14
+[View Commit]("http://github.com/nandub/hubot-irc/commit/07122c748e6722b70dc118b162835b55c2973f52") release 0.1.14
+ [View Commit]("http://github.com/nandub/hubot-irc/commit/c26966072b3215c7ce0b7ce8c7f88a703f43ed9c") Fix for the depreciation of userForId()
+
+## v0.1.13 - 2013-05-17
+[View Commit]("http://github.com/nandub/hubot-irc/commit/1ebd702bfd02699275f980499ce5b78dd8c4b1bd") release 0.1.13
+ [View Commit]("http://github.com/nandub/hubot-irc/commit/b18e613f5cffc973f4edec7948430236fa67af6b") Fix for deprecation warning
+ [View Commit]("http://github.com/nandub/hubot-irc/commit/cd1434e6e943c3c37c75f352cecdd274e9a56cc7") New unflood options, per nandub/hubot-irc#77.
+
+## v0.1.12 - 2013-03-11
+[View Commit]("http://github.com/nandub/hubot-irc/commit/979ed77ed2e57b7c70ce43685699f95cee044371") release 0.1.12
+ [View Commit]("http://github.com/nandub/hubot-irc/commit/55c95eac859173e060e1cc0f67fda171e7db4855") Merging and fixing notice problems
+ [View Commit]("http://github.com/nandub/hubot-irc/commit/378fc4c9407ee65c6defe3eb575a10271020cfc7") Considerations for private bots
+ [View Commit]("http://github.com/nandub/hubot-irc/commit/9a140ff7484ebd5cb7fa5ac6f6ec1c538915f838") Added option to execute additional command after connecting
+ [View Commit]("http://github.com/nandub/hubot-irc/commit/b4b07d0e462701f11dbd86e916b7a93c72c3977d") release 0.1.11
+
+## v0.1.11 - 2013-03-07
+[View Commit]("http://github.com/nandub/hubot-irc/commit/9468c7912ad0d774560ce9d9cb8e2a511addca15") release 0.1.11
+ [View Commit]("http://github.com/nandub/hubot-irc/commit/83153d859d6bece37129cd4ccb5e2e44893f88b0") Bump version for npm publish
+ [View Commit]("http://github.com/nandub/hubot-irc/commit/7944bf853b948858fffc21e6dd14e1cdf4aab847") move out if statement
+ [View Commit]("http://github.com/nandub/hubot-irc/commit/670c877249c7961b322794157b53e10d41dba611") Add send notice mode
+
+## v0.1.10 - 2013-02-22
+[View Commit]("http://github.com/nandub/hubot-irc/commit/2fb12f7e6f8e7823693764547e4da34c05f08e6e") release 0.1.10
+ [View Commit]("http://github.com/nandub/hubot-irc/commit/72999977d0bb4a528b27fa5426f14c1090cf2f5b") release 0.1.10
+ [View Commit]("http://github.com/nandub/hubot-irc/commit/183b95c9256a02e42a1c6131eec8cd72f4b45118") Bumping version for publish
+ [View Commit]("http://github.com/nandub/hubot-irc/commit/09893087f0afc788491c522de7d87f8c3603e74e") clear room when user leaves the channel
+ [View Commit]("http://github.com/nandub/hubot-irc/commit/57ec2eceda504fdc4748961eb165398111184e16") Add link to runnable hubot project
+
+## v0.1.9 - 2013-02-15
+[View Commit]("http://github.com/nandub/hubot-irc/commit/d62c9ecb085f71c6f2ba0ba8e4fa5c4dc884ac21") release 0.1.9
+ [View Commit]("http://github.com/nandub/hubot-irc/commit/4b4b72a76a092e516add58e7ea686dac60d9eaed") Updated irc to 0.3.6
+ [View Commit]("http://github.com/nandub/hubot-irc/commit/6b036545bc16a58604459f10c85eb448f306c7f2") Handle PMs once, rather than twice.
+
+## v0.1.8 - 2013-02-13
+[View Commit]("http://github.com/nandub/hubot-irc/commit/e5accaa3b09709fb2b548c0f0acde52deb337d01") release 0.1.8
+ [View Commit]("http://github.com/nandub/hubot-irc/commit/ab310f50e889d02e902528a5b6aa60293e207580") Check true when robot.name is exist
+
+## v0.1.7 - 2013-01-25
+[View Commit]("http://github.com/nandub/hubot-irc/commit/97ad32fc05cfe60fe70927ab011988d42317ec6e") release 0.1.7
+ [View Commit]("http://github.com/nandub/hubot-irc/commit/f21984f375a14e6d8a62a9a8ed7cd06c49e29513") release 0.1.6
+ [View Commit]("http://github.com/nandub/hubot-irc/commit/25e34c6d518294df94da30bff939e4919dec5822") Automatically put name in received private messages, fixes #61
+
+## v0.1.6 - 2013-01-25
+[View Commit]("http://github.com/nandub/hubot-irc/commit/64413c4149b81279a504b0d72838d8b19bbfd3a8") release 0.1.6
+ [View Commit]("http://github.com/nandub/hubot-irc/commit/2a4688f0ae3c7057ed3b9a0c5e318210d8a364cb") Update to node-irc 0.3.5
+
+## v0.1.5 - 2013-01-22
+[View Commit]("http://github.com/nandub/hubot-irc/commit/1155527248a27b3329e56b8916f03d69a5016151") release 0.1.5
+ [View Commit]("http://github.com/nandub/hubot-irc/commit/615f99dc760781a390c20d3417a137bc412d5f86") Bumping version for npm release
+ [View Commit]("http://github.com/nandub/hubot-irc/commit/54df5a9b46b5bccf7ebcabe78f9f2a1037acc59e") Refactoring send for envelope & receiving private messages
+ [View Commit]("http://github.com/nandub/hubot-irc/commit/77584e057a7bbe5c2234f8c35f5588126acbd80b") When entering a channel, invoke self.createUser for all users
+ [View Commit]("http://github.com/nandub/hubot-irc/commit/09cd6e2b2724d18ec2268bbb272eee9f8fdd583d") fix messages with new adapter format
+
+## v0.1.4 - 2012-11-08
+[View Commit]("http://github.com/nandub/hubot-irc/commit/48cc137fea238b6fedd318d40afba63b9937b325") release 0.1.4
+ [View Commit]("http://github.com/nandub/hubot-irc/commit/83a78489a2fc92ec3881c9e294a760b043c6e5b3") Adding Real Name as an environmental variable
+
+## v0.1.3 - 2012-11-06
+[View Commit]("http://github.com/nandub/hubot-irc/commit/3e45fc125338d71e1a5b0b71a606fb9b344ce683") release 0.1.3
+ [View Commit]("http://github.com/nandub/hubot-irc/commit/f3ae1a3f5b4e71a48eb82b0ca7888f32ce5debde") Adding d to certExpire
+ [View Commit]("http://github.com/nandub/hubot-irc/commit/f25a7ac7b4df5205e914b3afe745400722171b2d") Cleaning up hubot dependencies, fixing certExpired in options
+ [View Commit]("http://github.com/nandub/hubot-irc/commit/01b21f661681bb9947606cdf81e1abb4f0ad54b3") Updating README installation and setup directions
+
+## v0.1.2 - 2012-11-06
+[View Commit]("http://github.com/nandub/hubot-irc/commit/d92edf41fb34269ed786799f6c04198f105cac08") release 0.1.2
+ [View Commit]("http://github.com/nandub/hubot-irc/commit/c12405bf08658665bebfce5aa5f71287f005811f") Fixes #48, #49. Bump irc module version, allow expiredCert option
+
+## v0.1.1 - 2012-10-25
+[View Commit]("http://github.com/nandub/hubot-irc/commit/381abba16bad129b1e1e7bd290636e31cbd1a1e3") release 0.1.1
+ [View Commit]("http://github.com/nandub/hubot-irc/commit/6b992d0e51fe22257c1a9c8a3ef1ba1c44e47ba4") release 0.1.0
+ [View Commit]("http://github.com/nandub/hubot-irc/commit/6cef98f248dc3eec4d67e9e73c29c958be60de0f") Fix irc.mozilla.org login (and probably others)
+ [View Commit]("http://github.com/nandub/hubot-irc/commit/04eb38eb7dc7551fe1bb217406206df72b9749c6") Tweaked user ID generation.
+ [View Commit]("http://github.com/nandub/hubot-irc/commit/49dafb5e821cb225df400f258995c07cb9e4702c") listen for 'identify' notice instead of 'register': more generic
+ [View Commit]("http://github.com/nandub/hubot-irc/commit/2ce86eb80359bddd83168453890b5f3cd791faa5") support a distinct username for NickServ identify msgs
+ [View Commit]("http://github.com/nandub/hubot-irc/commit/30b87dff8d6b115602d6d6cd1f74d2a4250bb0f8") Add "Test Local Changes" section
+ [View Commit]("http://github.com/nandub/hubot-irc/commit/588906db1066506b62461d5ac76ab3a4c452cf44") Updating min version in notice about adapter upgrade.
+ [View Commit]("http://github.com/nandub/hubot-irc/commit/aa2a257bd135788ac9970fd94ba9c22349f4e011") Adding information about hubot-irc channel on freenode.
+ [View Commit]("http://github.com/nandub/hubot-irc/commit/175feb371491a4bac529e6be53d9d3c6982fdf9c") Adding year and name to LICENSE (fixes #33) and updating warning in README (fixes #32)
+
+## v0.1.0 - 2012-07-18
+[View Commit]("http://github.com/nandub/hubot-irc/commit/afb8779fae26637f5ae096c523f8a82ac9904a7c") release 0.1.0
+ [View Commit]("http://github.com/nandub/hubot-irc/commit/7822ba5ed9169e36089f21ca59d67a5a221885db") Merging fix for NICK check and setting bots name so it responds to its own name
+ [View Commit]("http://github.com/nandub/hubot-irc/commit/2b0dbb9a2b259b6788900de9535559dba636b619") Updating the robots name with the passed in nick so it responds to its name
+ [View Commit]("http://github.com/nandub/hubot-irc/commit/e1c693f9176d7ca471bc52bda6a2518dd49a83e8") Fix Error: HUBOT_IRC_NICK is not defined; try: export HUBOT_IRC_NICK='mybot'
+ [View Commit]("http://github.com/nandub/hubot-irc/commit/bea800689933f778173943e53c000d144d467107") Removing duplicate code from earlier merge
+ [View Commit]("http://github.com/nandub/hubot-irc/commit/a6fc4a092c5896a620549c5049887345a865ecdd") Adding some helpful errors for missing environment variables
+ [View Commit]("http://github.com/nandub/hubot-irc/commit/f4b0f8262fc46dd1002f66114ecd23c9f06ace99") Merging changes from 
+intridea-east for showing name before message
+ [View Commit]("http://github.com/nandub/hubot-irc/commit/2eb232c96a717ac84250ec411e96eb93c546901a") Updates before merging 
+pboos changes
+ [View Commit]("http://github.com/nandub/hubot-irc/commit/5e877a570f24665367f13633a3cbd51ea451499f") Adding changes for entering and leaving room from 
+pboos
+ [View Commit]("http://github.com/nandub/hubot-irc/commit/3a3cf72f4d47968b1b17a106535dc643276154d0") Updating version information, description to Hubot 2.0 and updating node engine upper version
+ [View Commit]("http://github.com/nandub/hubot-irc/commit/0343013d8600401e20756edfe97700e720399b12") More correct implementation for join/leave messages for the bot.
+ [View Commit]("http://github.com/nandub/hubot-irc/commit/9159d2887f00c2d2567f05d92d860ebcc029cc44") Use enter/leave messages on enter/leave events.
+ [View Commit]("http://github.com/nandub/hubot-irc/commit/8d33bdd5722ffb1edb99c865170c2ccda9e9ba92") Missed one.
+ [View Commit]("http://github.com/nandub/hubot-irc/commit/a54b89d8589be616e8498404713c77549836bc0d") Updating to work with latest hubot.
+ [View Commit]("http://github.com/nandub/hubot-irc/commit/29700cddfcd00e074befbe68ebdbcd4e1008ca81") Added robot.leave support
+ [View Commit]("http://github.com/nandub/hubot-irc/commit/dc0b0e63276b772f9cc735c7291db865b97752c7") Added support for "Enter Message" support
+ [View Commit]("http://github.com/nandub/hubot-irc/commit/4b39ced9a94351929ce5663d135a6c51b70585ee") Emit a joined event.
+ [View Commit]("http://github.com/nandub/hubot-irc/commit/d8ab884fcb6496a07d740f399f220e72eccad3e5") Pass command arguments all toghether.
+ [View Commit]("http://github.com/nandub/hubot-irc/commit/a75a006d41d8e21dd1c9dd65f6909529a1ebc4f3") Adding a command listener.
+ [View Commit]("http://github.com/nandub/hubot-irc/commit/43c20615cb494c5192f8ea142aa29eb629fba887") Send messages to rooms
+ [View Commit]("http://github.com/nandub/hubot-irc/commit/88a44a3e76a6cd8acdb23c58bd45912834c19b56") Auto add name before message which sent from query window
+
+## v0.0.8 - 2012-04-24
+[View Commit]("http://github.com/nandub/hubot-irc/commit/9ac1fd94b4fb528ecdbbb01dfce1ec02c70d9b80") release 0.0.8
+ [View Commit]("http://github.com/nandub/hubot-irc/commit/0b859bcd89e2304860f3868d20f15a12e015e24f") change HUBOT_IRC_USERNAME? to HUBOT_IRC_USERNAME
+ [View Commit]("http://github.com/nandub/hubot-irc/commit/61d8985d4f0d5382dcf1645a7cb0f697f77a4987") using options object for consistency
+ [View Commit]("http://github.com/nandub/hubot-irc/commit/25292363714384d0c43c1e7f1520e14def593d14") hubot is identifying itself as user
+host to the IRC server. making the user portion configurable as HUBOT_IRC_USERNAME, since certain IRC networks require a valid username instead of the default one, which is nodebot.
+
+## v0.0.7 - 2012-04-06
+[View Commit]("http://github.com/nandub/hubot-irc/commit/a42b694f99565d1e0faccac863e09bdb27594b73") release 0.0.7
+ [View Commit]("http://github.com/nandub/hubot-irc/commit/97ec0ef7679e6f9c62a05e1e0a9852269f17f58c") Closes #16, #18
+ [View Commit]("http://github.com/nandub/hubot-irc/commit/40c02434da6f9655e174a9b51cca7ff0d1fad0fc") Run now emits "connected" event in order to load hubot scripts
+ [View Commit]("http://github.com/nandub/hubot-irc/commit/68c35fe0c0a17b57064d1e61b5cfb9dfdb1541ec") append on constructor
+ [View Commit]("http://github.com/nandub/hubot-irc/commit/df2a0325e0b9097fb24a2206211dd375b29cfdb4") append notice method to Adapter and Robot.Response
+
+## v0.0.6 - 2011-12-19
+[View Commit]("http://github.com/nandub/hubot-irc/commit/a1ee96dca717df384f2688831e203f1b57548782") release 0.0.6
+ [View Commit]("http://github.com/nandub/hubot-irc/commit/2913a4d655f1172aed1ea2f58ad70f7adede8c2c") fix for #5: hard crash on sending null values
+ [View Commit]("http://github.com/nandub/hubot-irc/commit/8bc98438a8efa6fd2f34531832c923373a0dc4b7") Remove the Twilio specific config
+
+## v0.0.5 - 2011-12-03
+[View Commit]("http://github.com/nandub/hubot-irc/commit/d536c04d56aca5169d711b0199a342f43808864d") release 0.0.5
+ [View Commit]("http://github.com/nandub/hubot-irc/commit/4a5f0bd8ef9de7fe2ba3ef2c631699d7dcbd23c2") Remove hubot dependency as hubot will already be installed, fixes #4
+
+## v0.0.4 - 2011-11-30
+[View Commit]("http://github.com/nandub/hubot-irc/commit/853413885d2cf39b2f6fe249db44fc12ac4c141f") release 0.0.4
+ [View Commit]("http://github.com/nandub/hubot-irc/commit/e2df065cc34ec721e3d81d566b124fd0a1fa8ba8") fix room join for freenode channels
+
+## v0.0.3 - 2011-11-27
+[View Commit]("http://github.com/nandub/hubot-irc/commit/03638b02b0bc36b05a2ad3e2add0d50e18d35e57") release 0.0.3
+ [View Commit]("http://github.com/nandub/hubot-irc/commit/ef51441a5b583b14eb1734f9d4d883d96abf4f00") release 0.0.2
+
+## v0.0.2 - 2011-11-27
+[View Commit]("http://github.com/nandub/hubot-irc/commit/88f9ae309885fdddb0a838c8c1bde520af2fb7f1") release 0.0.2
 
-#### [Current]
- * [6c34e08](../../commit/6c34e08) - __(Fernando Ortiz)__ add yarn instead of npm to Makefile
- * [70441d3](../../commit/70441d3) - __(Fernando Ortiz)__ update deps, add yarn.lock file and change nodejs version on travis file
- * [2d69ea4](../../commit/2d69ea4) - __(Peter Tripp)__ Merge pull request [#177](../../issues/177) from bval/unpin-node-irc
-
-Unpin node-irc dependency to specific SHA
- * [7ba1cb7](../../commit/7ba1cb7) - __(Brandon Valentine)__ Unpin node-irc dependency to specific SHA
- * [ef468c4](../../commit/ef468c4) - __(Peter Tripp)__ Merge pull request [#174](../../issues/174) from phily245/master
-
-Fix for robot.messageRoom. Fixes [#173](../../issues/173).
- * [7c3e4be](../../commit/7c3e4be) - __(Phil Young)__ Fix Issue For robot.messageRoom
-
-A TypeError was being thrown due to the wrong scope being used when this command was run
- * [a430c25](../../commit/a430c25) - __(Chris Blake)__ release 0.4.0
- * [67d4a33](../../commit/67d4a33) - __(Chris Blake)__ release 0.3.9
- * [52fcb1c](../../commit/52fcb1c) - __(Chris Blake)__ Replace irc dependency with matrix-org version.
- * [b088487](../../commit/b088487) - __(Chris Blake)__ Enable network auto-reconnect and channel auto-rejoin
-
-Closes [#93](../../issues/93)
-
- * [cc634a1](../../commit/cc634a1) - __(Gregor Martynus)__ docs(README): replace hubot --create with yo hubot
- * [548e0ec](../../commit/548e0ec) - __(Tyler McCleve)__ Add sasl
- * [ec70eea](../../commit/ec70eea) - __(Tyler McCleve)__ Adding sasl options
- * [545ecb6](../../commit/545ecb6) - __(Chris Blake)__ Merge pull request [#158](../../issues/158) from JamiKarvanen/fix-channel-regex
-
-Add ! to channel.match regex
-
- * [7c35ef1](../../commit/7c35ef1) - __(Peter Tripp)__ Add npm badge
- * [8ad2674](../../commit/8ad2674) - __(Peter Tripp)__ Merge pull request [#165](../../issues/165) from internaught/master
-
-Add option to accept an expired SSL cert
- * [c3aedc7](../../commit/c3aedc7) - __(Fernando Ortiz)__ release 0.2.9
- * [156f0cd](../../commit/156f0cd) - __(Fernando Ortiz)__ Merge pull request [#166](../../issues/166) from Wykks/patch-1
-
-Update irc
- * [ca47a9f](../../commit/ca47a9f) - __(Wykks)__ Update irc
-
-Update irc to 0.5.0 in order to make it work with recent version of nodejs.
- * [a7520ac](../../commit/a7520ac) - __(Scott)__ Add option to accept an expired SSL cert
-
-This feature is optional but undocumented https://github.com/nandub/hubot-irc/blob/master/src/irc.coffee#L168
- * [d40d6a3](../../commit/d40d6a3) - __(Jacob Gable)__ Merge pull request [#150](../../issues/150) from notpeter/master
-
-Document HUBOT_IRC_USERNAME
- * [ee05591](../../commit/ee05591) - __(Jami Karvanen)__ Add ! to channel.match regex
-
-Hubot was able to join !-channels on ircnet, but couldn't respond
-to any messages. This adds (escaped) ! to the regex.
-
- * [51d1f4b](../../commit/51d1f4b) - __(Fernando Ortiz)__ add dep to compile on node 0.8 and other changes
- * [aca43c9](../../commit/aca43c9) - __(Fernando Ortiz)__ Merge pull request [#153](../../issues/153) from BenoitZugmeyer/master
-
-Node 4 compatibility
- * [fb6d24c](../../commit/fb6d24c) - __(Fernando Ortiz)__ Merge pull request [#154](../../issues/154) from BenoitZugmeyer/fix-travis
-
-Add coffeelint as dependency, to fix travis build
- * [97e2bfa](../../commit/97e2bfa) - __(Benoît Zugmeyer)__ Include node 4 in travis builds
- * [9671a07](../../commit/9671a07) - __(Benoît Zugmeyer)__ Add coffeelint as dependency, to fix travis build
- * [1c92923](../../commit/1c92923) - __(Benoît Zugmeyer)__ Update node-irc version
-
-Fix node 4.x installation
-
- * [0ca5f01](../../commit/0ca5f01) - __(Peter Tripp)__ Document HUBOT_IRC_USERNAME
- * [f905a66](../../commit/f905a66) - __(Jacob Gable)__ release 0.2.8
- * [f0cc4f8](../../commit/f0cc4f8) - __(Jacob Gable)__ Version 0.2.8
- * [bc47ab6](../../commit/bc47ab6) - __(Jacob Gable)__ Merge pull request [#143](../../issues/143) from radnor/patch-1
-
-Fix for [#135](../../issues/135)
- * [951e007](../../commit/951e007) - __(Kevin Lo)__ Fix for [#135](../../issues/135)
-
-Ignore the message if the sender is undefined
- * [07753b4](../../commit/07753b4) - __(Fernando Ortiz)__ change irc dep to 0.3.9
- * [9f35f3e](../../commit/9f35f3e) - __(Fernando Ortiz)__ Merge pull request [#127](../../issues/127) from dpritchett/patch-1
-
-Log all hubot output to debug log?
- * [b0502d0](../../commit/b0502d0) - __(Fernando Ortiz)__ Merge pull request [#137](../../issues/137) from jasonvasquez/log_messages_at_debug_level
-
-Log room messages at the debug level
- * [657ff3c](../../commit/657ff3c) - __(Fernando Ortiz)__ move to latest node-irc
- * [092f488](../../commit/092f488) - __(Fernando Ortiz)__ opps miss the readme
- * [3dd5609](../../commit/3dd5609) - __(Fernando Ortiz)__ change email and license info
- * [09f1f09](../../commit/09f1f09) - __(Jason Vasquez)__ Log room messages at the debug level
-
-It looks like in this singular case, room logs are logged at the info level.  In the default hubot configuration, channel logs are ending up in the hubot log, which may not be desired from a privacy standpoint unless explicitly enabled by changing the log level.
- * [17c5d58](../../commit/17c5d58) - __(Jacob Gable)__ Merge pull request [#130](../../issues/130) from ChristianGaertner/patch-1
-
-Added IRC notifications
- * [470172b](../../commit/470172b) - __(Christian Gärtner)__ Added IRC notifications
- * [d047559](../../commit/d047559) - __(Daniel J. Pritchett)__ Log all hubot output to debug log?
-
-I was hoping to build something on top of hubot's log (a twitter integration) and I noticed that while hubot's logging everything he hears he's not logging everything he says.  If he were logging his own .send() text then I could very easily hook into that.  What do you think?
-
-cc @joshwlewis
-
-btw thanks for this library from #memtech on freenode :beer:
- * [522c501](../../commit/522c501) - __(Jacob Gable)__ release 0.2.7
- * [f91ae1a](../../commit/f91ae1a) - __(Jacob Gable)__ Merge pull request [#124](../../issues/124) from stanaka/fix-notice-multi-lines
-
-Separate lines in case of notice multiple lines
- * [860108f](../../commit/860108f) - __(Shinji Tanaka)__ separate lines in case of notice
- * [bce17c1](../../commit/bce17c1) - __(Jacob Gable)__ release 0.2.6
- * [4046fa4](../../commit/4046fa4) - __(Jacob Gable)__ Merge pull request [#123](../../issues/123) from take-cheeze/leave_msg_fix
-
-Don't enable done flag with text.
- * [c4624a0](../../commit/c4624a0) - __(take_cheeze)__ Don't enable done flag with text. Set text after creating leave message.
- * [2b6177c](../../commit/2b6177c) - __(Jacob Gable)__ release 0.2.5
- * [4e44ce8](../../commit/4e44ce8) - __(Jacob Gable)__ Update npm in before_install instead of before_script
- * [a62ab74](../../commit/a62ab74) - __(Jacob Gable)__ Update version and fix travis
-
-- Bump to 0.2.5
-- Update travis config to update NPM to fix minimatch errors
-
- * [5cf88ab](../../commit/5cf88ab) - __(take_cheeze)__ Pass reason to LeaveMessage.
- * [5677223](../../commit/5677223) - __(take_cheeze)__ Handle quit message.
- * [a31af4e](../../commit/a31af4e) - __(Jacob Gable)__ release 0.2.4
- * [074ba6f](../../commit/074ba6f) - __(Jacob Gable)__ release 0.2.3
- * [6fb02ee](../../commit/6fb02ee) - __(Jacob Gable)__ Merge pull request [#121](../../issues/121) from nandub/fixNotice
-
-Fix notice without from user
- * [72d6b5a](../../commit/72d6b5a) - __(Jacob Gable)__ Fix notice without from user
- * [769e4a4](../../commit/769e4a4) - __(Jacob Gable)__ release 0.2.2
- * [2ab07cc](../../commit/2ab07cc) - __(Jacob Gable)__ Merge pull request [#118](../../issues/118) from nandub/sendPrivate
-
-Add sendPrivate method
- * [d68c642](../../commit/d68c642) - __(Jacob Gable)__ Add sendPrivate method
-
-- Add new IrcResponse class derived from Response
-- Add sendPrivate to IrcResponse
-- Add sendPrivate to IrcAdapter
-
- * [cac3074](../../commit/cac3074) - __(Jacob Gable)__ release 0.2.1
- * [8088625](../../commit/8088625) - __(Jacob Gable)__ Merge pull request [#115](../../issues/115) from lusis/logging_fix
-
-change to use proper logger
- * [24d5723](../../commit/24d5723) - __(John E. Vincent)__ change to use proper logger
- * [acb02ce](../../commit/acb02ce) - __(Jacob Gable)__ release 0.2.0
- * [1c7efa1](../../commit/1c7efa1) - __(Jacob Gable)__ release 0.1.28
- * [b376c08](../../commit/b376c08) - __(Jacob Gable)__ Merge pull request [#112](../../issues/112) from patcon/112-irc-nick-as-uid
-
-Save username for both user.name and user.id
- * [24b2d52](../../commit/24b2d52) - __(Patrick Connolly)__ Make smallest possible change to start using irc nick as uid.
- * [ea7a898](../../commit/ea7a898) - __(Jacob Gable)__ release 0.1.27
- * [d401093](../../commit/d401093) - __(Jacob Gable)__ Bump version for publish
-
-[ci skip]
-
- * [673b8f0](../../commit/673b8f0) - __(Jacob Gable)__ Merge pull request [#111](../../issues/111) from ChristianGaertner/patch-1
-
-Added NOTICE listener
- * [51490cc](../../commit/51490cc) - __(Christian Gärtner)__ Added NOTICE listener
- * [360619b](../../commit/360619b) - __(Jacob Gable)__ Merge pull request [#110](../../issues/110) from colindean/patch-1
-
-Add note about private room passwords
- * [72a7ad3](../../commit/72a7ad3) - __(Colin Dean)__ Add note about private room passwords
-
-Had to look at node-irc to verify this behavior before trying it. Now it's documented.
- * [1417f40](../../commit/1417f40) - __(Jacob Gable)__ release 0.1.26
- * [a57e13c](../../commit/a57e13c) - __(Jacob Gable)__ Bump version for publish
- * [255074d](../../commit/255074d) - __(Jacob Gable)__ Merge pull request [#108](../../issues/108) from justafish/master
-
-Add room information when a user joins/leaves
- * [9cd69bc](../../commit/9cd69bc) - __(Sally Young)__ Add room information when a user joins/leaves
- * [6cf6acd](../../commit/6cf6acd) - __(Jacob Gable)__ release 0.1.25
- * [3c0083f](../../commit/3c0083f) - __(Jacob Gable)__ Bump version for publish
- * [eb71d35](../../commit/eb71d35) - __(Jacob Gable)__ Merge pull request [#106](../../issues/106) from audaxion/ignore_users
-
-Add support for ignoring users
- * [ee2aff8](../../commit/ee2aff8) - __(Robb Wright)__ added ignore in invite listener
- * [6547a19](../../commit/6547a19) - __(Robb Wright)__ fix for empty ignoreUsers array
- * [57b9bb8](../../commit/57b9bb8) - __(Robb Wright)__ Fix ignore users
- * [ad94ede](../../commit/ad94ede) - __(Robb Wright)__ First pass at ignoring users by configuration
- * [0ff5cc5](../../commit/0ff5cc5) - __(Jacob Gable)__ release 0.1.24
- * [29890c9](../../commit/29890c9) - __(Jacob Gable)__ Update version for release
- * [1e6e9b5](../../commit/1e6e9b5) - __(Jacob Gable)__ Merge pull request [#102](../../issues/102) from amaltson/npm-version-of-irc
-
-Use npm version of irc
- * [ea07e41](../../commit/ea07e41) - __(Arthur Maltson)__ Use git https for forked node-irc
-
-This works better behind corporate firewalls
-
- * [4c7bf47](../../commit/4c7bf47) - __(Jacob Gable)__ release 0.1.23
- * [ed8bfba](../../commit/ed8bfba) - __(Jacob Gable)__ Update version
- * [ab7aac0](../../commit/ab7aac0) - __(Jacob Gable)__ Merge pull request [#101](../../issues/101) from sshirokov/topic
-
-Support changing the topic in the adapter.
- * [decaf4d](../../commit/decaf4d) - __(Yaroslav Shirokov)__ Support changing the topic in the adapter.
- * [ad567c0](../../commit/ad567c0) - __(Jacob Gable)__ release 0.1.22
- * [644af67](../../commit/644af67) - __(Jacob Gable)__ release 0.1.21
- * [ac22b85](../../commit/ac22b85) - __(Jacob Gable)__ Merge pull request [#100](../../issues/100) from rgbkrk/patch-1
-
-Invite grammar
- * [567826e](../../commit/567826e) - __(Kyle Kelley)__ Invite grammar
- * [4ec1905](../../commit/4ec1905) - __(Jacob Gable)__ release 0.1.20
- * [276f1df](../../commit/276f1df) - __(Jacob Gable)__ Merge pull request [#98](../../issues/98) from 5thWall/bug/joinpart
-
-Pass user to Leave and Enter Message constructors
- * [637effc](../../commit/637effc) - __(Andy)__ Pass user to Leave and Enter Message constructors
- * [f5b5496](../../commit/f5b5496) - __(Fernando Ortiz)__ add bundler-dep
- * [29da22e](../../commit/29da22e) - __(Fernando Ortiz)__ in case @jgable does not use ruby I don't force to pre-release in release task
- * [5a9f3f8](../../commit/5a9f3f8) - __(Fernando Ortiz)__ add changelog and contributors
- * [6ea6ea1](../../commit/6ea6ea1) - __(Fernando Ortiz)__ add contributors script
- * [569e7e5](../../commit/569e7e5) - __(Jacob Gable)__ release 0.1.19
- * [1020a0f](../../commit/1020a0f) - __(Jacob Gable)__ Bump version for npm publish
- * [36a46c4](../../commit/36a46c4) - __(Jacob Gable)__ Merge pull request [#94](../../issues/94) from VShell/feature/ignore-invites
-
-Add environment variable to ignore invites
- * [af24bfe](../../commit/af24bfe) - __(Cameron Turner)__ Ignore /invites when the HUBOT_IRC_IGNOREINVITE environment variable is set
- * [f3b7d13](../../commit/f3b7d13) - __(Fernando Ortiz)__ Change Build Status heading size
- * [81273e7](../../commit/81273e7) - __(Fernando Ortiz)__ Add Travis-CI build status
- * [d25378a](../../commit/d25378a) - __(Jacob Gable)__ release 0.1.18
- * [efa007d](../../commit/efa007d) - __(Jacob Gable)__ Add Gruntfile.coffee to linting and add travis file
- * [5a4a72c](../../commit/5a4a72c) - __(Jacob Gable)__ Merge pull request [#92](../../issues/92) from halkeye/action-event
-
-Trigger TextMessage when actions are done
- * [9d4e431](../../commit/9d4e431) - __(Jacob Gable)__ Merge pull request [#91](../../issues/91) from halkeye/add-action-support
-
-Add emote support
- * [f255884](../../commit/f255884) - __(Fernando Ortiz)__ add webchat link to connect to #hubot-irc channel.
- * [bd5f99b](../../commit/bd5f99b) - __(Fernando Ortiz)__ Revert "Revert "add mibbit.com link to connect to #hubot-irc channel""
-
-This reverts commit 95058fd6051afaa0c954a60af42008ec2bacb039.
-
- * [b42caf3](../../commit/b42caf3) - __(Gavin)__ Trigger TextMessage when actions are done
- * [f98db8e](../../commit/f98db8e) - __(Gavin)__ Add emote support
- * [95058fd](../../commit/95058fd) - __(Fernando Ortiz)__ Revert "add mibbit.com link to connect to #hubot-irc channel"
-
-Sad freenode does not support mibbit.com.  This reverts commit 04ec0b5f2587fba0f8d06801e9b8eebe23382d0a.
-
- * [04ec0b5](../../commit/04ec0b5) - __(Fernando Ortiz)__ add mibbit.com link to connect to #hubot-irc channel
- * [f20066f](../../commit/f20066f) - __(Jacob Gable)__ Merge pull request [#90](../../issues/90) from stephenyeargin/master
-
-Updates README to include reference to HUBOT_IRC_PRIVATE env variable
- * [0dc3b86](../../commit/0dc3b86) - __(Stephen Yeargin)__ Describe the variable's purpose
- * [79c128d](../../commit/79c128d) - __(Stephen Yeargin)__ Updates README to include reference to HUBOT_IRC_PRIVATE env variable
- * [b50d74f](../../commit/b50d74f) - __(Jacob Gable)__ Merge pull request [#88](../../issues/88) from halkeye/fix-lint-issue
-
-remove trailing space
- * [76afce0](../../commit/76afce0) - __(Gavin)__ remove trailing space (issue reported by grunt)
- * [ef7ef14](../../commit/ef7ef14) - __(Jacob Gable)__ Update README to include info from Hubot wiki
-
-Closes [#87](../../issues/87).
-
- * [85e42c5](../../commit/85e42c5) - __(Jacob Gable)__ release 0.1.17
- * [3653c2b](../../commit/3653c2b) - __(Jacob Gable)__ Fix error for getUserForId
- * [8df1ea1](../../commit/8df1ea1) - __(Jacob Gable)__ release 0.1.16
- * [4895b20](../../commit/4895b20) - __(Jacob Gable)__ Bump version for npm publish
- * [a7ac686](../../commit/a7ac686) - __(Jacob Gable)__ Merge pull request [#86](../../issues/86) from pgolm/feature/fix-unflood
-
-fix new unflood options
- * [443f258](../../commit/443f258) - __(Peter Golm)__ refactor unflood improvements
- * [4d10cfa](../../commit/4d10cfa) - __(Fernando Ortiz)__ add local fork of node-irc to fix ssl problem on node 0.9+, it fixes [#76](../../issues/76) or until upstream fixes the problem.
- * [d5ad864](../../commit/d5ad864) - __(Peter Golm)__ fix unflood options parse
- * [54bcfa3](../../commit/54bcfa3) - __(Jacob Gable)__ Merge pull request [#84](../../issues/84) from nandub/feature/enable-grunt
-
-Enable Grunt
- * [0e3ee5c](../../commit/0e3ee5c) - __(Fernando Ortiz)__ fix indentation and add grunt-coffeelint
- * [5ffe304](../../commit/5ffe304) - __(Jacob Gable)__ release 0.1.15
- * [d3eab32](../../commit/d3eab32) - __(Fernando Ortiz)__ Merge pull request [#83](../../issues/83) from ewilliam/master
-
-Fix typo
- * [a1ac90e](../../commit/a1ac90e) - __(William Albright)__ fix typo
- * [07122c7](../../commit/07122c7) - __(Jacob Gable)__ release 0.1.14
- * [64b36a0](../../commit/64b36a0) - __(Jacob Gable)__ Merge pull request [#82](../../issues/82) from torp/Fix-userForId
-
-Fix for the deprecation of `userForId()`
- * [c269660](../../commit/c269660) - __(kingcody)__ Fix for the depreciation of userForId()
-
-#### 0.1.14
- * [5879e1a](../../commit/5879e1a) - __(Jacob Gable)__ release 0.1.14
- * [1ebd702](../../commit/1ebd702) - __(Jacob Gable)__ release 0.1.13
- * [b18e613](../../commit/b18e613) - __(Robb Wright)__ Fix for deprecation warning
- * [0159129](../../commit/0159129) - __(Fernando Ortiz)__ Merge pull request [#79](../../issues/79) from parkr/unflood-plus
-
-New unflood options
- * [cd1434e](../../commit/cd1434e) - __(Parker Moore)__ New unflood options, per nandub/hubot-irc[#77](../../issues/77).
- * [979ed77](../../commit/979ed77) - __(Jacob Gable)__ release 0.1.12
- * [55c95ea](../../commit/55c95ea) - __(Jacob Gable)__ Merging and fixing notice problems
- * [378fc4c](../../commit/378fc4c) - __(Josh Betz)__ Considerations for private bots
-
-If I run my bot in a public place, like freenode, I want to be able to control exactly what rooms it joins.
-
-Just walking into any room someone invites him into and talking with strangers is bad :)
- * [9a140ff](../../commit/9a140ff) - __(Christopher Kim)__ Added option to execute additional command after connecting
- * [b4b07d0](../../commit/b4b07d0) - __(Jacob Gable)__ release 0.1.11
- * [9468c79](../../commit/9468c79) - __(Jacob Gable)__ release 0.1.11
- * [83153d8](../../commit/83153d8) - __(Jacob Gable)__ Bump version for npm publish
- * [411f15f](../../commit/411f15f) - __(Jacob Gable)__ Merge pull request [#69](../../issues/69) from suisho/notice_mode
-
-Add send notice mode
- * [7944bf8](../../commit/7944bf8) - __(suisho)__ move out if statement
- * [670c877](../../commit/670c877) - __(suisho)__ Add send notice mode
- * [2fb12f7](../../commit/2fb12f7) - __(Jacob Gable)__ release 0.1.10
- * [7299997](../../commit/7299997) - __(Jacob Gable)__ release 0.1.10
- * [183b95c](../../commit/183b95c) - __(Jacob Gable)__ Bumping version for publish
- * [abbc282](../../commit/abbc282) - __(Jacob Gable)__ Merge pull request [#66](../../issues/66) from theodi/master
-
-Clear user.room when a user leaves the channel
- * [0989308](../../commit/0989308) - __(James Smith)__ clear room when user leaves the channel
- * [57ec2ec](../../commit/57ec2ec) - __(Jacob Gable)__ Add link to runnable hubot project
- * [d62c9ec](../../commit/d62c9ec) - __(Jacob Gable)__ release 0.1.9
- * [ea353aa](../../commit/ea353aa) - __(Jacob Gable)__ Merge pull request [#65](../../issues/65) from frozzare/patch-1
-
-Updated irc to 0.3.6
- * [b8d7825](../../commit/b8d7825) - __(Jacob Gable)__ Merge pull request [#64](../../issues/64) from hashbrowncipher/pm_once
-
-Handle PMs once, rather than twice.
- * [4b4b72a](../../commit/4b4b72a) - __(Fredrik Forsmo)__ Updated irc to 0.3.6
-
-0.3.6 fixes parse line errors, so it don't split "hello :)" to ":hello".
- * [6b03654](../../commit/6b03654) - __(Josh Snyder)__ Handle PMs once, rather than twice.
-
-Currently new PMs are handled first by the 'message' handler and then by the
-'pm' handler.  This change makes the 'message' handler take a back seat to the
-'pm' handler.
-
- * [e5accaa](../../commit/e5accaa) - __(Jacob Gable)__ release 0.1.8
- * [977248d](../../commit/977248d) - __(Jacob Gable)__ Merge pull request [#63](../../issues/63) from suisho/robot_name
-
-Check true when robot.name is exist
- * [ab310f5](../../commit/ab310f5) - __(suisho)__ Check true when robot.name is exist
- * [97ad32f](../../commit/97ad32f) - __(Jacob Gable)__ release 0.1.7
- * [f21984f](../../commit/f21984f) - __(Jacob Gable)__ release 0.1.6
- * [25e34c6](../../commit/25e34c6) - __(Jacob Gable)__ Automatically put name in received private messages, fixes [#61](../../issues/61)
- * [64413c4](../../commit/64413c4) - __(Jacob Gable)__ release 0.1.6
- * [2bd1ddd](../../commit/2bd1ddd) - __(Jacob Gable)__ Merge pull request [#60](../../issues/60) from petecheslock/master
-
-Update package.json to install node-irc 0.3.5
- * [2a4688f](../../commit/2a4688f) - __(Pete Cheslock)__ Update to node-irc 0.3.5
- * [1155527](../../commit/1155527) - __(Jacob Gable)__ release 0.1.5
- * [615f99d](../../commit/615f99d) - __(Jacob Gable)__ Bumping version for npm release
- * [54df5a9](../../commit/54df5a9) - __(Jacob Gable)__ Refactoring send for envelope & receiving private messages
- * [91c79e3](../../commit/91c79e3) - __(Jacob Gable)__ Merge pull request [#58](../../issues/58) from EverythingMe/master
-
-When entering a channel, invoke self.createUser for all users
- * [27d391e](../../commit/27d391e) - __(Jacob Gable)__ Merge pull request [#57](../../issues/57) from fmitchell/master
-
-Fix messages with new Adapter format
- * [77584e0](../../commit/77584e0) - __(Omri Bahumi)__ When entering a channel, invoke self.createUser for all users
- * [09cd6e2](../../commit/09cd6e2) - __(fmitchell)__ fix messages with new adapter format
- * [48cc137](../../commit/48cc137) - __(Jacob Gable)__ release 0.1.4
- * [fbeeda4](../../commit/fbeeda4) - __(Jacob Gable)__ Merge pull request [#50](../../issues/50) from johnmichel/master
-
-Adding Real Name as an configurable variable
- * [83a7848](../../commit/83a7848) - __(John Michel)__ Adding Real Name as an environmental variable
-
-Useful for networks where the Real Name of a bot must correspond to a
-non-bot user
-
- * [3e45fc1](../../commit/3e45fc1) - __(Jacob Gable)__ release 0.1.3
- * [f3ae1a3](../../commit/f3ae1a3) - __(Jacob Gable)__ Adding d to certExpire
- * [f25a7ac](../../commit/f25a7ac) - __(Jacob Gable)__ Cleaning up hubot dependencies, fixing certExpired in options
- * [01b21f6](../../commit/01b21f6) - __(Jacob Gable)__ Updating README installation and setup directions
- * [d92edf4](../../commit/d92edf4) - __(Jacob Gable)__ release 0.1.2
- * [c12405b](../../commit/c12405b) - __(Jacob Gable)__ Fixes [#48](../../issues/48), [#49](../../issues/49).  Bump irc module version, allow expiredCert option
- * [381abba](../../commit/381abba) - __(Jacob Gable)__ release 0.1.1
- * [6b992d0](../../commit/6b992d0) - __(Jacob Gable)__ release 0.1.0
- * [2d3dfa5](../../commit/2d3dfa5) - __(Jacob Gable)__ Merge pull request [#47](../../issues/47) from saebekassebil/master
-
-Fix NickServ IDENTIFY messages for irc.mozilla.org - Fixes [#46](../../issues/46)
- * [6cef98f](../../commit/6cef98f) - __(Saebekassebil)__ Fix irc.mozilla.org login (and probably others)
- * [57bfa43](../../commit/57bfa43) - __(Jacob Gable)__ Merge pull request [#42](../../issues/42) from BotDev/userid-fix
-
-Tweaked user ID generation.
- * [04eb38e](../../commit/04eb38e) - __(BotDev)__ Tweaked user ID generation.
- * [3cac371](../../commit/3cac371) - __(Jacob Gable)__ Merge pull request [#40](../../issues/40) from jamesob/nickserv_username
-
-Optional username for NickServ `identify`
- * [49dafb5](../../commit/49dafb5) - __(James O'Beirne)__ listen for 'identify' notice instead of 'register': more generic
- * [2ce86eb](../../commit/2ce86eb) - __(James O'Beirne)__ support a distinct username for NickServ identify msgs
- * [30b87df](../../commit/30b87df) - __(Fernando Ortiz)__ Add "Test Local Changes" section
-
-Closes [#36](../../issues/36)
- * [588906d](../../commit/588906d) - __(Jacob Gable)__ Updating min version in notice about adapter upgrade.
- * [aa2a257](../../commit/aa2a257) - __(Jacob Gable)__ Adding information about hubot-irc channel on freenode.
- * [175feb3](../../commit/175feb3) - __(Jacob Gable)__ Adding year and name to LICENSE (fixes [#33](../../issues/33)) and updating warning in README (fixes [#32](../../issues/32))
- * [afb8779](../../commit/afb8779) - __(Jacob Gable)__ release 0.1.0
- * [7822ba5](../../commit/7822ba5) - __(Jacob Gable)__ Merging fix for NICK check and setting bots name so it responds to its own name
- * [2b0dbb9](../../commit/2b0dbb9) - __(Jacob Gable)__ Updating the robots name with the passed in nick so it responds to its name
- * [e1c693f](../../commit/e1c693f) - __(Fernando Ortiz)__ Fix Error: HUBOT_IRC_NICK is not defined; try: export HUBOT_IRC_NICK='mybot'
- * [bea8006](../../commit/bea8006) - __(Jacob Gable)__ Removing duplicate code from earlier merge
- * [a6fc4a0](../../commit/a6fc4a0) - __(Jacob Gable)__ Adding some helpful errors for missing environment variables
- * [f4b0f82](../../commit/f4b0f82) - __(Jacob Gable)__ Merging changes from @intridea-east for showing name before message
- * [c730c7e](../../commit/c730c7e) - __(Jacob Gable)__ Merge pull request [#13](../../issues/13) from simon/irc-room
-
-Send messages to rooms
- * [2eb232c](../../commit/2eb232c) - __(Jacob Gable)__ Updates before merging @pboos changes
- * [5e877a5](../../commit/5e877a5) - __(Jacob Gable)__ Adding changes for entering and leaving room from @pboos
- * [3a3cf72](../../commit/3a3cf72) - __(Jacob Gable)__ Updating version information, description to Hubot 2.0 and updating node engine upper version
- * [ed5cd41](../../commit/ed5cd41) - __(Jacob Gable)__ Merge pull request [#31](../../issues/31) from elliotttf/master
-
-Updates for latest version of hubot
- * [0343013](../../commit/0343013) - __(Elliott Foster)__ More correct implementation for join/leave messages for the bot.
- * [9159d28](../../commit/9159d28) - __(Elliott Foster)__ Use enter/leave messages on enter/leave events.
- * [8d33bdd](../../commit/8d33bdd) - __(Elliott Foster)__ Missed one.
- * [a54b89d](../../commit/a54b89d) - __(Elliott Foster)__ Updating to work with latest hubot.
- * [29700cd](../../commit/29700cd) - __(Patrick Boos)__ Added robot.leave support
- * [dc0b0e6](../../commit/dc0b0e6) - __(Patrick Boos)__ Added support for "Enter Message" support
- * [4b39ced](../../commit/4b39ced) - __(Elliott Foster)__ Emit a joined event.
- * [d8ab884](../../commit/d8ab884) - __(Elliott Foster)__ Pass command arguments all toghether.
- * [a75a006](../../commit/a75a006) - __(Elliott Foster)__ Adding a command listener.
- * [9ac1fd9](../../commit/9ac1fd9) - __(Fernando Ortiz)__ release 0.0.8
- * [0b859bc](../../commit/0b859bc) - __(Fernando Ortiz)__ change HUBOT_IRC_USERNAME? to HUBOT_IRC_USERNAME
- * [a4c7262](../../commit/a4c7262) - __(Fernando Ortiz)__ Merge pull request [#17](../../issues/17) from Schnitz/master
-
-allow for better user identification for some IRC networks
- * [61d8985](../../commit/61d8985) - __(Fabian Frank)__ using options object for consistency
-
-using options object for consistency, thanks jimeh for the suggestion.
-
- * [a42b694](../../commit/a42b694) - __(Fernando Ortiz)__ release 0.0.7
- * [97ec0ef](../../commit/97ec0ef) - __(Fernando Ortiz)__ Closes [#16](../../issues/16), [#18](../../issues/18)
-
-Signed-off-by: Fernando Ortiz <fortiz2k@gmail.com>
-
- * [40c0243](../../commit/40c0243) - __(Ian Anderson)__ Run now emits "connected" event in order to load hubot scripts
-
-Signed-off-by: Ian Anderson <getfatday@gmail.com>
-
- * [2529236](../../commit/2529236) - __(Fabian Frank)__ hubot is identifying itself as user@host to the IRC server. making the user portion configurable as HUBOT_IRC_USERNAME, since certain IRC networks require a valid username instead of the default one, which is nodebot.
- * [68c35fe](../../commit/68c35fe) - __(kmnk)__ append on constructor
- * [df2a032](../../commit/df2a032) - __(kmnk)__ append notice method to Adapter and Robot.Response
- * [43c2061](../../commit/43c2061) - __(Simon Gate)__ Send messages to rooms
- * [88a44a3](../../commit/88a44a3) - __(Ian Yang)__ Auto add name before message which sent from query window
- * [a1ee96d](../../commit/a1ee96d) - __(Fernando Ortiz)__ release 0.0.6
- * [ae3e556](../../commit/ae3e556) - __(Tom Bell)__ Merge pull request [#7](../../issues/7) from DataDog/null_send
-
-fix for [#5](../../issues/5): hard crash on sending null values
- * [2913a4d](../../commit/2913a4d) - __(Matt Singleton)__ fix for [#5](../../issues/5): hard crash on sending null values
- * [8bc9843](../../commit/8bc9843) - __(Tom Bell)__ Remove the Twilio specific config
- * [d536c04](../../commit/d536c04) - __(Fernando Ortiz)__ release 0.0.5
- * [4a5f0bd](../../commit/4a5f0bd) - __(Tom Bell)__ Remove hubot dependency as hubot will already be installed, fixes [#4](../../issues/4)
- * [8534138](../../commit/8534138) - __(Fernando Ortiz)__ release 0.0.4
- * [2693d5a](../../commit/2693d5a) - __(Tom Bell)__ Merge pull request [#3](../../issues/3) from mrtazz/fix-freenode-room-join
-
-fix room join for freenode channels
- * [e2df065](../../commit/e2df065) - __(Daniel Schauenberg)__ fix room join for freenode channels
-
-I had this problem that hubot wouldn't join rooms and just idled connected to
-the freenode servers. I tracked it down to the `NOTICE` message parsing. The
-freenode servers would not send 'Password accepted' but rather something like
-'You are now identified for ...'. I added a condition to take that into
-account.
-
- * [03638b0](../../commit/03638b0) - __(Fernando Ortiz)__ release 0.0.3
- * [ef51441](../../commit/ef51441) - __(Fernando Ortiz)__ release 0.0.2
- * [88f9ae3](../../commit/88f9ae3) - __(Fernando Ortiz)__ release 0.0.2
- * [95f42ec](../../commit/95f42ec) - __(Fernando Ortiz)__ first commit

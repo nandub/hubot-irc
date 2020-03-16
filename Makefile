@@ -5,8 +5,7 @@ dev: js
 	@coffee -wc --bare -o lib src/
 
 VERSION = $(shell coffee src/npm-version.coffee)
-pre-release: bundler-dep
-	@bundle install >/dev/null 2>&1
+pre-release:
 	@sh release/changelog >/dev/null 2>&1
 	@sh release/contributors >/dev/null 2>&1
 
@@ -29,9 +28,6 @@ js: coffee-dep
 
 remove-js:
 	@rm -fr lib/
-
-bundler-dep:
-	@test `which bundle` || echo 'You need bundler to do bundle install... makes sense?'
 
 yarn-dep:
 	@test `which yarn` || echo 'You need to have yarn in your PATH.\nPlease install it using `brew install yarn` or `npm install -g yarn`.'

@@ -1,3 +1,56 @@
-#!/bin/sh
+#!/usr/bin/env bash
 
-katip
+# Taken from https://stackoverflow.com/a/40000492
+function create_array_from_args() {
+  local somearray=("$@")
+  for elem in "${somearray[@]}"
+  do
+    echo "${elem}"
+  done
+}
+
+function versions() {
+  verarray=()
+  tags=$(git tag -l --sort=-version:refname | grep "v")
+  for tag in $tags
+  do
+    verarray+=$tag 
+    verarray+=' '
+  done
+  mapfile -t vers <<< "$(create_array_from_args ${verarray})"
+}
+
+function get_version_date() {
+  git show -s --format=%cd --date=short $1
+}
+
+function get_commit_since_tag() {
+  local new_tag=$1
+  local old_tag=$2
+  git log $old_tag...$new_tag --pretty=format:'[View Commit]("http://github.com/nandub/hubot-irc/commit/%H") %s@' | grep -v Merge
+  #git log $old_tag...$new_tag --pretty=format:'<li> <a href="http://github.com/nandub/hubot-irc/commit/%H">view commit &bull;</a> %s</li>@' | grep -v Merge
+}
+
+versions
+
+#Reset Changelog
+rm CHANGELOG.md
+
+for (( v=0; v<=${#vers[@]}; v+=1 ))
+do  
+  if [ "${vers[$v]}" = "" ]; then
+    continue
+  fi
+  if [ "${vers[$v+1]}" = "" ]; then
+    first_date=$(get_version_date ${vers[$v]})
+    first_hash=$(git log --pretty=format:%H | tail -1)
+    first_commits=$(get_commit_since_tag ${vers[$v]} $first_hash)
+    echo \#\# ${vers[$v]} - $first_date >> CHANGELOG.md
+    echo $first_commits | tr '@' '\n' >> CHANGELOG.md
+  else
+    commit_date=$(get_version_date ${vers[$v]})
+    commits=$(get_commit_since_tag ${vers[$v]} ${vers[$v+1]})
+    echo \#\# ${vers[$v]} - $commit_date >> CHANGELOG.md
+    echo $commits | tr '@' '\n' >> CHANGELOG.md
+  fi
+done
