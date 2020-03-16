@@ -340,7 +340,7 @@ class IrcBot extends Adapter
         # we'll ignore this message if it's from someone we want to ignore
         return
       
-      if not process.env.HUBOT_IRC_PRIVATE or process.env.HUBOT_IRC_IGNOREINVITE
+      if not process.env.HUBOT_IRC_PRIVATE or not process.env.HUBOT_IRC_IGNOREINVITE
         bot.join channel
 
     @bot = bot
