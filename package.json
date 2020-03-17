@@ -21,7 +21,7 @@
   },
   "dependencies": {
     "irc": "matrix-org/node-irc",
-    "log": "6.0.0"
+    "log": "1.4.0"
   },
   "devDependencies": {
     "are-we-there-yet": "1.1.5",
