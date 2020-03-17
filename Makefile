@@ -6,8 +6,8 @@ dev: js
 
 VERSION = $(shell coffee src/npm-version.coffee)
 pre-release:
-	@sh release/changelog >/dev/null 2>&1
-	@sh release/contributors >/dev/null 2>&1
+	@bash release/changelog v${VERSION} >/dev/null 2>&1
+	@bash release/contributors >/dev/null 2>&1
 
 release: yarn-dep js
 	git commit --allow-empty -a -m "release $(VERSION)"

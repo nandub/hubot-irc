@@ -1,3 +1,10 @@
+## Current - 2020-03-16
+- [View Commit](https://github.com/nandub/hubot-irc/commit/7e4f997064cd36e21ff1021e0df6887dc9553f42) fix markdown commit list
+ - [View Commit](https://github.com/nandub/hubot-irc/commit/39b064d20d7ebdf150b2508d2b831c11e42a899d) fix url markdown
+ - [View Commit](https://github.com/nandub/hubot-irc/commit/d4b35d6b1fbc9708f1d6245b9a950237f814a159) remove ruby dependency
+ - [View Commit](https://github.com/nandub/hubot-irc/commit/7688bfaa6f59552ffd920a695bd7477a40e9cd50) add test folder
+ - [View Commit](https://github.com/nandub/hubot-irc/commit/bbcd0b56bd2c38e038c8710213dc5d59cdf58e1e) add initial test. Closes #59
+
 ## v0.4.1 - 2020-03-14
 - [View Commit](https://github.com/nandub/hubot-irc/commit/19752a21a7fb41f3eaf02cfb821aa7a97867930f) release 0.4.1
  - [View Commit](https://github.com/nandub/hubot-irc/commit/6c34e08f3dcb0d68114278f1650ebba2e6d5b298) add yarn instead of npm to Makefile
