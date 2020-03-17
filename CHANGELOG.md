@@ -1,5 +1,6 @@
 ## Current - 2020-03-16
-- [View Commit](https://github.com/nandub/hubot-irc/commit/7e4f997064cd36e21ff1021e0df6887dc9553f42) fix markdown commit list
+- [View Commit](https://github.com/nandub/hubot-irc/commit/3148103b101d14afb2420bec8cfe2a6cdfe8e61f) pass version arg to release/changelog
+ - [View Commit](https://github.com/nandub/hubot-irc/commit/7e4f997064cd36e21ff1021e0df6887dc9553f42) fix markdown commit list
  - [View Commit](https://github.com/nandub/hubot-irc/commit/39b064d20d7ebdf150b2508d2b831c11e42a899d) fix url markdown
  - [View Commit](https://github.com/nandub/hubot-irc/commit/d4b35d6b1fbc9708f1d6245b9a950237f814a159) remove ruby dependency
  - [View Commit](https://github.com/nandub/hubot-irc/commit/7688bfaa6f59552ffd920a695bd7477a40e9cd50) add test folder
