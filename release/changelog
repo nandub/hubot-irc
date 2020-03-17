@@ -27,8 +27,8 @@ function get_version_date() {
 function get_commit_since_tag() {
   local new_tag=$1
   local old_tag=$2
-  git log $old_tag...$new_tag --pretty=format:'[View Commit]("http://github.com/nandub/hubot-irc/commit/%H") %s@' | grep -v Merge
-  #git log $old_tag...$new_tag --pretty=format:'<li> <a href="http://github.com/nandub/hubot-irc/commit/%H">view commit &bull;</a> %s</li>@' | grep -v Merge
+  git log $old_tag...$new_tag --pretty=format:'[View Commit](https://github.com/nandub/hubot-irc/commit/%H) %s@' | grep -v Merge
+  #git log $old_tag...$new_tag --pretty=format:'<li> <a href="https://github.com/nandub/hubot-irc/commit/%H">view commit &bull;</a> %s</li>@' | grep -v Merge
 }
 
 versions
