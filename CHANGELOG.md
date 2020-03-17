@@ -1,5 +1,7 @@
-## Current - 2020-03-16
-- [View Commit](https://github.com/nandub/hubot-irc/commit/3148103b101d14afb2420bec8cfe2a6cdfe8e61f) pass version arg to release/changelog
+## v0.4.2 - 2020-03-17
+- [View Commit](https://github.com/nandub/hubot-irc/commit/1966758c3c9db695848181ace77ac3ba8525fa7a) Downgrade logs package to follow hubot logs (#178)
+ - [View Commit](https://github.com/nandub/hubot-irc/commit/7d0eb42dbb73cc5586424f68c4d6fe1091407589) more changelog changes
+ - [View Commit](https://github.com/nandub/hubot-irc/commit/3148103b101d14afb2420bec8cfe2a6cdfe8e61f) pass version arg to release/changelog
  - [View Commit](https://github.com/nandub/hubot-irc/commit/7e4f997064cd36e21ff1021e0df6887dc9553f42) fix markdown commit list
  - [View Commit](https://github.com/nandub/hubot-irc/commit/39b064d20d7ebdf150b2508d2b831c11e42a899d) fix url markdown
  - [View Commit](https://github.com/nandub/hubot-irc/commit/d4b35d6b1fbc9708f1d6245b9a950237f814a159) remove ruby dependency

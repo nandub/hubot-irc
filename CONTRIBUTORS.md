@@ -1,22 +1,22 @@
    122	Jacob Gable
-    41	Fernando Ortiz
+    49	Fernando Ortiz
      7	Elliott Foster
      5	Chris Blake
      5	Robb Wright
      5	Peter Tripp
      4	Tom Bell
      3	take_cheeze
-     3	Benoît Zugmeyer
      3	Gavin
      3	suisho
+     3	Benoît Zugmeyer
      2	Tyler McCleve
-     2	Patrick Boos
-     2	Fabian Frank
+     2	kmnk
      2	Christian Gärtner
      2	Peter Golm
-     2	Stephen Yeargin
      2	James O'Beirne
-     2	kmnk
+     2	Stephen Yeargin
+     2	Fabian Frank
+     2	Patrick Boos
      1	Josh Snyder
      1	Kevin Lo
      1	Kyle Kelley
@@ -31,6 +31,7 @@
      1	Scott
      1	Shinji Tanaka
      1	Simon Gate
+     1	Thomas Bille
      1	Andy
      1	Wykks
      1	Yaroslav Shirokov

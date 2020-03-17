@@ -9,7 +9,7 @@ pre-release:
 	@bash release/changelog v${VERSION} >/dev/null 2>&1
 	@bash release/contributors >/dev/null 2>&1
 
-release: yarn-dep js
+release: yarn-dep js pre-release
 	git commit --allow-empty -a -m "release $(VERSION)"
 	git tag v$(VERSION)
 	git push origin master
