@@ -5,8 +5,6 @@ node_js:
   - 12
   - 13
 before_install:
-  - npm update -g npm
-before_script:
-  - npm install -g grunt-cli
+  - yarn config set ignore-engines true
 notifications:
   irc: "chat.freenode.net#hubot-irc"
