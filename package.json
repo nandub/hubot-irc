@@ -13,7 +13,7 @@
     "url": "http://github.com/nandub/hubot-irc/issues"
   },
   "main": "./src/irc.coffee",
-  "engine": "node > 10.19.0",
+  "engine": "node >= 8.17.0",
   "scripts": {
     "pretest": "coffee -c --bare -o lib src/",
     "test": "nyc --reporter=html --reporter=text mocha",
