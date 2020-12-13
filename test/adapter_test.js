@@ -91,13 +91,15 @@ describe('IrcBot', function () {
     });
   });
 
-  it('dispatches received messages to the robot', function () {
-    this.robot.receive = sinon.spy();
-    this.adapter = HubotIrc.use(this.robot);
-    this.message = sinon.spy();
+  describe('Adapter use', function () {
+    it('dispatches received messages to the robot', function () {
+      this.robot.receive = sinon.spy();
+      this.adapter = HubotIrc.use(this.robot);
+      this.message = sinon.spy();
 
-    this.adapter.receive(this.message);
+      this.adapter.receive(this.message);
 
-    expect(this.robot.receive).to.have.been.calledWith(this.message);
+      expect(this.robot.receive).to.have.been.calledWith(this.message);
+    });
   });
 });

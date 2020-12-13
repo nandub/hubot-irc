@@ -15,29 +15,25 @@
   "main": "./src/irc.coffee",
   "engine": "node > 10.19.0",
   "scripts": {
-    "pretest": "coffee -c --bare -o lib src/ && grunt",
+    "pretest": "coffee -c --bare -o lib src/",
     "test": "nyc --reporter=html --reporter=text mocha",
-    "coverage": "nyc report --reporter=text-lcov | coveralls"
+    "coverage": "nyc report --reporter=text-lcov | coveralls",
+    "lint": "jshint lib/**.js",
+    "lint:checkstyle": "yarn run lint --reporter checkstyle > checkstyle.xml"
   },
   "dependencies": {
     "irc": "matrix-org/node-irc",
     "log": "1.4.0"
   },
   "devDependencies": {
-    "are-we-there-yet": "1.1.5",
-    "chai": "~2.1.0",
-    "coffeelint": "2.1.0",
-    "coveralls": "^3.0.2",
-    "mocha": "^5.2.0",
-    "nyc": "^13.0.0",
-    "grunt": "1.0.4",
-    "grunt-contrib-coffee": "2.1.0",
-    "grunt-contrib-jshint": "2.1.0",
-    "grunt-contrib-watch": "1.1.0",
-    "grunt-contrib-nodeunit": "2.1.0",
-    "grunt-coffeelint": "0.0.16",
-    "hubot": "~3.3.2",
-    "sinon": "~1.17.0",
-    "sinon-chai": "^2.8.0"
+    "chai": "latest",
+    "coffeescript": "latest",
+    "coveralls": "latest",
+    "jshint": "latest",
+    "hubot": "latest",
+    "mocha": "latest",
+    "nyc": "latest",
+    "sinon": "latest",
+    "sinon-chai": "latest"
   }
 }
