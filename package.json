@@ -22,7 +22,7 @@
     "lint:checkstyle": "yarn run lint --reporter checkstyle > checkstyle.xml"
   },
   "dependencies": {
-    "irc": "matrix-org/node-irc",
+    "irc": "matrix-org/node-irc#matrix-irc-bridge",
     "log": "1.4.0"
   },
   "devDependencies": {
