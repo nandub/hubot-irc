@@ -162,8 +162,9 @@ class IrcBot extends Adapter
 
     options =
       nick:     process.env.HUBOT_IRC_NICK or @robot.name
-      realName: process.env.HUBOT_IRC_REALNAME
-      port:     process.env.HUBOT_IRC_PORT
+      userName: process.env.HUBOT_IRC_USERNAME or @robot.name
+      realName: process.env.HUBOT_IRC_REALNAME or 'nodeJS IRC client'
+      port:     process.env.HUBOT_IRC_PORT or 6667
       rooms:    process.env.HUBOT_IRC_ROOMS.split(",")
       ignoreUsers: process.env.HUBOT_IRC_IGNORE_USERS?.split(",") or []
       server:   process.env.HUBOT_IRC_SERVER
@@ -176,7 +177,6 @@ class IrcBot extends Adapter
       unflood:  process.env.HUBOT_IRC_UNFLOOD
       debug:    process.env.HUBOT_IRC_DEBUG?
       usessl:   process.env.HUBOT_IRC_USESSL?
-      userName: process.env.HUBOT_IRC_USERNAME
       usesasl:  process.env.HUBOT_IRC_USESASL?
 
     client_options =
@@ -222,7 +222,10 @@ class IrcBot extends Adapter
                  text.indexOf('identified') isnt -1)
           for room in options.rooms
             @join room
-
+        else if from is 'SaslServ' and text.indexOf('Last login from') isnt -1			
+          for room in options.rooms
+            @join room
+            
     if options.connectCommand?
       bot.addListener 'registered', (message) ->
         # The 'registered' event is fired when you are connected to the server
